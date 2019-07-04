@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_system/welcome.dart';
+import 'package:flutter_system/guide.dart';
 
 /// App Entry
 void main() => runApp(MyApp());
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WelcomePage(),
+      home: GuidePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
