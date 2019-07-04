@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/home.dart';
 
 class GuideData {
   String imgUrl;
@@ -23,16 +24,18 @@ class _GuidePageState extends State<GuidePage> {
 
   int _currentIndex;
 
+  final PageController _controller = PageController();
+
   @override
   void initState() {
     super.initState();
     data.add(GuideData("landscape0.jpeg", "好看", "Just for beautiful"));
     data.add(GuideData("landscape1.jpeg", "好玩", "Just for fun"));
     data.add(GuideData("landscape2.jpeg", "好用", "Juest for usage"));
-    _itemCount = 3;
 
     setState(() {
       _currentIndex = 0;
+      _itemCount = 3;
     });
 
     _onPageChanged = (value) => {
@@ -55,7 +58,7 @@ class _GuidePageState extends State<GuidePage> {
               itemBuilder: (BuildContext context, int index) =>
                   _buildItem(context, index),
               itemCount: _itemCount,
-              controller: PageController(),
+              controller: _controller,
               pageSnapping: true,
               onPageChanged: _onPageChanged,
             ),
@@ -87,6 +90,35 @@ class _GuidePageState extends State<GuidePage> {
         image: DecorationImage(
             image: AssetImage("images/" + data[index].imgUrl),
             fit: BoxFit.fill),
+      ),
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: Visibility(
+          visible: _currentIndex == _itemCount - 1 &&
+              _controller.page == _itemCount - 1,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 4, right: 14),
+            child: RaisedButton(
+              padding: EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(2)),
+              color: Colors.black26,
+              textColor: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text("启程"),
+                  Icon(Icons.chevron_right),
+                ],
+              ),
+              onPressed: () => {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => HomePage()))
+                  },
+            ),
+          ),
+        ),
       ),
     );
   }
