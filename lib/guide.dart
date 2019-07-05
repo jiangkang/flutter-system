@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_system/home.dart';
 
 class GuideData {
   String imgUrl;
@@ -86,39 +85,9 @@ class _GuidePageState extends State<GuidePage> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("images/" + data[index].imgUrl),
-            fit: BoxFit.fill),
-      ),
-      child: Align(
-        alignment: Alignment.bottomRight,
-        child: Visibility(
-          visible: _currentIndex == _itemCount - 1 &&
-              _controller.page == _itemCount - 1,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 4, right: 14),
-            child: RaisedButton(
-              padding: EdgeInsets.all(0),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(2)),
-              color: Colors.black26,
-              textColor: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text("启程"),
-                  Icon(Icons.chevron_right),
-                ],
-              ),
-              onPressed: () => {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => HomePage()))
-                  },
-            ),
-          ),
-        ),
+      child: Image.asset(
+        "images/" + data[index].imgUrl,
+        fit: BoxFit.fill,
       ),
     );
   }
