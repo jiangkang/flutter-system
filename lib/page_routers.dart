@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
+import 'package:flutter_system/guide.dart';
 import 'package:flutter_system/home.dart';
 import 'package:flutter_system/widgets/demo_container.dart';
 import 'package:flutter_system/widgets/demo_text.dart';
 
+import 'demos/demo_pageview.dart';
+
+/// 路由汇总
 final Map<String, WidgetBuilder> pageRouters = {
   "/": (BuildContext context) => HomePage(),
-  "/text": (BuildContext context) => TextDemo(),
-  "/container": (BuildContext context) => ContainerDemo(),
-  "/safearea": (BuildContext context) => SafeAreaDemo(),
+  "/page/guide": (BuildContext context) => GuidePage(),
+  "/demo/text": (BuildContext context) => TextDemo(),
+  "/demo/container": (BuildContext context) => ContainerDemo(),
+  "/demo/safearea": (BuildContext context) => SafeAreaDemo(),
+  "/demo/pageview": (BuildContext context) => PageViewDemo(),
 };
