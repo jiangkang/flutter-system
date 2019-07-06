@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/demos/demo_container.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
-import 'package:flutter_system/guide.dart';
+import 'package:flutter_system/demos/demo_text.dart';
 import 'package:flutter_system/home.dart';
-import 'package:flutter_system/widgets/demo_container.dart';
-import 'package:flutter_system/widgets/demo_text.dart';
+import 'package:flutter_system/page/guide.dart';
 
 import 'demos/demo_pageview.dart';
 

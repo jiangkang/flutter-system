@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/demos/demos.dart';
 
 /// Text Demos
 class TextDemo extends StatelessWidget {
@@ -6,17 +7,31 @@ class TextDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
+        // default
         ListTile(
-          title: Text(
-            "Default Text",
+          title: InkWell(
+            child: Text(
+              "Default Text",
+            ),
+            onTap: () {
+              debugPrint("click");
+            },
           ),
         ),
+        ListTile(
+          title: Text(
+            "方正仿宋-简体",
+            style: TextStyle(fontFamily: "FangZhengFangSongJianTi"),
+          ),
+        ),
+        //text align
         ListTile(
           title: Text(
             "textAlign:TextAlign.center",
             textAlign: TextAlign.center,
           ),
         ),
+        //text direction
         ListTile(
           title: Text(
             "textDirection: TextDirection.rtl",
@@ -75,7 +90,6 @@ class TextDemo extends StatelessWidget {
           title: Text(
             "style: letterSpacing,shadows",
             style: TextStyle(
-              letterSpacing: 4,
               shadows: <Shadow>[
                 Shadow(color: Colors.pink, offset: Offset(1, 2))
               ],
@@ -84,11 +98,20 @@ class TextDemo extends StatelessWidget {
         ),
         ListTile(
           title: Text(
-            "decoration: underline,decorationColor,decorationStyle: TextDecorationStyle.dashed",
+            "decoration",
             style: TextStyle(
                 decoration: TextDecoration.underline,
                 decorationColor: Colors.blueAccent,
-                decorationStyle: TextDecorationStyle.dashed),
+                decorationStyle: TextDecorationStyle.solid),
+          ),
+        ),
+        ListTile(
+          title: Text(
+            "decoration",
+            style: TextStyle(
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.blueAccent,
+                decorationStyle: TextDecorationStyle.wavy),
           ),
         ),
         ListTile(
@@ -105,6 +128,17 @@ class TextDemo extends StatelessWidget {
             style: TextStyle(
                 decoration: TextDecoration.overline,
                 decorationStyle: TextDecorationStyle.double),
+          ),
+        ),
+        ListTile(
+          title: Text(
+            "decoration: overline & underline",
+            style: TextStyle(
+              decoration: TextDecoration.combine(<TextDecoration>[
+                TextDecoration.underline,
+                TextDecoration.overline
+              ]),
+            ),
           ),
         ),
         ListTile(
@@ -149,3 +183,5 @@ class TextDemo extends StatelessWidget {
     );
   }
 }
+
+void main() => runDemo(TextDemo(), title: "Text Demo");

@@ -11,6 +11,7 @@ const List<Color> colors = [
   Colors.purple
 ];
 
+/// PageView Demos
 class PageViewDemo extends StatelessWidget {
   final _controller = PageController();
 

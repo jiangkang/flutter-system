@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_system/guide.dart';
-import 'package:flutter_system/page_routers.dart';
+import 'package:flutter_system/page/guide.dart';
 
 /// App Entry
 void main() => runApp(MyApp());
 
+/// App Entry
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
