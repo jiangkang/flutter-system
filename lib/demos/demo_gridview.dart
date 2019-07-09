@@ -21,9 +21,10 @@ class GridViewCountDemo extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: GridView.count(
         primary: false,
+        childAspectRatio: 1,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        scrollDirection: Axis.vertical,
+        scrollDirection: Axis.horizontal,
         children: List.generate(
           100,
           (index) {
@@ -35,7 +36,7 @@ class GridViewCountDemo extends StatelessWidget {
             );
           },
         ),
-        crossAxisCount: 2,
+        crossAxisCount: 3,
       ),
     );
   }
@@ -113,7 +114,7 @@ class GridViewCustomDemo extends StatelessWidget {
   }
 }
 
-//void main() => runDemo(GridViewCountDemo(), title: "GridView.count Demo");
+void main() => runDemo(GridViewCountDemo(), title: "GridView.count Demo");
 //void main() => runDemo(GridViewExtentDemo(), title: "GridView.extent Demo");
 //void main() => runDemo(GridViewBuilderDemo(), title: "GridView.builder Demo");
-void main() => runDemo(GridViewCustomDemo(), title: "GridView.custom Demo");
+//void main() => runDemo(GridViewCustomDemo(), title: "GridView.custom Demo");

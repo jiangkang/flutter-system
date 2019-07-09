@@ -35,5 +35,6 @@
     <orderEntry type="library" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support.test:monitor:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/jiangkang/MyProjects/flutter-system/build/app/intermediates/flutter/debug/libs.jar:unspecified@jar" level="project" />
   </component>
 </module>
