@@ -14,6 +14,32 @@ const List<String> IMGS = [
   IMG_URL8,
 ];
 
+class GridViewDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: GridView(
+        primary: false,
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        scrollDirection: Axis.horizontal,
+        children: List.generate(
+          100,
+          (index) {
+            return Image.network(
+              IMGS[index % 8],
+              fit: BoxFit.cover,
+              colorBlendMode: BlendMode.colorBurn,
+              color: Colors.white10,
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
 class GridViewCountDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
