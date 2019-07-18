@@ -14,16 +14,22 @@ const List<String> IMGS = [
   IMG_URL8,
 ];
 
+/// 图片的几大常见需求：
+/// 1. 占位图
+/// 2. 圆角
+/// 3. 圆形
+/// 4. 资源/网络/内存加载
+/// 5. 缓存
 class ImageDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        Card(
-          child: Image(
-            image: AssetImage("images/landscape0.jpeg"),
-            filterQuality: FilterQuality.high,
-          ),
+        Image.asset(
+          "images/landscape0.jpeg",
+          width: 100,
+          height: 100,
+          semanticLabel: "Default Image",
         ),
       ],
     );
