@@ -18,3 +18,15 @@ const IMG_URL8 =
     "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562428895236&di=03322d03df7ec21f408a88bb3fcbe244&imgtype=0&src=http%3A%2F%2Fpics1.baidu.com%2Ffeed%2F7dd98d1001e93901bbbae7d68d93d9e337d19626.jpeg%3Ftoken%3Db82c7de1748aeacba09eefa3483dcf44%26s%3DFD2631774DC342511E5429DA0100C0B2";
 const IMG_URL9 = "";
 const IMG_URL10 = "";
+
+const List<String> IMGS = [
+  IMG_URL0,
+  IMG_URL1,
+  IMG_URL2,
+  IMG_URL3,
+  IMG_URL4,
+  IMG_URL5,
+  IMG_URL6,
+  IMG_URL7,
+  IMG_URL8,
+];
