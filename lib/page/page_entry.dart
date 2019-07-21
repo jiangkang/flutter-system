@@ -35,7 +35,7 @@ class PageEntry extends StatelessWidget {
           itemCount: pageEntries.length,
           itemBuilder: (context, index) {
             return Card(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: 10, bottom: 0, left: 10, right: 10),
               child: InkWell(
                 onTap: () {
                   Navigator.of(context)
@@ -119,7 +119,7 @@ class ArticleEntry extends StatelessWidget {
           itemCount: articleEntries.length,
           itemBuilder: (BuildContext context, int index) {
             return Card(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(top: 10, bottom: 0, left: 10, right: 10),
               child: InkWell(
                 onTap: () {
                   NavUtils.openWebView(context, articleEntries[index].url,
