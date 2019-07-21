@@ -40,10 +40,10 @@ class PageViewDemo extends StatelessWidget {
                   children: <Widget>[
                     PageView.builder(
                       itemBuilder: (context, index) => Container(
-                            width: 300,
-                            height: 300,
-                            color: colors[index % colors.length],
-                          ),
+                        width: 300,
+                        height: 300,
+                        color: colors[index % colors.length],
+                      ),
                       pageSnapping: true,
                       controller: _controller,
                     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_system/page/guide.dart';
+import 'package:flutter_system/page_routers.dart';
 
 /// App Entry
 void main() => runApp(MyApp());
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: GuidePage(),
       debugShowCheckedModeBanner: false,
+      routes: pageRouters,
     );
   }
 }

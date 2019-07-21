@@ -1,16 +1,36 @@
 name: flutter_system
 description: Learn Flutter System
 
-version: 1.5.4+1
+version: 0.0.1
 
 environment:
   sdk: ">=2.2.0 <3.0.0"
 
+# ^0.1.1 则版本应该为0.1.x , x >=1
+# '0.1.1' 指定版本
 dependencies:
   flutter:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
+  webview_flutter:
+  url_launcher:
+#  video_player:
+#  shared_preferences:
+#  share:
+#  sensors:
+#  quick_actions:
+#  path_provider:
+#  image_picker:
+#  google_sign_in:
+#  package_info:
+#  local_auth:
+#  in_app_purchase:
+#  google_maps_flutter:
+#  device_info:
+#  connectivity:
+#  camera:
+#  battery:
 
 dev_dependencies:
   flutter_test:

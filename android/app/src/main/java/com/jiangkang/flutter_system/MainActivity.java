@@ -1,4 +1,4 @@
-package com.example.flutter_road;
+package com.jiangkang.flutter_system;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

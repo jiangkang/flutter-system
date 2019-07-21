@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_system/common/res_constants.dart';
 import 'package:flutter_system/demos/demos.dart';
@@ -27,10 +29,13 @@ class ImageDemo extends StatelessWidget {
       children: <Widget>[
         Image.asset(
           "images/landscape0.jpeg",
-          width: 100,
-          height: 100,
+          width: double.maxFinite,
           semanticLabel: "Default Image",
         ),
+        Image.network(
+          IMGS[new Random().nextInt(9)],
+          width: double.maxFinite,
+        )
       ],
     );
   }
