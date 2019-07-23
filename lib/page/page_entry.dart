@@ -128,7 +128,10 @@ class ArticleEntry extends StatelessWidget {
                 child: Padding(
                   padding:
                       const EdgeInsets.only(top: 28.0, bottom: 28.0, left: 10),
-                  child: Text(articleEntries[index].title),
+                  child: Hero(
+                    child: Text(articleEntries[index].title),
+                    tag: articleEntries[index].title,
+                  ),
                 ),
               ),
             );

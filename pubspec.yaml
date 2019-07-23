@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   webview_flutter:
   url_launcher:
+  http:
 #  video_player:
 #  shared_preferences:
 #  share:

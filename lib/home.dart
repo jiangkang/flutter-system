@@ -53,19 +53,19 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.pages),
+              icon: Icon(Icons.pageview),
               title: Text("页面"),
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
-              icon: Icon(Icons.cake),
+              icon: Icon(Icons.category),
               title: Text("组件"),
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
-              icon: Icon(Icons.desktop_mac),
+              icon: Icon(Icons.gps_fixed),
               title: Text("实例"),
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
-            icon: Icon(Icons.art_track),
+            icon: Icon(Icons.book),
             title: Text("文章"),
             backgroundColor: Theme.of(context).primaryColor,
           ),

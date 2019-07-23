@@ -19,7 +19,10 @@ class _WebPageState extends State<WebPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Hero(
+          child: Text(widget.title),
+          tag: widget.title,
+        ),
         centerTitle: true,
       ),
       body: WebView(
