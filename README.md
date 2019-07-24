@@ -2,8 +2,11 @@
 
 ## face
 
-![demos](captures/home_demo.png)
-![gridview](captures/demos/gridview_count_basic.png)
+<div>
+   <img src="captures/home_demo.png" width="150"/> 
+   <img src="captures/demos/gridview_count_basic.png" width="150"/> 
+</div>
+
 
 
 ## Articles
@@ -17,7 +20,7 @@
 
 - Guide Page
   
-  ![Guide Page](captures/page/guide.gif)
+  <img src="captures/page/guide.gif" width="150"/>
   
 - Welcome Page
 
@@ -29,7 +32,10 @@
 
 - GridView Demo
   
-  ![GridView Demo](captures/demos/gridview_count_basic.png)
+  <div>
+     <img src="captures/demos/gridview_count_basic.png" width="150"/>
+  </div>
+  
 
 
 ## Components
