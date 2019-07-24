@@ -1,0 +1,87 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:http/http.dart';
+
+const String HOST_DEMO = "https://api.apiopen.top";
+
+const String defaultPage = "0";
+
+const String defaultCount = "20";
+
+/// 获取图片列表
+Future<ImageResponse> fetchImages() async {
+  return getImages().then((response) {
+    return ImageResponse.fromJson(json.decode(response.body));
+  }).catchError((error) {
+    throw HttpException("statusCode: ${error.toString()}");
+  });
+//  final response = await getImages();
+//  print("fetchImages() : statusCode :${response.statusCode}");
+//  if (response.statusCode == 200) {
+//    print("${json.decode(response.body)}");
+//    return ImageResponse.fromJson(json.decode(response.body));
+//  } else {
+//    throw HttpException("statusCode: ${response.statusCode}");
+//  }
+}
+
+Future<Response> getImages() => get("$HOST_DEMO/getImages",
+    headers: {"page": defaultPage, "count": defaultCount});
+
+/// 获取新闻列表
+Future<Response> getNews() => get("$HOST_DEMO/getWangYiNews",
+    headers: {"page": defaultPage, "count": defaultCount});
+
+/// 获取城市列表
+Future<Response> getWeather(String city) =>
+    get("$HOST_DEMO/weatherApi", headers: {"city": city});
+
+/// 获取唐诗列表
+Future<Response> getTangPoets() => get("$HOST_DEMO/getTangPoetry",
+    headers: {"page": defaultPage, "count": defaultCount});
+
+/// 获取宋诗列表
+Future<Response> getSongPoets() => get("$HOST_DEMO/getSongPoetry",
+    headers: {"page": defaultPage, "count": defaultCount});
+
+/// 获取一首随机的诗词
+Future<Response> getRecPoet() => get("$HOST_DEMO/recommendPoetry");
+
+class CommonResponse<T> {
+  final int code;
+  final String message;
+  final T data;
+  final T result;
+
+  CommonResponse(this.code, this.message, this.data, this.result);
+
+  factory CommonResponse.fromJson(Map<String, dynamic> json) {
+    return CommonResponse<T>(
+        json["code"], json["message"], json["data"], json["result"]);
+  }
+}
+
+class ImageResponse {
+  final int code;
+  final String message;
+  final List<Map<String, dynamic>> result;
+
+  ImageResponse(this.code, this.message, this.result);
+
+  factory ImageResponse.fromJson(Map<String, dynamic> json) => ImageResponse(
+      json["code"],
+      json["message"],
+      List<Map<String, dynamic>>.from(json["result"]));
+}
+
+class ImageBean {
+  final String url;
+  final String publishedAt;
+
+  ImageBean({this.url, this.publishedAt});
+
+  factory ImageBean.fromJson(Map<String, String> json) {
+    return ImageBean(url: json["url"], publishedAt: json["publishedAt"]);
+  }
+}
