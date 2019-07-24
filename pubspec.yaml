@@ -16,7 +16,6 @@ dependencies:
   webview_flutter:
   url_launcher:
   http:
-  json_serializable:
 #  video_player:
 #  shared_preferences:
 #  share:

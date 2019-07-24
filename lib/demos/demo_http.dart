@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/api/api_demo.dart';
 import 'package:flutter_system/common/res_constants.dart';
+import 'package:flutter_system/utils/nav_utils.dart';
 
 class HttpDemo extends StatefulWidget {
   @override
@@ -31,14 +32,22 @@ class _HttpDemoState extends State<HttpDemo> {
                     return Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4)),
-                      child: Image.network(bean["img"] ?? IMG_URL0),
+                      child: InkWell(
+                        child: FadeInImage.assetNetwork(
+                          image: bean["img"] ?? IMG_URL0,
+                          placeholder: "images/loading.gif",
+                        ),
+                        onTap: () {
+                          NavUtils.openWebView(context,
+                              "https://github.com/jiangkang/flutter-system");
+                        },
+                      ),
                     );
                   });
             } else if (snapshot.hasError) {
               return Center(child: Text("Error occurs! ${snapshot.error}"));
-            } else {
-              return Center(child: CircularProgressIndicator());
             }
+            return Center(child: CircularProgressIndicator());
           },
         )));
   }

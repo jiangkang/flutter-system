@@ -7,7 +7,7 @@ const String HOST_DEMO = "https://api.apiopen.top";
 
 const String defaultPage = "0";
 
-const String defaultCount = "20";
+const String defaultCount = "30";
 
 /// 获取图片列表
 Future<ImageResponse> fetchImages() async {
@@ -16,14 +16,6 @@ Future<ImageResponse> fetchImages() async {
   }).catchError((error) {
     throw HttpException("statusCode: ${error.toString()}");
   });
-//  final response = await getImages();
-//  print("fetchImages() : statusCode :${response.statusCode}");
-//  if (response.statusCode == 200) {
-//    print("${json.decode(response.body)}");
-//    return ImageResponse.fromJson(json.decode(response.body));
-//  } else {
-//    throw HttpException("statusCode: ${response.statusCode}");
-//  }
 }
 
 Future<Response> getImages() => get("$HOST_DEMO/getImages",
@@ -47,20 +39,6 @@ Future<Response> getSongPoets() => get("$HOST_DEMO/getSongPoetry",
 
 /// 获取一首随机的诗词
 Future<Response> getRecPoet() => get("$HOST_DEMO/recommendPoetry");
-
-class CommonResponse<T> {
-  final int code;
-  final String message;
-  final T data;
-  final T result;
-
-  CommonResponse(this.code, this.message, this.data, this.result);
-
-  factory CommonResponse.fromJson(Map<String, dynamic> json) {
-    return CommonResponse<T>(
-        json["code"], json["message"], json["data"], json["result"]);
-  }
-}
 
 class ImageResponse {
   final int code;
