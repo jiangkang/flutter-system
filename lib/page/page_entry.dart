@@ -15,6 +15,8 @@ final List<EntryItem> demoEntries = [
   EntryItem("Image", "/demo/image", icon: Icons.image),
   EntryItem("GridView", "/demo/gridview", icon: Icons.grid_on),
   EntryItem("Http", "/demo/http", icon: Icons.http),
+  EntryItem("PageView", "/demo/pageview", icon: Icons.pageview),
+  EntryItem("Video", "/demo/video", icon: Icons.video_library),
 ];
 
 final List<Article> articleEntries = [

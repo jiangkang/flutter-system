@@ -9,6 +9,7 @@ import 'package:flutter_system/page/page_show0.dart';
 
 import 'demos/demo_gridview.dart';
 import 'demos/demo_pageview.dart';
+import 'demos/demo_video.dart';
 import 'home.dart';
 
 /// 路由汇总
@@ -23,4 +24,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/container": (BuildContext context) => ContainerDemo(),
   "/demo/safearea": (BuildContext context) => SafeAreaDemo(),
   "/demo/pageview": (BuildContext context) => PageViewDemo(),
+  "/demo/video": (BuildContext context) => VideoDemo(),
 };
