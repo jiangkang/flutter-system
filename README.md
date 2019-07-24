@@ -34,6 +34,9 @@
   
   <div>
      <img src="captures/demos/gridview_count_basic.png" width="150"/>
+     <img src="captures/demos/gridview_count_3.png" width="150"/>
+     <img src="captures/demos/gridview_count_aspect_ratio.png" width="150"/>
+     <img src="captures/demos/gridview_count_axis.png" width="150"/>
   </div>
   
 
