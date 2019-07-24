@@ -4,6 +4,7 @@ import 'package:flutter_system/utils/nav_utils.dart';
 
 final List<EntryItem> pageEntries = [
   EntryItem("Guide Page", "/page/guide"),
+  EntryItem("MarkDown Editor", "/page/markdown"),
 ];
 
 final List<EntryItem> componentEntries = [

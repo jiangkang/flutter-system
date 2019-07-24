@@ -11,12 +11,14 @@ import 'demos/demo_gridview.dart';
 import 'demos/demo_pageview.dart';
 import 'demos/demo_video.dart';
 import 'home.dart';
+import 'page/page_markdown.dart';
 
 /// 路由汇总
 final Map<String, WidgetBuilder> pageRouters = {
   "/": (BuildContext context) => HomePage(),
   "/page/guide": (BuildContext context) => GuidePage(),
   "/page/show0": (BuildContext context) => Show0Page(),
+  "/page/markdown": (BuildContext context) => MarkDownEditorPage(),
   "/demo/text": (BuildContext context) => TextDemo(),
   "/demo/image": (BuildContext context) => ImageDemo(),
   "/demo/http": (BuildContext context) => HttpDemo(),
