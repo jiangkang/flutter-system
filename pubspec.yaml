@@ -33,6 +33,7 @@ dependencies:
 #  camera:
 #  battery:
   flutter_markdown:
+  dartdoc:
 
 dev_dependencies:
   flutter_test:

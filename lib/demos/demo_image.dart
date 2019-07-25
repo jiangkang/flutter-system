@@ -33,6 +33,7 @@ class ImageDemo extends StatelessWidget {
           _buildRoundCornerImageByCard(),
           _buildRoundCornerImageByContainer(),
           _buildRoundCornerImageByClipRRect(),
+          _buildImageBlendColor(),
         ],
       )),
     );
@@ -84,6 +85,7 @@ class ImageDemo extends StatelessWidget {
         ],
       );
 
+  /// 通过ClipRRect实现圆角
   _buildRoundCornerImageByClipRRect() => Padding(
         padding: const EdgeInsets.all(8.0),
         child: Stack(
@@ -101,6 +103,46 @@ class ImageDemo extends StatelessWidget {
               ),
             )
           ],
+        ),
+      );
+
+  /// Color Blend Mode
+  _buildImageBlendColor() => Padding(
+        padding: EdgeInsets.all(8),
+        child: Container(
+          width: double.infinity,
+          height: 160,
+          child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              reverse: true,
+              itemCount: BlendMode.values.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: <Widget>[
+                      Image.asset(
+                        "images/landscape2.jpeg",
+                        width: 160,
+                        height: 160,
+                        color: Colors.blue,
+                        fit: BoxFit.fitWidth,
+                        colorBlendMode: BlendMode.values[index],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          BlendMode.values[index].toString().substring(
+                              BlendMode.values[index].toString().indexOf(".") +
+                                  1),
+                          style: TextStyle(fontSize: 24),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }),
         ),
       );
 }
