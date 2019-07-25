@@ -1,5 +1,7 @@
 PODS:
   - Flutter (1.0.0)
+  - path_provider (0.0.1):
+    - Flutter
   - url_launcher (0.0.1):
     - Flutter
   - video_player (0.0.1):
@@ -9,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
   - video_player (from `.symlinks/plugins/video_player/ios`)
   - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
@@ -16,6 +19,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Flutter:
     :path: ".symlinks/flutter/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
   url_launcher:
     :path: ".symlinks/plugins/url_launcher/ios"
   video_player:
@@ -25,6 +30,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
   video_player: 3964090a33353060ed7f58aa6427c7b4b208ec21
   webview_flutter: 1aa7604e6cdb451a9b7ed2c37d5454c0b440246b

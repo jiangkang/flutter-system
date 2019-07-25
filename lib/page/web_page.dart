@@ -15,19 +15,48 @@ class WebPage extends StatefulWidget {
 }
 
 class _WebPageState extends State<WebPage> {
+  bool _loadFinished;
+
+  @override
+  void initState() {
+    _loadFinished = false;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Hero(
-          child: Text(widget.title),
-          tag: widget.title,
-        ),
+        title: Text(widget.title),
         centerTitle: true,
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.of(context).pop();
+              });
+        }),
       ),
-      body: WebView(
-        initialUrl: widget.webUrl,
-        javascriptMode: JavascriptMode.unrestricted,
+      body: Stack(
+        alignment: AlignmentDirectional.center,
+        children: <Widget>[
+          WebView(
+            initialUrl: widget.webUrl,
+            javascriptMode: JavascriptMode.unrestricted,
+            onPageFinished: (url) {
+              setState(() {
+                _loadFinished = true;
+              });
+            },
+            navigationDelegate: (NavigationRequest request) {
+              return NavigationDecision.navigate;
+            },
+          ),
+          Visibility(
+            child: CircularProgressIndicator(),
+            visible: !_loadFinished,
+          )
+        ],
       ),
     );
   }

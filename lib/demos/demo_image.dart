@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_system/common/res_constants.dart';
-import 'package:flutter_system/demos/demos.dart';
 
 const List<String> IMGS = [
   IMG_URL0,
@@ -25,20 +22,85 @@ const List<String> IMGS = [
 class ImageDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Image.asset(
-          "images/landscape0.jpeg",
-          width: double.maxFinite,
-          semanticLabel: "Default Image",
-        ),
-        Image.network(
-          IMGS[new Random().nextInt(9)],
-          width: double.maxFinite,
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Image Demo"),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+          child: ListView(
+        children: <Widget>[
+          _buildRoundCornerImageByCard(),
+          _buildRoundCornerImageByContainer(),
+          _buildRoundCornerImageByClipRRect(),
+        ],
+      )),
     );
   }
-}
 
-void main() => runDemo(ImageDemo(), title: "Image Demo");
+  _buildRoundCornerImageByContainer() => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: ShapeDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/landscape1.jpeg"),
+                  fit: BoxFit.fitWidth),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusDirectional.circular(20))),
+          width: double.maxFinite,
+          height: 300,
+          child: Align(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Container decoration实现圆角(radius = 20)",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            alignment: Alignment.bottomCenter,
+          ),
+        ),
+      );
+
+  _buildRoundCornerImageByCard() => Stack(
+        alignment: AlignmentDirectional.bottomCenter,
+        children: <Widget>[
+          Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusDirectional.circular(20)),
+            clipBehavior: Clip.antiAlias,
+            child: Image.asset(
+              "images/landscape0.jpeg",
+              width: double.maxFinite,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "Card实现圆角(radius = 20)",
+              style: TextStyle(color: Colors.white),
+            ),
+          )
+        ],
+      );
+
+  _buildRoundCornerImageByClipRRect() => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Stack(
+          alignment: AlignmentDirectional.bottomCenter,
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset("images/landscape2.jpeg"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                "ClipRRect实现圆角(radius = 20)",
+                style: TextStyle(color: Colors.white),
+              ),
+            )
+          ],
+        ),
+      );
+}
