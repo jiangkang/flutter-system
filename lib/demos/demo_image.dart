@@ -106,15 +106,14 @@ class ImageDemo extends StatelessWidget {
         ),
       );
 
-  /// Color Blend Mode
+  /// Color Blend Mode, 以蓝色为基准色
   _buildImageBlendColor() => Padding(
         padding: EdgeInsets.all(8),
         child: Container(
           width: double.infinity,
-          height: 160,
+          height: 120,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              reverse: true,
               itemCount: BlendMode.values.length,
               itemBuilder: (context, index) {
                 return Padding(
@@ -124,8 +123,8 @@ class ImageDemo extends StatelessWidget {
                     children: <Widget>[
                       Image.asset(
                         "images/landscape2.jpeg",
-                        width: 160,
-                        height: 160,
+                        width: 120,
+                        height: 120,
                         color: Colors.blue,
                         fit: BoxFit.fitWidth,
                         colorBlendMode: BlendMode.values[index],
