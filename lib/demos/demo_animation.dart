@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'demo_image.dart';
 
+enum SlideDirection { right2left, bottom2top }
+
 /// Animation Demos
 /// 1. PageRouter Animation
 class AnimationDemo extends StatefulWidget {
@@ -22,28 +24,35 @@ class _AnimationDemoState extends State<AnimationDemo> {
       body: SafeArea(
           child: ListView(
         children: <Widget>[
-          buildPageRouterAnimation(),
+          buildPageRouterAnimation(SlideDirection.bottom2top),
+          buildPageRouterAnimation(SlideDirection.right2left),
         ],
       )),
     );
   }
 
   /// 创建一个PageRouter动画
-  Widget buildPageRouterAnimation() {
+  Widget buildPageRouterAnimation(SlideDirection slideDirection) {
     return ListTile(
       title: Text("PageRouter Animation"),
       subtitle: Text("Click here！"),
-      onTap: () => Navigator.of(context).push(_createPageRouter()),
+      trailing: Text(
+          slideDirection == SlideDirection.bottom2top ? "从下往上滑入" : "从右往左滑入"),
+      onTap: () =>
+          Navigator.of(context).push(_createPageRouter(slideDirection)),
     );
   }
 
-  Route _createPageRouter() {
+  Route _createPageRouter(SlideDirection slideDirection) {
     return PageRouteBuilder(pageBuilder: (BuildContext context,
         Animation animation, Animation secondaryAnimation) {
       return ImageDemo();
     }, transitionsBuilder: (BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
       var begin = Offset(0, 1);
+      if (slideDirection == SlideDirection.right2left) {
+        begin = Offset(1, 0);
+      }
       var end = Offset.zero;
       var curve = Curves.ease;
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
