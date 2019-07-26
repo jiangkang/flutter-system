@@ -71,7 +71,8 @@ class ComponentEntry extends StatelessWidget {
             return Card(
               child: InkWell(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
                     Icon(componentEntries[index].icon),
                     Text(componentEntries[index].title)
@@ -100,7 +101,8 @@ class DemoEntry extends StatelessWidget {
             return Card(
               child: InkWell(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
                     Icon(demoEntries[index].icon),
                     Text(demoEntries[index].title)
