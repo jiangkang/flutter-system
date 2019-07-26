@@ -1,19 +1,11 @@
 dartdoc:
   categories:
     "Flutter-System":
-      markdown: doc/index.md
+      documentationMarkdown: doc/index.md
     "Flutter Page":
-      markdown: doc/page.md
+      documentationMarkdown: doc/page.md
     "Flutter Component":
-      markdown: doc/component.md
+      documentationMarkdown: doc/component.md
     "Flutter Demo":
-      markdown: doc/demo.md
+      documentationMarkdown: doc/demo.md
   categoryOrder: ["Flutter-System", "Flutter Page","Flutter Component","Flutter Demo"]
-  includeExternal: []
-  showUndocumentedCategories: false
-  ignore:
-    - ambiguous-doc-reference
-  errors:
-    - unresolved-doc-reference
-  warnings:
-    - tool-error

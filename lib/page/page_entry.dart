@@ -18,6 +18,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Http", "/demo/http", icon: Icons.http),
   EntryItem("PageView", "/demo/pageview", icon: Icons.pageview),
   EntryItem("Video", "/demo/video", icon: Icons.video_library),
+  EntryItem("Animation", "/demo/animation", icon: Icons.motorcycle),
 ];
 
 final List<Article> articleEntries = [
@@ -31,6 +32,7 @@ final List<Article> articleEntries = [
       "https://www.jiangkang.tech/archives/%E3%80%90Flutter%E3%80%91GridView%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93"),
 ];
 
+/// Page 入口
 class PageEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,6 +59,7 @@ class PageEntry extends StatelessWidget {
   }
 }
 
+/// Component 入口
 class ComponentEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -85,6 +88,7 @@ class ComponentEntry extends StatelessWidget {
   }
 }
 
+/// Demo 入口
 class DemoEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -113,6 +117,7 @@ class DemoEntry extends StatelessWidget {
   }
 }
 
+/// Article 入口
 class ArticleEntry extends StatelessWidget {
   final List<String> articles = [];
 

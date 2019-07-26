@@ -7,6 +7,7 @@ import 'package:flutter_system/demos/demo_text.dart';
 import 'package:flutter_system/page/guide.dart';
 import 'package:flutter_system/page/page_show0.dart';
 
+import 'demos/demo_animation.dart';
 import 'demos/demo_gridview.dart';
 import 'demos/demo_pageview.dart';
 import 'demos/demo_video.dart';
@@ -27,4 +28,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/safearea": (BuildContext context) => SafeAreaDemo(),
   "/demo/pageview": (BuildContext context) => PageViewDemo(),
   "/demo/video": (BuildContext context) => VideoDemo(),
+  "/demo/animation": (BuildContext context) => AnimationDemo(),
 };

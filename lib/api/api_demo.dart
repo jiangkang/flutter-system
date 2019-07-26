@@ -40,6 +40,7 @@ Future<Response> getSongPoets() => get("$HOST_DEMO/getSongPoetry",
 /// 获取一首随机的诗词
 Future<Response> getRecPoet() => get("$HOST_DEMO/recommendPoetry");
 
+/// Model:图片列表响应
 class ImageResponse {
   final int code;
   final String message;
@@ -53,13 +54,14 @@ class ImageResponse {
       List<Map<String, dynamic>>.from(json["result"]));
 }
 
+/// Model:图片数据
 class ImageBean {
-  final String url;
+  final String img;
   final String publishedAt;
 
-  ImageBean({this.url, this.publishedAt});
+  ImageBean({this.img, this.publishedAt});
 
   factory ImageBean.fromJson(Map<String, String> json) {
-    return ImageBean(url: json["url"], publishedAt: json["publishedAt"]);
+    return ImageBean(img: json["img"], publishedAt: json["publishedAt"]);
   }
 }
