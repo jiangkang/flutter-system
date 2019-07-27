@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_container.dart';
+import 'package:flutter_system/demos/demo_drawer.dart';
+import 'package:flutter_system/demos/demo_forms.dart';
+import 'package:flutter_system/demos/demo_gridview.dart';
 import 'package:flutter_system/demos/demo_http.dart';
 import 'package:flutter_system/demos/demo_image.dart';
+import 'package:flutter_system/demos/demo_pageview.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
+import 'package:flutter_system/demos/demo_tabs.dart';
 import 'package:flutter_system/demos/demo_text.dart';
+import 'package:flutter_system/demos/demo_video.dart';
+import 'package:flutter_system/home.dart';
 import 'package:flutter_system/page/guide.dart';
+import 'package:flutter_system/page/page_markdown.dart';
 import 'package:flutter_system/page/page_show0.dart';
-
-import 'demos/demo_animation.dart';
-import 'demos/demo_drawer.dart';
-import 'demos/demo_gridview.dart';
-import 'demos/demo_pageview.dart';
-import 'demos/demo_tabs.dart';
-import 'demos/demo_video.dart';
-import 'home.dart';
-import 'page/page_markdown.dart';
 
 /// 路由汇总
 final Map<String, WidgetBuilder> pageRouters = {
@@ -33,4 +33,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/animation": (BuildContext context) => AnimationDemo(),
   "/demo/drawer": (BuildContext context) => DrawerDemo(),
   "/demo/tabs": (BuildContext context) => TabsDemo(),
+  "/demo/forms": (BuildContext context) => FormsDemo(),
 };

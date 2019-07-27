@@ -21,6 +21,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Animation", "/demo/animation", icon: Icons.motorcycle),
   EntryItem("Drawer", "/demo/drawer", icon: Icons.subdirectory_arrow_right),
   EntryItem("Tabs", "/demo/tabs", icon: Icons.tab),
+  EntryItem("Forms", "/demo/forms", icon: Icons.input),
 ];
 
 final List<Article> articleEntries = [
