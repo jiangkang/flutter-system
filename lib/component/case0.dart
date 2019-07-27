@@ -34,30 +34,44 @@ class ShowCase0 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusDirectional.circular(radius)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Image.network(
-            imgUrl,
-            fit: BoxFit.contain,
+          Expanded(
+            child: Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(radius),
+                child: Image.network(
+                  imgUrl,
+                  fit: BoxFit.cover,
+                  width: double.maxFinite,
+                ),
+              ),
+            ),
           ),
-          Text(title),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, top: 6),
+            child: Text(title),
+          ),
           Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  CircleAvatar(
-                    maxRadius: 8,
-                    child: Image.network(avatarUrl),
-                  ),
-                  Text(username),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Row(
+                  children: <Widget>[
+                    CircleAvatar(
+                      maxRadius: 8,
+                      child: Image.network(avatarUrl),
+                    ),
+                    Text(username),
+                  ],
+                ),
               ),
               FlatButton.icon(
                   onPressed: null,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/component/listview_item.dart';
 
+import 'animation/anim_animated_container.dart';
 import 'demo_image.dart';
 
 enum SlideDirection { right2left, bottom2top }
@@ -26,6 +28,7 @@ class _AnimationDemoState extends State<AnimationDemo> {
         children: <Widget>[
           buildPageRouterAnimation(SlideDirection.bottom2top),
           buildPageRouterAnimation(SlideDirection.right2left),
+          buildAnimatedContainer(),
         ],
       )),
     );
@@ -33,7 +36,8 @@ class _AnimationDemoState extends State<AnimationDemo> {
 
   /// 创建一个PageRouter动画
   Widget buildPageRouterAnimation(SlideDirection slideDirection) {
-    return ListTile(
+    return ListTileCard(
+      borderRadius: 4,
       title: Text("PageRouter Animation"),
       subtitle: Text("Click here！"),
       trailing: Text(
@@ -63,4 +67,14 @@ class _AnimationDemoState extends State<AnimationDemo> {
       );
     });
   }
+
+  buildAnimatedContainer() => ListTileCard(
+        borderRadius: 4,
+        title: Text("AnimatedContainer Demo"),
+        subtitle: Text("Widget属性动画"),
+        onTap: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => AnimatedContainerDemo()));
+        },
+      );
 }

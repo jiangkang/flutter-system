@@ -32,13 +32,21 @@ class Show0Page extends StatefulWidget {
 class _Show0PageState extends State<Show0Page> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      height: double.maxFinite,
-      decoration: BoxDecoration(color: Colors.white),
-      child: GridView.count(
-        crossAxisCount: 2,
-        children: List.generate(1000, gen),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Show Case"),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: Container(
+          width: double.maxFinite,
+          height: double.maxFinite,
+          decoration: BoxDecoration(color: Colors.white),
+          child: GridView.count(
+            crossAxisCount: 2,
+            children: List.generate(1000, gen),
+          ),
+        ),
       ),
     );
   }
