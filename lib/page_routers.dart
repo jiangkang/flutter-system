@@ -8,6 +8,7 @@ import 'package:flutter_system/page/guide.dart';
 import 'package:flutter_system/page/page_show0.dart';
 
 import 'demos/demo_animation.dart';
+import 'demos/demo_drawer.dart';
 import 'demos/demo_gridview.dart';
 import 'demos/demo_pageview.dart';
 import 'demos/demo_video.dart';
@@ -29,4 +30,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/pageview": (BuildContext context) => PageViewDemo(),
   "/demo/video": (BuildContext context) => VideoDemo(),
   "/demo/animation": (BuildContext context) => AnimationDemo(),
+  "/demo/drawer": (BuildContext context) => DrawerDemo(),
 };

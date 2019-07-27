@@ -19,6 +19,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("PageView", "/demo/pageview", icon: Icons.pageview),
   EntryItem("Video", "/demo/video", icon: Icons.video_library),
   EntryItem("Animation", "/demo/animation", icon: Icons.motorcycle),
+  EntryItem("Drawer", "/demo/drawer", icon: Icons.subdirectory_arrow_right),
 ];
 
 final List<Article> articleEntries = [
