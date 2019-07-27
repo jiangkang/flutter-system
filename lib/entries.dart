@@ -22,6 +22,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Drawer", "/demo/drawer", icon: Icons.subdirectory_arrow_right),
   EntryItem("Tabs", "/demo/tabs", icon: Icons.tab),
   EntryItem("Forms", "/demo/forms", icon: Icons.input),
+  EntryItem("Swipe to Dismiss", "/demo/dismissible", icon: Icons.delete_sweep),
 ];
 
 final List<Article> articleEntries = [

@@ -11,6 +11,16 @@ class FormsDemo extends StatefulWidget {
 class _FormsDemoState extends State<FormsDemo> {
   final _formKey = GlobalKey<FormState>();
 
+  final TextEditingController _userController = TextEditingController();
+
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    _userController.addListener(_printFieldValue);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,28 +39,23 @@ class _FormsDemoState extends State<FormsDemo> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(top: 50, left: 8, right: 8),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Text("用户名："),
-                    Expanded(
-                        child: TextFormField(
-                      validator: _validateFiledValue,
-                    )),
-                  ],
+                child: TextFormField(
+                  autofocus: true,
+                  decoration: InputDecoration(
+                    labelText: "用户名",
+                    hintText: "请输入2~12个字符",
+                  ),
+                  validator: _validateFiledValue,
+                  controller: _userController,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Text("密   码："),
-                    Expanded(
-                        child: TextFormField(
-                      validator: _validateFiledValue,
-                    )),
-                  ],
+                child: TextFormField(
+                  decoration:
+                      InputDecoration(labelText: "密码", hintText: "请输入2~20个字符"),
+                  validator: _validateFiledValue,
+                  controller: _passwordController,
                 ),
               ),
               Padding(
@@ -97,8 +102,23 @@ class _FormsDemoState extends State<FormsDemo> {
   }
 
   void _login(BuildContext context) {
+    var tipMsg =
+        "${_userController.value.text}:${_passwordController.value.text}";
     if (_formKey.currentState.validate()) {
-      Scaffold.of(context).showSnackBar(SnackBar(content: Text("恭喜你，登录成功")));
+      Scaffold.of(context)
+          .showSnackBar(SnackBar(content: Text("恭喜你，登录成功,${tipMsg}")));
     }
+  }
+
+  @override
+  void dispose() {
+    _userController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  void _printFieldValue() {
+    print("username:${_userController.text}");
+    print("password:${_passwordController.text}");
   }
 }

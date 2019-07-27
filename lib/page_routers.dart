@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_container.dart';
+import 'package:flutter_system/demos/demo_dismissible.dart';
 import 'package:flutter_system/demos/demo_drawer.dart';
 import 'package:flutter_system/demos/demo_forms.dart';
 import 'package:flutter_system/demos/demo_gridview.dart';
@@ -34,4 +35,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/drawer": (BuildContext context) => DrawerDemo(),
   "/demo/tabs": (BuildContext context) => TabsDemo(),
   "/demo/forms": (BuildContext context) => FormsDemo(),
+  "/demo/dismissible": (BuildContext context) => SwipeDismissDemo(),
 };
