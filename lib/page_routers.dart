@@ -11,6 +11,7 @@ import 'demos/demo_animation.dart';
 import 'demos/demo_drawer.dart';
 import 'demos/demo_gridview.dart';
 import 'demos/demo_pageview.dart';
+import 'demos/demo_tabs.dart';
 import 'demos/demo_video.dart';
 import 'home.dart';
 import 'page/page_markdown.dart';
@@ -31,4 +32,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/video": (BuildContext context) => VideoDemo(),
   "/demo/animation": (BuildContext context) => AnimationDemo(),
   "/demo/drawer": (BuildContext context) => DrawerDemo(),
+  "/demo/tabs": (BuildContext context) => TabsDemo(),
 };

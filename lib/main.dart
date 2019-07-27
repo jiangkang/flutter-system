@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter System',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        accentColor: Colors.redAccent,
       ),
       debugShowCheckedModeBanner: false,
       routes: pageRouters,
