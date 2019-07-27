@@ -9,7 +9,6 @@ class FormsDemo extends StatefulWidget {
 }
 
 class _FormsDemoState extends State<FormsDemo> {
-  
   final _formKey = GlobalKey<FormState>();
 
   @override
