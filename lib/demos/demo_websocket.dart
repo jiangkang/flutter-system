@@ -31,15 +31,16 @@ class _WebSocketDemoState extends State<WebSocketDemo> {
           StreamBuilder(
               stream: _channel.stream,
               builder: (context, snapshot) {
-                if(snapshot.hasError){
+                if (snapshot.hasError) {
                   showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: Text(
-                          "Tips",
-                        ),
-                        content: Text("You should science online if you are in china"),
-                      ));
+                            title: Text(
+                              "Tips",
+                            ),
+                            content: Text(
+                                "You should science online if you are in china"),
+                          ));
                 }
                 return Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),

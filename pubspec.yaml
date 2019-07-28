@@ -36,6 +36,8 @@ dependencies:
   dartdoc:
   cached_network_image:
   web_socket_channel:
+  sqflite:
+  path:
 
 dev_dependencies:
   flutter_test:

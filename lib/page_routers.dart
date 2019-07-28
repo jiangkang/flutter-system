@@ -10,6 +10,7 @@ import 'package:flutter_system/demos/demo_http.dart';
 import 'package:flutter_system/demos/demo_image.dart';
 import 'package:flutter_system/demos/demo_pageview.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
+import 'package:flutter_system/demos/demo_sqlite.dart';
 import 'package:flutter_system/demos/demo_tabs.dart';
 import 'package:flutter_system/demos/demo_text.dart';
 import 'package:flutter_system/demos/demo_video.dart';
@@ -40,4 +41,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/dismissible": (BuildContext context) => SwipeDismissDemo(),
   "/demo/CustomScrollView": (BuildContext context) => CustomScrollViewDemo(),
   "/demo/websocket": (BuildContext context) => WebSocketDemo(),
+  "/demo/sqlite": (BuildContext context) => SQLiteDemo(),
 };

@@ -26,6 +26,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("CustomScrollView", "/demo/CustomScrollView",
       icon: Icons.filter_list),
   EntryItem("WebSocket", "/demo/websocket", icon: Icons.web),
+  EntryItem("SQLite", "/demo/sqlite", icon: Icons.data_usage),
 ];
 
 final List<Article> articleEntries = [
