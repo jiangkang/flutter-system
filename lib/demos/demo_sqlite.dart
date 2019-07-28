@@ -150,4 +150,9 @@ class Dog {
       'age': age,
     };
   }
+
+  @override
+  String toString() {
+    return 'Dog{id: $id, name: $name, age: $age}';
+  }
 }

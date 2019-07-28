@@ -9,6 +9,7 @@ import 'package:flutter_system/demos/demo_gridview.dart';
 import 'package:flutter_system/demos/demo_http.dart';
 import 'package:flutter_system/demos/demo_image.dart';
 import 'package:flutter_system/demos/demo_pageview.dart';
+import 'package:flutter_system/demos/demo_read_write_files.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
 import 'package:flutter_system/demos/demo_sqlite.dart';
 import 'package:flutter_system/demos/demo_tabs.dart';
@@ -42,4 +43,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/CustomScrollView": (BuildContext context) => CustomScrollViewDemo(),
   "/demo/websocket": (BuildContext context) => WebSocketDemo(),
   "/demo/sqlite": (BuildContext context) => SQLiteDemo(),
+  "/demo/read-write-file": (BuildContext context) => ReadWriteFileDemo(),
 };
