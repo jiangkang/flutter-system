@@ -13,6 +13,7 @@ import 'package:flutter_system/demos/demo_safearea.dart';
 import 'package:flutter_system/demos/demo_tabs.dart';
 import 'package:flutter_system/demos/demo_text.dart';
 import 'package:flutter_system/demos/demo_video.dart';
+import 'package:flutter_system/demos/demo_websocket.dart';
 import 'package:flutter_system/home.dart';
 import 'package:flutter_system/page/guide.dart';
 import 'package:flutter_system/page/page_markdown.dart';
@@ -38,4 +39,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/forms": (BuildContext context) => FormsDemo(),
   "/demo/dismissible": (BuildContext context) => SwipeDismissDemo(),
   "/demo/CustomScrollView": (BuildContext context) => CustomScrollViewDemo(),
+  "/demo/websocket": (BuildContext context) => WebSocketDemo(),
 };

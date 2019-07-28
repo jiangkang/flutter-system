@@ -49,8 +49,8 @@ class ImageResponse {
   ImageResponse(this.code, this.message, this.result);
 
   factory ImageResponse.fromJson(Map<String, dynamic> json) => ImageResponse(
-      json["code"],
-      json["message"],
+      json["code"] as int,
+      json["message"] as String,
       List<Map<String, dynamic>>.from(json["result"]));
 }
 

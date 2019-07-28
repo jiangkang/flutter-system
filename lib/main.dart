@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.redAccent,
       ),
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
       routes: pageRouters,
     );
   }

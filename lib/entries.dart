@@ -25,6 +25,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Dismissible", "/demo/dismissible", icon: Icons.delete_sweep),
   EntryItem("CustomScrollView", "/demo/CustomScrollView",
       icon: Icons.filter_list),
+  EntryItem("WebSocket", "/demo/websocket", icon: Icons.web),
 ];
 
 final List<Article> articleEntries = [
