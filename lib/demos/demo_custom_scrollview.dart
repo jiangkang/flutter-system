@@ -16,6 +16,7 @@ class _CustomScrollViewDemoState extends State<CustomScrollViewDemo> {
         slivers: <Widget>[
           SliverAppBar(
             title: Text("Floting App bar"),
+            centerTitle: true,
             floating: true,
             expandedHeight: 200,
             flexibleSpace: Image.asset(
@@ -23,6 +24,8 @@ class _CustomScrollViewDemoState extends State<CustomScrollViewDemo> {
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
+            pinned: true,
+            snap: true,
           ),
           SliverList(
               delegate: SliverChildListDelegate(

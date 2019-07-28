@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_system/common/res_constants.dart';
 
@@ -99,12 +100,7 @@ class GridViewDemo extends StatelessWidget {
         100,
         (index) {
           return Card(
-            child: Image.network(
-              IMGS[index % 8],
-              fit: BoxFit.cover,
-              colorBlendMode: BlendMode.colorBurn,
-              color: Colors.white10,
-            ),
+            child: buildCachedNetworkImage(index),
           );
         },
       ),
@@ -126,12 +122,7 @@ class GridViewCountDemo extends StatelessWidget {
         children: List.generate(
           100,
           (index) {
-            return Image.network(
-              IMGS[index % 8],
-              fit: BoxFit.cover,
-              colorBlendMode: BlendMode.colorBurn,
-              color: Colors.white10,
-            );
+            return buildCachedNetworkImage(index);
           },
         ),
         crossAxisCount: 3,
@@ -154,12 +145,7 @@ class GridViewExtentDemo extends StatelessWidget {
         children: List.generate(
           100,
           (index) {
-            return Image.network(
-              IMGS[index % 8],
-              fit: BoxFit.cover,
-              colorBlendMode: BlendMode.colorBurn,
-              color: Colors.white10,
-            );
+            return buildCachedNetworkImage(index);
           },
         ),
       ),
@@ -176,12 +162,7 @@ class GridViewBuilderDemo extends StatelessWidget {
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
         itemBuilder: (context, index) {
-          return Image.network(
-            IMGS[index % 8],
-            fit: BoxFit.cover,
-            colorBlendMode: BlendMode.colorBurn,
-            color: Colors.white10,
-          );
+          return buildCachedNetworkImage(index);
         },
         itemCount: 100,
       ),
@@ -199,15 +180,19 @@ class GridViewCustomDemo extends StatelessWidget {
             crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
         childrenDelegate: SliverChildListDelegate(
           List.generate(100, (index) {
-            return Image.network(
-              IMGS[index % 8],
-              fit: BoxFit.cover,
-              colorBlendMode: BlendMode.colorBurn,
-              color: Colors.white10,
-            );
+            return buildCachedNetworkImage(index);
           }),
         ),
       ),
     );
   }
 }
+
+buildCachedNetworkImage(int index) => CachedNetworkImage(
+      placeholder: (context, url) =>
+          SizedBox.shrink(child: Center(child: CircularProgressIndicator())),
+      imageUrl: IMGS[index % 8],
+      fit: BoxFit.cover,
+      colorBlendMode: BlendMode.colorBurn,
+      color: Colors.white10,
+    );
