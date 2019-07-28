@@ -43,5 +43,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/CustomScrollView": (BuildContext context) => CustomScrollViewDemo(),
   "/demo/websocket": (BuildContext context) => WebSocketDemo(),
   "/demo/sqlite": (BuildContext context) => SQLiteDemo(),
-  "/demo/read-write-file": (BuildContext context) => ReadWriteFileDemo(),
+  "/demo/io": (BuildContext context) => ReadWriteFileDemo(),
 };

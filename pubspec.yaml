@@ -17,7 +17,7 @@ dependencies:
   url_launcher:
   http:
   video_player:
-#  shared_preferences:
+  shared_preferences:
 #  share:
 #  sensors:
 #  quick_actions:
