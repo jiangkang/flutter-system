@@ -75,7 +75,11 @@ class DemoEntry extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
                     Icon(demoEntries[index].icon),
-                    Text(demoEntries[index].title)
+                    Text(
+                      demoEntries[index].title,
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
+                    )
                   ],
                 ),
                 onTap: () {
