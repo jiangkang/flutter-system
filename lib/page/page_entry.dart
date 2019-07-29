@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/entries.dart';
+import 'package:flutter_system/model/model_entry.dart';
+import 'package:flutter_system/storage/storage_assets.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
 
 /// Page 入口
@@ -95,29 +98,29 @@ class DemoEntry extends StatelessWidget {
 
 /// Article 入口
 class ArticleEntry extends StatelessWidget {
-  final List<String> articles = [];
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: ListView.builder(
-          itemCount: articleEntries.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Card(
-              margin: EdgeInsets.only(top: 10, bottom: 0, left: 10, right: 10),
-              child: InkWell(
-                onTap: () {
-                  NavUtils.openWebView(context, articleEntries[index].url,
-                      title: articleEntries[index].title);
-                },
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 28.0, bottom: 28.0, left: 10),
-                  child: Text(articleEntries[index].title),
-                ),
-              ),
-            );
-          }),
-    );
+        child: FutureBuilder<List<Article>>(
+            future: AssetStorage.getArticleList(context),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                final _articles = snapshot.data;
+                return ListView.builder(
+                    itemCount: _articles.length,
+                    itemBuilder: (context, index) {
+                      return ListTileCard(
+                        borderRadius: 4,
+                        title: Text("${_articles[index].title}"),
+                        onTap: () {
+                          NavUtils.openWebView(context, _articles[index].url,
+                              title: _articles[index].title);
+                        },
+                      );
+                    });
+              } else {
+                return CircularProgressIndicator();
+              }
+            }));
   }
 }
