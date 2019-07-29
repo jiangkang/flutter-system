@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
+import 'package:flutter_system/demos/demo_camera.dart';
 import 'package:flutter_system/demos/demo_container.dart';
 import 'package:flutter_system/demos/demo_custom_scrollview.dart';
 import 'package:flutter_system/demos/demo_dismissible.dart';
@@ -44,4 +45,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/websocket": (BuildContext context) => WebSocketDemo(),
   "/demo/sqlite": (BuildContext context) => SQLiteDemo(),
   "/demo/io": (BuildContext context) => ReadWriteFileDemo(),
+  "/demo/camera": (BuildContext context) => CameraDemo(),
 };

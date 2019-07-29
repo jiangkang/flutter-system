@@ -30,7 +30,7 @@ dependencies:
 #  google_maps_flutter:
 #  device_info:
 #  connectivity:
-#  camera:
+  camera:
 #  battery:
   flutter_markdown:
   dartdoc:
@@ -43,7 +43,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   source_gen: ^0.9.1
-
+  flutter_driver:
+    sdk: flutter
+  test:
 flutter:
 
   # The following line ensures that the Material Icons font is

@@ -28,6 +28,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("WebSocket", "/demo/websocket", icon: Icons.web),
   EntryItem("SQLite", "/demo/sqlite", icon: Icons.data_usage),
   EntryItem("File IO", "/demo/io", icon: Icons.insert_drive_file),
+  EntryItem("Camera", "/demo/camera", icon: Icons.camera),
 ];
 
 final List<Article> articleEntries = [
