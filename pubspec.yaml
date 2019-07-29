@@ -57,6 +57,7 @@ flutter:
   assets:
     - images/
     - assets/video/
+    - assets/json/
 
   fonts:
     - family: FangZhengFangSongJianTi

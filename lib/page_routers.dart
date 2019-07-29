@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
+import 'package:flutter_system/demos/demo_assets.dart';
 import 'package:flutter_system/demos/demo_camera.dart';
 import 'package:flutter_system/demos/demo_container.dart';
 import 'package:flutter_system/demos/demo_custom_scrollview.dart';
@@ -46,4 +47,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/sqlite": (BuildContext context) => SQLiteDemo(),
   "/demo/io": (BuildContext context) => ReadWriteFileDemo(),
   "/demo/camera": (BuildContext context) => CameraDemo(),
+  "/demo/assets": (BuildContext context) => AssetsDemo(),
 };

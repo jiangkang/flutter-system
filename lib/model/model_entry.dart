@@ -7,6 +7,14 @@ class Article {
   final String url;
 
   Article(this.title, this.url);
+
+  factory Article.fromJson(Map<String, dynamic> json) {
+    return Article(json["title"] as String, json["url"] as String);
+  }
+
+  Map<String, String> toJson(Article article) {
+    return {"title": article.title, "url": article.url};
+  }
 }
 
 @immutable
