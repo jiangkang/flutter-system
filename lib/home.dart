@@ -4,13 +4,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'page/page_entry.dart';
 
-const List<String> titles = [
-  "页面",
-  "组件",
-  "实例",
-  "文章",
-];
-
 /// Home page
 /// basic sketch : drawer + bottom navigation bar
 class HomePage extends StatefulWidget {
@@ -30,9 +23,16 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> _titles = [
+      S.of(context).page,
+      S.of(context).component,
+      S.of(context).demo,
+      S.of(context).article,
+    ];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(titles[_currentIndex]),
+        title: Text(_titles[_currentIndex]),
         centerTitle: true,
         actions: <Widget>[
           InkWell(
