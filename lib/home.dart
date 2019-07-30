@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/generated/i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'page/page_entry.dart';
@@ -54,19 +55,19 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.pageview),
-              title: Text("页面"),
+              title: Text(S.of(context).page),
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
               icon: Icon(Icons.category),
-              title: Text("组件"),
+              title: Text(S.of(context).component),
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
               icon: Icon(Icons.gps_fixed),
-              title: Text("实例"),
+              title: Text(S.of(context).demo),
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            title: Text("文章"),
+            title: Text(S.of(context).article),
             backgroundColor: Theme.of(context).primaryColor,
           ),
         ],
