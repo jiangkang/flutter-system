@@ -30,4 +30,9 @@ final List<EntryItem> demoEntries = [
   EntryItem("File IO", "/demo/io", icon: Icons.insert_drive_file),
   EntryItem("Camera", "/demo/camera", icon: Icons.camera),
   EntryItem("Assets", "/demo/assets", icon: Icons.web_asset),
+  EntryItem("Platform", "/demo/platform", icon: Icons.phone_android),
 ];
+
+final Map<String, IconData> ICONS = {
+  "Text": Icons.text_fields,
+};

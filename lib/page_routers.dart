@@ -11,6 +11,7 @@ import 'package:flutter_system/demos/demo_gridview.dart';
 import 'package:flutter_system/demos/demo_http.dart';
 import 'package:flutter_system/demos/demo_image.dart';
 import 'package:flutter_system/demos/demo_pageview.dart';
+import 'package:flutter_system/demos/demo_platform.dart';
 import 'package:flutter_system/demos/demo_read_write_files.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
 import 'package:flutter_system/demos/demo_sqlite.dart';
@@ -48,4 +49,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/io": (BuildContext context) => ReadWriteFileDemo(),
   "/demo/camera": (BuildContext context) => CameraDemo(),
   "/demo/assets": (BuildContext context) => AssetsDemo(),
+  "/demo/platform": (BuildContext context) => PlatformDemo(),
 };
