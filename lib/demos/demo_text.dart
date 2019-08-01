@@ -201,5 +201,3 @@ class TextDemo extends StatelessWidget {
     );
   }
 }
-
-//void main() => runDemo(TextDemo(), title: "Text Demo");

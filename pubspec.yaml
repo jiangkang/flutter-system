@@ -64,5 +64,5 @@ flutter:
   fonts:
     - family: FangZhengFangSongJianTi
       fonts:
-        - asset: fonts/FangZhengFangSongJianTi.ttf
+        - asset: assets/fonts/FangZhengFangSongJianTi.ttf
 
