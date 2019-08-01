@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/jiangkang/flutter-system.svg?branch=master)](https://travis-ci.com/jiangkang/flutter-system)
 
-## face
+## Main UI
 
 <div>
    <img src="captures/home_demo.png" width="150"/> 
@@ -26,11 +26,6 @@
   
   <img src="captures/page/guide.gif" width="150"/>
   
-- Welcome Page
-
-
-- Login/Register Page
-
 
 ## Demos
 
@@ -43,9 +38,6 @@
      <img src="captures/demos/gridview_count_axis.png" width="150"/>
   </div>
   
-
-
-## Components
 
 
 
