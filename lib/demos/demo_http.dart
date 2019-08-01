@@ -39,7 +39,8 @@ class _HttpDemoState extends State<HttpDemo> {
                       ),
                       onTap: () {
                         NavUtils.openWebView(context,
-                            "https://github.com/jiangkang/flutter-system");
+                            "https://github.com/jiangkang/flutter-system",
+                            title: "Flutter System");
                       },
                     ),
                   );
