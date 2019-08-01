@@ -1,5 +1,7 @@
 # flutter-system
 
+[![Build Status](https://travis-ci.com/jiangkang/flutter-system.svg?branch=master)](https://travis-ci.com/jiangkang/flutter-system)
+
 ## face
 
 <div>
