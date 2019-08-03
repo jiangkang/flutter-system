@@ -1,20 +1,6 @@
 #!/usr/bin/env bash
-#set -e
-#
-#declare -a  PROJECT_NAMES=(
-#    "animations" \
-#    "flutter_maps_firestore" \
-#    "isolate_example" \
-#    "jsonexample" \
-#    "place_tracker" \
-#    "platform_design"
-#    "platform_view_swift" \
-#    "provider_counter" \
-#    "provider_shopper" \
-#    "shrine" \
-#    "veggieseasons" \
-#)
-#
+set -e
+
 #for PROJECT_NAME in "${PROJECT_NAMES[@]}"
 #do
 #    echo "== Testing '${PROJECT_NAME}' on Flutter's $FLUTTER_VERSION channel =="
@@ -31,5 +17,9 @@
 #
 #    popd
 #done
+
+./flutter/bin/flutter analyze
+
+./flutter/bin/flutter format -n --set-exit-if-changed .
 
 echo "-- Success --"
