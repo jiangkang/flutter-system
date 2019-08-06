@@ -5,6 +5,7 @@ import 'model/model_entry.dart';
 final List<EntryItem> pageEntries = [
   EntryItem("Guide Page", "/page/guide"),
   EntryItem("MarkDown Editor", "/page/markdown"),
+  EntryItem("Password", "/page/password"),
 ];
 
 final List<EntryItem> componentEntries = [
@@ -34,5 +35,5 @@ final List<EntryItem> demoEntries = [
 ];
 
 final Map<String, IconData> ICONS = {
-  "Text": Icons.text_fields,
+  "text_fields": Icons.text_fields,
 };

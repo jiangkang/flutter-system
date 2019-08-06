@@ -22,6 +22,7 @@ import 'package:flutter_system/demos/demo_websocket.dart';
 import 'package:flutter_system/home.dart';
 import 'package:flutter_system/page/guide.dart';
 import 'package:flutter_system/page/page_markdown.dart';
+import 'package:flutter_system/page/page_password.dart';
 import 'package:flutter_system/page/page_show0.dart';
 
 /// 路由汇总
@@ -30,6 +31,7 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/page/guide": (BuildContext context) => GuidePage(),
   "/page/show0": (BuildContext context) => Show0Page(),
   "/page/markdown": (BuildContext context) => MarkDownEditorPage(),
+  "/page/password": (BuildContext context) => PasswordPage(),
   "/demo/text": (BuildContext context) => TextDemo(),
   "/demo/image": (BuildContext context) => ImageDemo(),
   "/demo/http": (BuildContext context) => HttpDemo(),
