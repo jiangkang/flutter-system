@@ -18,8 +18,8 @@ set -e
 #    popd
 #done
 
-./flutter/bin/flutter analyze
+../flutter/bin/flutter analyze
 
-./flutter/bin/flutter format -n --set-exit-if-changed .
+../flutter/bin/flutter format -n --set-exit-if-changed .
 
 echo "-- Success --"
