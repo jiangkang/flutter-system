@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.2+2/android" />
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.1.2/android" />
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+4/android" />
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.6+2/android" />
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.1.0/android" />
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.1+5/android" />
+            <option value="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.10+3/android" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

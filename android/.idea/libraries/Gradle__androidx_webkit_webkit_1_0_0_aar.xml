@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.webkit:webkit:1.0.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7074f8a4f5a814f4a24cffc0394f969/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7074f8a4f5a814f4a24cffc0394f969/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7074f8a4f5a814f4a24cffc0394f969/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.webkit/webkit/1.0.0/796993be74738304e61b1998460da1995850952e/webkit-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/android.iml" filepath="$PROJECT_DIR$/.idea/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.2+2/android/camera.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.2+2/android/camera.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.1.2/android/path_provider.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.1.2/android/path_provider.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+4/android/shared_preferences.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+4/android/shared_preferences.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.6+2/android/sqflite.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.6+2/android/sqflite.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.1.0/android/url_launcher.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.1.0/android/url_launcher.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.1+5/android/video_player.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.1+5/android/video_player.iml" />
+      <module fileurl="file://$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.10+3/android/webview_flutter.iml" filepath="$USER_HOME$/Env/googletool/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.10+3/android/webview_flutter.iml" />
+    </modules>
+  </component>
+</project>
