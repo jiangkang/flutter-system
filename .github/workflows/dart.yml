@@ -1,0 +1,17 @@
+name: Flutter CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    container:
+      image:  google/dart:latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: build app
+      run: flutter build
+    
