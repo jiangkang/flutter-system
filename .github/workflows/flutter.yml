@@ -12,6 +12,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: build app
-      run: flutter build
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+       channel: 'stable' # or: 'dev' or 'beta'
+    - run: flutter pub get
+    - run: flutter test
+    - run: flutter build apk
     
