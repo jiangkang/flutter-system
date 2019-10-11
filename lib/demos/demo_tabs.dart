@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/page/page_entry.dart';
 
+/// Tab Demo
+/// important concept: [TabBar.indicator],[TabController],[TabBar],[TabBarView]
 class TabsDemo extends StatefulWidget {
   @override
   _TabsDemoState createState() {
@@ -16,7 +18,11 @@ class _TabsDemoState extends State<TabsDemo>
     Tab(icon: Icon(Icons.games)),
   ];
 
-  final PAGES = [ArticleEntry(), PageEntry(), DemoEntry()];
+  final PAGES = [
+    ArticleEntry(),
+    PageEntry(),
+    DemoEntry(),
+  ];
 
   TabController _tabController;
 
@@ -62,6 +68,7 @@ class _TabsDemoState extends State<TabsDemo>
       indicatorPadding: EdgeInsets.symmetric(horizontal: 20),
       indicatorWeight: 2,
       indicatorSize: TabBarIndicatorSize.label,
+      isScrollable: true,
     );
   }
 
