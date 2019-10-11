@@ -48,8 +48,10 @@ class _CalendarState extends State<Calendar> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text("${_selectedYearAndMonth.year}年"),
-              Text("${_selectedYearAndMonth.month}月")
+              Text("${_selectedYearAndMonth.year}年",
+                  style: TextStyle(fontSize: 21)),
+              Text("${_selectedYearAndMonth.month}月",
+                  style: TextStyle(fontSize: 21))
             ],
           ),
         ),
@@ -90,16 +92,21 @@ class _CalendarState extends State<Calendar> {
           child: Text(
             date,
             style: TextStyle(
-                color: (date == "六" || date == "日")
-                    ? Theme.of(context).accentColor
-                    : Theme.of(context).textTheme.body1.color),
+              color: (date == "六" || date == "日")
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).textTheme.body1.color,
+              fontSize: 21,
+            ),
           ),
         );
       }).toList();
     } else {
       week = weekDaysStartWithSunday.take(7).map((date) {
         return Center(
-          child: Text(date),
+          child: Text(
+            date,
+            style: TextStyle(fontSize: 21),
+          ),
         );
       }).toList();
     }
@@ -122,6 +129,7 @@ class _CalendarState extends State<Calendar> {
         children: list.map((date) {
       return DayCell(
         dateTime: date,
+        currentMonth: _selectedYearAndMonth,
       );
     }).toList());
   }
@@ -130,28 +138,43 @@ class _CalendarState extends State<Calendar> {
 class DayCell extends StatefulWidget {
   final DateTime dateTime;
 
-  const DayCell({Key key, this.dateTime}) : super(key: key);
+  final DateTime currentMonth;
+
+  const DayCell({Key key, this.dateTime, this.currentMonth}) : super(key: key);
 
   @override
   _DayCellState createState() => _DayCellState();
 }
 
 class _DayCellState extends State<DayCell> {
+  final today = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
+    final isToday = widget.dateTime.day == today.day &&
+        widget.dateTime.month == today.month &&
+        widget.dateTime.year == today.year;
+    final isCurrentMonth = widget.currentMonth.month == widget.dateTime.month;
     return TableCell(
         verticalAlignment: TableCellVerticalAlignment.middle,
-        child: SizedBox(
-            height: 60,
-            child: Center(
+        child: Container(
+          decoration: isToday
+              ? ShapeDecoration(
+                  shape: CircleBorder(), color: Colors.pinkAccent[100])
+              : null,
+          child: SizedBox(
+              height: 60,
+              child: Center(
                 child: Text(
-              widget.dateTime.day.toString(),
-              style: TextStyle(
-                  color: (widget.dateTime.weekday == 6 ||
-                          widget.dateTime.weekday == 7)
-                      ? Theme.of(context).accentColor
-                      : Theme.of(context).textTheme.body1.color),
-            ))));
+                  widget.dateTime.day.toString(),
+                  style: TextStyle(
+                      color: isCurrentMonth
+                          ? Theme.of(context).textTheme.body1.color
+                          : Colors.grey,
+                      fontSize: 21),
+                ),
+              )),
+        ));
   }
 }
 
