@@ -3,12 +3,49 @@ import 'package:flutter/material.dart';
 /// whether start with monday or sunday in a week
 enum StartDayOfWeek { monday, sunday }
 
+enum CalendarLanguage { chinese, english }
+
 const weekDaysStartWithMonday = ["一", "二", "三", "四", "五", "六", "日"];
 
 const weekDaysStartWithSunday = ["日", "一", "二", "三", "四", "五", "六"];
 
+const weekDaysStartWithMondayEnglish = [
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat",
+  "Sun"
+];
+
+const weekDaysStartWithSundayEnglish = [
+  "Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat"
+];
+
 /// Calendar View
 class Calendar extends StatefulWidget {
+  final StartDayOfWeek startDayOfWeek;
+  final CalendarLanguage calendarLanguage;
+  final DateTime startSelectionDay;
+  final DateTime endSelectionDay;
+  final TextStyle weekTextStyle;
+
+  const Calendar(
+      {Key key,
+      this.startDayOfWeek = StartDayOfWeek.sunday,
+      this.calendarLanguage = CalendarLanguage.chinese,
+      this.startSelectionDay,
+      this.endSelectionDay,
+      this.weekTextStyle = const TextStyle(fontSize: 21)})
+      : super(key: key);
+
   @override
   _CalendarState createState() => _CalendarState();
 }
@@ -18,10 +55,19 @@ class _CalendarState extends State<Calendar> {
 
   StartDayOfWeek _startDayOfWeek;
 
+  CalendarLanguage _calendarLanguage;
+
+  DateTime _startSelectionDay;
+
+  DateTime _endSelectionDay;
+
   @override
   void initState() {
     _selectedYearAndMonth = DateTime.now();
-    _startDayOfWeek = StartDayOfWeek.monday;
+    _startDayOfWeek = widget.startDayOfWeek;
+    _calendarLanguage = widget.calendarLanguage;
+    _startDayOfWeek = widget.startDayOfWeek;
+    _endSelectionDay = widget.endSelectionDay;
     super.initState();
   }
 
@@ -48,9 +94,9 @@ class _CalendarState extends State<Calendar> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text("${_selectedYearAndMonth.year}年",
+              Text("${_selectedYearAndMonth.year} /",
                   style: TextStyle(fontSize: 21)),
-              Text("${_selectedYearAndMonth.month}月",
+              Text(" ${_selectedYearAndMonth.month}",
                   style: TextStyle(fontSize: 21))
             ],
           ),
@@ -85,31 +131,21 @@ class _CalendarState extends State<Calendar> {
   }
 
   TableRow _buildWeek() {
-    List<Widget> week;
-    if (_startDayOfWeek == StartDayOfWeek.monday) {
-      week = weekDaysStartWithMonday.take(7).map((date) {
-        return Center(
+    final weekNames = _getWeekNames();
+    final week = weekNames.take(7).map((date) {
+      return Container(
+        height: 60,
+        decoration: BoxDecoration(
+            border: BorderDirectional(
+                bottom: BorderSide(color: Color(0xFFE6E6E6)))),
+        child: Center(
           child: Text(
             date,
-            style: TextStyle(
-              color: (date == "六" || date == "日")
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).textTheme.body1.color,
-              fontSize: 21,
-            ),
+            style: widget.weekTextStyle,
           ),
-        );
-      }).toList();
-    } else {
-      week = weekDaysStartWithSunday.take(7).map((date) {
-        return Center(
-          child: Text(
-            date,
-            style: TextStyle(fontSize: 21),
-          ),
-        );
-      }).toList();
-    }
+        ),
+      );
+    }).toList();
     return TableRow(children: week);
   }
 
@@ -132,6 +168,26 @@ class _CalendarState extends State<Calendar> {
         currentMonth: _selectedYearAndMonth,
       );
     }).toList());
+  }
+
+  List<String> _getWeekNames() {
+    switch (_calendarLanguage) {
+      case CalendarLanguage.chinese:
+        if (_startDayOfWeek == StartDayOfWeek.sunday) {
+          return weekDaysStartWithSunday;
+        } else {
+          return weekDaysStartWithMonday;
+        }
+        break;
+      case CalendarLanguage.english:
+        if (_startDayOfWeek == StartDayOfWeek.sunday) {
+          return weekDaysStartWithSundayEnglish;
+        } else {
+          return weekDaysStartWithMondayEnglish;
+        }
+        break;
+    }
+    return [];
   }
 }
 
@@ -158,12 +214,12 @@ class _DayCellState extends State<DayCell> {
     return TableCell(
         verticalAlignment: TableCellVerticalAlignment.middle,
         child: Container(
-          decoration: isToday
-              ? ShapeDecoration(
-                  shape: CircleBorder(), color: Colors.pinkAccent[100])
-              : null,
-          child: SizedBox(
-              height: 60,
+          height: 60,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundColor:
+                  isToday ? Theme.of(context).primaryColorDark : Colors.white10,
               child: Center(
                 child: Text(
                   widget.dateTime.day.toString(),
@@ -173,7 +229,9 @@ class _DayCellState extends State<DayCell> {
                           : Colors.grey,
                       fontSize: 21),
                 ),
-              )),
+              ),
+            ),
+          ),
         ));
   }
 }

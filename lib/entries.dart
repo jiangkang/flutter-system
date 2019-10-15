@@ -33,6 +33,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Camera", "/demo/camera", icon: Icons.camera),
   EntryItem("Assets", "/demo/assets", icon: Icons.web_asset),
   EntryItem("Platform", "/demo/platform", icon: Icons.phone_android),
+  EntryItem("Time", "/demo/time", icon: Icons.access_time),
 ];
 
 final Map<String, IconData> ICONS = {

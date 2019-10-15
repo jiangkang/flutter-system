@@ -15,9 +15,18 @@ class _CalendarPageState extends State<CalendarPage> {
         centerTitle: true,
       ),
       body: SafeArea(
-          child: Container(
-        child: Calendar(),
-      )),
+        child: Column(
+          children: <Widget>[
+            Calendar(
+              startDayOfWeek: StartDayOfWeek.sunday,
+              calendarLanguage: CalendarLanguage.english,
+              weekTextStyle: TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

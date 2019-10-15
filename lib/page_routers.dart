@@ -25,6 +25,7 @@ import 'package:flutter_system/page/page_markdown.dart';
 import 'package:flutter_system/page/page_password.dart';
 import 'package:flutter_system/page/page_show0.dart';
 
+import 'demos/demo_time.dart';
 import 'page/page_calendar.dart';
 
 /// 路由汇总
@@ -55,4 +56,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/camera": (BuildContext context) => CameraDemo(),
   "/demo/assets": (BuildContext context) => AssetsDemo(),
   "/demo/platform": (BuildContext context) => PlatformDemo(),
+  "/demo/time": (BuildContext context) => TimeDemo(),
 };
