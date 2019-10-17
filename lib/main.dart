@@ -3,22 +3,21 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_system/constants/const_key_value.dart';
 import 'package:flutter_system/generated/i18n.dart';
 import 'package:flutter_system/page_routers.dart';
+import 'package:flutter_system/theme/custom_themes.dart';
 import 'package:flutter_system/utils/sp_utils.dart';
+import 'package:provider/provider.dart';
 
 /// App Entry
 void main() {
-  SpUtils.getBool(keyIsDarkMode, false).then((value) {
-    runApp(MyApp(
-      isDarkMode: value,
-    ));
-  });
+  runApp(ChangeNotifierProvider<ThemesNotifier>.value(
+    value: ThemesNotifier(),
+    child: MyApp(),
+  ));
 }
 
 /// App Entry
 class MyApp extends StatefulWidget {
-  final bool isDarkMode;
-
-  const MyApp({Key key, this.isDarkMode}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -26,13 +25,20 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    SpUtils.getBool(keyIsDarkMode, false).then((value) {
+      Provider.of<ThemesNotifier>(context)
+          .setCurrentTheme(value ? dartTheme : lightTheme);
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemesNotifier>(context);
     return MaterialApp(
       title: 'Flutter System',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          accentColor: Colors.redAccent,
-          brightness: widget.isDarkMode ? Brightness.dark : Brightness.light),
+      theme: themeProvider?.currentTheme ?? lightTheme,
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: pageRouters,
