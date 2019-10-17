@@ -5,8 +5,13 @@ class NavUtils {
   /// 打开WebView
   static Future openWebView(BuildContext context, String webUrl,
       {String title = ""}) async {
-    Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+    await Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
       return WebPage(title, webUrl);
     }));
+  }
+
+  /// 通过路由名字跳转
+  static navByRouterName(BuildContext context, String routerName) {
+    Navigator.of(context).pushNamed(routerName);
   }
 }

@@ -27,10 +27,12 @@ import 'package:flutter_system/page/page_show0.dart';
 
 import 'demos/demo_time.dart';
 import 'page/page_calendar.dart';
+import 'page/page_settings.dart';
 
 /// 路由汇总
 final Map<String, WidgetBuilder> pageRouters = {
   "/": (BuildContext context) => HomePage(),
+  "/page/settings": (BuildContext context) => SettingsPage(),
   "/page/guide": (BuildContext context) => GuidePage(),
   "/page/show0": (BuildContext context) => Show0Page(),
   "/page/markdown": (BuildContext context) => MarkDownEditorPage(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/generated/i18n.dart';
+import 'package:flutter_system/utils/nav_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'page/page_entry.dart';
@@ -49,6 +50,52 @@ class _HomePageState extends State<HomePage> {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: Container(
+            color: Theme.of(context).primaryColor,
+            child: Column(
+              children: <Widget>[
+                DrawerHeader(
+                  decoration:
+                      BoxDecoration(color: Theme.of(context).primaryColor),
+                  curve: Curves.bounceInOut,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(
+                        "Flutter System",
+                        style: Theme.of(context).primaryTextTheme.title,
+                      ),
+                      Text(
+                        "姜康",
+                        style: Theme.of(context).primaryTextTheme.title,
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).scaffoldBackgroundColor),
+                    child: ListView(
+                      padding: EdgeInsets.all(10),
+                      children: <Widget>[
+                        ListTile(
+                          title: Text(
+                            "设置",
+                            style: Theme.of(context).textTheme.title,
+                          ),
+                          onTap: () {
+                            NavUtils.navByRouterName(context, "/page/settings");
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )),
       ),
       body: pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(

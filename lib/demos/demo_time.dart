@@ -34,6 +34,10 @@ class _TimeDemoState extends State<TimeDemo> {
                   "now.year-now.month-now.day now.hour:now.minute:now.second"),
             ),
             ListTileCard(
+              title: Text(("星期${now.weekday}")),
+              subtitle: Text("now.weekday"),
+            ),
+            ListTileCard(
               title: Text((now.subtract(Duration(days: 2)).toIso8601String())),
               subtitle: Text("now.subtract(Duration(days: 2)):前两天"),
             ),

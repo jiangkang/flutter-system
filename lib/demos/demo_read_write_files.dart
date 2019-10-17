@@ -102,15 +102,14 @@ class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
             title: Text("Read key value from xml"),
             onTap: () {
               _showDialog(
-                  "JK", KeyValueStorage().getString("jk", "default value"));
+                  "JK", KeyValueStorage.getString("jk", "default value"));
             },
           ),
           ListTileCard(
             borderRadius: 4,
             title: Text("Write key value from xml"),
             onTap: () {
-              KeyValueStorage()
-                  .saveString("jk", "https://jiangkang.tech")
+              KeyValueStorage.saveString("jk", "https://jiangkang.tech")
                   .then((value) {
                 _showDialog("jk", value ? "Success" : "Failed");
               }).catchError((err) {
@@ -142,36 +141,36 @@ class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
 }
 
 class KeyValueStorage {
-  Future<SharedPreferences> get _prefs async {
+  static Future<SharedPreferences> get _prefs async {
     return await SharedPreferences.getInstance();
   }
 
-  Future<bool> saveString(String key, String value) async {
+  static Future<bool> saveString(String key, String value) async {
     final prefs = await _prefs;
     return prefs.setString(key, value);
   }
 
-  Future<bool> saveInt(String key, int value) async {
+  static Future<bool> saveInt(String key, int value) async {
     final prefs = await _prefs;
     return prefs.setInt(key, value);
   }
 
-  Future<bool> saveDouble(String key, double value) async {
+  static Future<bool> saveDouble(String key, double value) async {
     final prefs = await _prefs;
     return prefs.setDouble(key, value);
   }
 
-  Future<bool> saveBool(String key, bool value) async {
+  static Future<bool> saveBool(String key, bool value) async {
     final prefs = await _prefs;
     return prefs.setBool(key, value);
   }
 
-  Future<bool> saveStringList(String key, List<String> value) async {
+  static Future<bool> saveStringList(String key, List<String> value) async {
     final prefs = await _prefs;
     return prefs.setStringList(key, value);
   }
 
-  String getString(String key, String defaultValue) {
+  static String getString(String key, String defaultValue) {
     _prefs.then((value) {
       return value.getString(key);
     }).catchError((err) {
