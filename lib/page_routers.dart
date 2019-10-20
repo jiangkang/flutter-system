@@ -28,10 +28,12 @@ import 'package:flutter_system/page/page_markdown.dart';
 import 'package:flutter_system/page/page_password.dart';
 import 'package:flutter_system/page/page_settings.dart';
 import 'package:flutter_system/page/page_show0.dart';
+import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 
 /// 路由汇总
 final Map<String, WidgetBuilder> pageRouters = {
   "/": (BuildContext context) => HomePage(),
+  "/product/xiyou": (BuildContext context) => XiyouHome(),
   "/page/settings": (BuildContext context) => SettingsPage(),
   "/page/guide": (BuildContext context) => GuidePage(),
   "/page/show0": (BuildContext context) => Show0Page(),

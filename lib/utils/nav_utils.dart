@@ -14,4 +14,11 @@ class NavUtils {
   static navByRouterName(BuildContext context, String routerName) {
     Navigator.of(context).pushNamed(routerName);
   }
+
+  /// 跳转指定页面
+  static navToPage(BuildContext context, Widget page) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      return page;
+    }));
+  }
 }

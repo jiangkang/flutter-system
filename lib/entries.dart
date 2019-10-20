@@ -6,6 +6,7 @@ final List<EntryItem> pageEntries = [
   EntryItem("Guide Page", "/page/guide"),
   EntryItem("MarkDown Editor", "/page/markdown"),
   EntryItem("Password", "/page/password"),
+  EntryItem("Xi You", "/product/xiyou"),
 ];
 
 final List<EntryItem> componentEntries = [
