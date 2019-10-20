@@ -40,14 +40,19 @@ dependencies:
   web_socket_channel:
   sqflite:
   path:
+  source_gen:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  source_gen: ^0.9.1
+  source_gen:
+  build_runner:
   flutter_driver:
     sdk: flutter
   test:
+
+
+
 flutter:
 
   # The following line ensures that the Material Icons font is

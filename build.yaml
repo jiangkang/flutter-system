@@ -13,3 +13,14 @@ targets:
           - test/multiplatform/**_test.dart
           - test/vm/**_test.dart
           - bin/**.dart
+      flutter_system|router_builder:
+        enabled: true
+
+
+builders:
+  router_builder:
+    import: 'package:flutter_system/frouter/router_builder.dart'
+    builder_factories: ['routerBuilder']
+    build_extensions: {'.dart': ['.router.dart']}
+    auto_apply: root_package
+    build_to: source

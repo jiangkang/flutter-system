@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/entries.dart';
@@ -86,8 +88,10 @@ class DemoEntry extends StatelessWidget {
                   ],
                 ),
                 onTap: () {
-                  Navigator.of(context)
-                      .pushNamed(demoEntries[index].routerName);
+                  Timeline.timeSync("Page Nav", () {
+                    Navigator.of(context)
+                        .pushNamed(demoEntries[index].routerName);
+                  });
                 },
               ),
             );

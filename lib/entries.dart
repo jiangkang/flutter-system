@@ -34,6 +34,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Assets", "/demo/assets", icon: Icons.web_asset),
   EntryItem("Platform", "/demo/platform", icon: Icons.phone_android),
   EntryItem("Time", "/demo/time", icon: Icons.access_time),
+  EntryItem("Progress Indicator", "/demo/progress_indicator", icon: Icons.loop),
 ];
 
 final Map<String, IconData> ICONS = {

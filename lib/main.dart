@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     SpUtils.getBool(keyIsDarkMode, false).then((value) {
-      Provider.of<ThemesNotifier>(context)
+      Provider.of<ThemesNotifier>(context, listen: false)
           .setCurrentTheme(value ? dartTheme : lightTheme);
     });
     super.initState();

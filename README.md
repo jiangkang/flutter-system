@@ -6,7 +6,7 @@
 
 <div>
    <img src="captures/home_demo.png" width="150"/> 
-   <img src="captures/demos/gridview_count_basic.png" width="150"/> 
+   <img src="captures/home_demo_dark.png" width="150"/> 
 </div>
 
 
@@ -38,6 +38,7 @@
      <img src="captures/demos/gridview_count_axis.png" width="150"/>
   </div>
   
+
 
 
 
