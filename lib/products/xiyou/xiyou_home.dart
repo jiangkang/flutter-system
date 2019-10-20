@@ -51,6 +51,44 @@ class _XiyouHomeState extends State<XiyouHome> {
       ],
     );
 
+    final listView = ListView(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.av_timer),
+          title: Text("开关"),
+          trailing: Switch(value: false, onChanged: null),
+        ),
+        ListTile(
+            leading: Icon(Icons.favorite_border),
+            title: Text("选项"),
+            trailing: IconButton(icon: Icon(Icons.add), onPressed: null)),
+        ListTile(
+          leading: Icon(Icons.check),
+          title: Text("点赞"),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.forward_5), onPressed: null),
+              IconButton(icon: Icon(Icons.forward_10), onPressed: null),
+              IconButton(icon: Icon(Icons.forward_30), onPressed: null),
+            ],
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.attach_file),
+          title: Text("习惯"),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.file_download), onPressed: null),
+              IconButton(icon: Icon(Icons.file_upload), onPressed: null),
+              IconButton(icon: Icon(Icons.folder), onPressed: null),
+            ],
+          ),
+        ),
+      ],
+    );
+
     return Scaffold(
         body: SafeArea(
       child: Column(
@@ -64,46 +102,7 @@ class _XiyouHomeState extends State<XiyouHome> {
             color: Colors.grey[300],
           ),
           Expanded(
-            child: ListView(
-              children: <Widget>[
-                ListTile(
-                  leading: Icon(Icons.av_timer),
-                  title: Text("开关"),
-                  trailing: Switch(value: false, onChanged: null),
-                ),
-                ListTile(
-                    leading: Icon(Icons.favorite_border),
-                    title: Text("选项"),
-                    trailing:
-                        IconButton(icon: Icon(Icons.add), onPressed: null)),
-                ListTile(
-                  leading: Icon(Icons.check),
-                  title: Text("点赞"),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      IconButton(icon: Icon(Icons.forward_5), onPressed: null),
-                      IconButton(icon: Icon(Icons.forward_10), onPressed: null),
-                      IconButton(icon: Icon(Icons.forward_30), onPressed: null),
-                    ],
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(Icons.attach_file),
-                  title: Text("习惯"),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      IconButton(
-                          icon: Icon(Icons.file_download), onPressed: null),
-                      IconButton(
-                          icon: Icon(Icons.file_upload), onPressed: null),
-                      IconButton(icon: Icon(Icons.folder), onPressed: null),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            child: listView,
           ),
         ],
       ),
