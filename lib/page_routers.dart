@@ -3,6 +3,7 @@ import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_assets.dart';
 import 'package:flutter_system/demos/demo_camera.dart';
 import 'package:flutter_system/demos/demo_container.dart';
+import 'package:flutter_system/demos/demo_custom_paint.dart';
 import 'package:flutter_system/demos/demo_custom_scrollview.dart';
 import 'package:flutter_system/demos/demo_dismissible.dart';
 import 'package:flutter_system/demos/demo_drawer.dart';
@@ -62,4 +63,5 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/platform": (BuildContext context) => PlatformDemo(),
   "/demo/time": (BuildContext context) => TimeDemo(),
   "/demo/progress_indicator": (BuildContext context) => ProgressIndicatorDemo(),
+  "/demo/custompaint": (BuildContext context) => CustomPaintDemo(),
 };
