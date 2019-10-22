@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/component/iconfont.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_assets.dart';
 import 'package:flutter_system/demos/demo_camera.dart';
@@ -31,16 +32,23 @@ import 'package:flutter_system/page/page_settings.dart';
 import 'package:flutter_system/page/page_show0.dart';
 import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 
-/// 路由汇总
+/// Page Routers
 final Map<String, WidgetBuilder> pageRouters = {
-  "/": (BuildContext context) => HomePage(),
-  "/product/xiyou": (BuildContext context) => XiyouHome(),
   "/page/settings": (BuildContext context) => SettingsPage(),
   "/page/guide": (BuildContext context) => GuidePage(),
   "/page/show0": (BuildContext context) => Show0Page(),
   "/page/markdown": (BuildContext context) => MarkDownEditorPage(),
   "/page/password": (BuildContext context) => PasswordPage(),
   "/page/calendar": (BuildContext context) => CalendarPage(),
+};
+
+/// Component Routers
+final Map<String, WidgetBuilder> componentRouters = {
+  "/component/iconfont": (BuildContext context) => IconFont(),
+};
+
+/// Demo Routers
+final Map<String, WidgetBuilder> demoRouters = {
   "/demo/text": (BuildContext context) => TextDemo(),
   "/demo/image": (BuildContext context) => ImageDemo(),
   "/demo/http": (BuildContext context) => HttpDemo(),
@@ -65,3 +73,18 @@ final Map<String, WidgetBuilder> pageRouters = {
   "/demo/progress_indicator": (BuildContext context) => ProgressIndicatorDemo(),
   "/demo/custompaint": (BuildContext context) => CustomPaintDemo(),
 };
+
+/// Product Routers
+final Map<String, WidgetBuilder> productRouters = {
+  "/product/xiyou": (BuildContext context) => XiyouHome(),
+};
+
+/// App Routers
+/// include of [pageRouters],[componentRouters],[demoRouters],[productRouters]
+final Map<String, WidgetBuilder> appRouters = {
+  "/": (BuildContext context) => HomePage(),
+}
+  ..addAll(pageRouters)
+  ..addAll(componentRouters)
+  ..addAll(demoRouters)
+  ..addAll(productRouters);

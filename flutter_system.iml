@@ -51,6 +51,9 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/webview_flutter/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/webview_flutter/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/webview_flutter/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/kicons/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/kicons/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/kicons/build" />
       <excludeFolder url="file://$MODULE_DIR$/webapp/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/webapp/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/webapp/build" />

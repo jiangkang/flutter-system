@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  kicons:
+    path: kicons
   flutter_localizations:
     sdk: flutter
   provider:

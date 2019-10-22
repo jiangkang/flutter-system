@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
       theme: themeProvider?.currentTheme ?? lightTheme,
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      routes: pageRouters,
+      routes: appRouters,
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

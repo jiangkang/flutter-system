@@ -12,6 +12,7 @@ final List<EntryItem> pageEntries = [
 final List<EntryItem> componentEntries = [
   EntryItem("Show Case 0", "/page/show0", icon: Icons.show_chart),
   EntryItem("Calendar", "/page/calendar", icon: Icons.calendar_today),
+  EntryItem("IconFont", "/component/iconfont", icon: Icons.insert_emoticon)
 ];
 
 final List<EntryItem> demoEntries = [
