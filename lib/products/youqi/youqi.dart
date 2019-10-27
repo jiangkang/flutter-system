@@ -2,7 +2,6 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
 import 'package:flutter_system/products/youqi/api_youqi.dart';
 import 'package:flutter_system/products/youqi/youqi_model.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
@@ -28,7 +27,6 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
           YouQiResponse response = snapshot.data;
           final modelList = response.data;
           _model = modelList.first;
-          print("model:${_model.toString()}");
           return Scaffold(
             body: Container(
               width: double.maxFinite,
@@ -240,14 +238,14 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
                             Align(
                                 child: Text(
                                   _model.date.split("-")[1],
-                                  style: prefix0.TextStyle(
+                                  style: TextStyle(
                                       color: Colors.white, fontSize: 21),
                                 ),
                                 alignment: AlignmentDirectional.topStart),
                             Align(
                               child: Text(
                                 _model.date.split("-")[2],
-                                style: prefix0.TextStyle(
+                                style: TextStyle(
                                     color: Colors.white, fontSize: 21),
                               ),
                               alignment: AlignmentDirectional.bottomEnd,
