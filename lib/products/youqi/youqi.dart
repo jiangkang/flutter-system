@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_system/products/youqi/api_youqi.dart';
 import 'package:flutter_system/products/youqi/youqi_model.dart';
@@ -14,46 +15,71 @@ class YouQiHomePage extends StatefulWidget {
 }
 
 class _YouQiHomePageState extends State<YouQiHomePage> {
-  final today = DateTime.now();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: FutureBuilder(
+          future: requestYouQiResponseFromAssets(context),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              YouQiResponse response = snapshot.data;
+              final modelList = response.data;
+              return PageView.builder(
+                itemBuilder: (context, index) {
+                  return YouQiContentPage(modelList[index]);
+                },
+                itemCount: modelList.length ?? 0,
+                pageSnapping: true,
+                reverse: true,
+              );
+            }
+            return Center(child: CircularProgressIndicator());
+          }),
+    );
+  }
+}
 
+class YouQiContentPage extends StatefulWidget {
+  final YouQiModel model;
+
+  YouQiContentPage(this.model);
+
+  @override
+  _YouQiContentPageState createState() => _YouQiContentPageState();
+}
+
+class _YouQiContentPageState extends State<YouQiContentPage> {
   YouQiModel _model;
 
   @override
+  void initState() {
+    _model = widget.model;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: requestYouQiResponseFromAssets(context),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          YouQiResponse response = snapshot.data;
-          final modelList = response.data;
-          _model = modelList.first;
-          return Scaffold(
-            body: Container(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              decoration: _model.bgImgUrl?.isEmpty ?? false
-                  ? BoxDecoration(
-                      color: _getBgColor(),
-                    )
-                  : BoxDecoration(
-                      image:
-                          DecorationImage(image: NetworkImage(_model.bgImgUrl)),
-                    ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  _buildTopHeader(),
-                  _buildContent(),
-                  _buildBottomMenu(),
-                ],
+    return Scaffold(
+      body: Container(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        decoration: _model.bgImgUrl?.isEmpty ?? false
+            ? BoxDecoration(
+                color: _getBgColor(),
+              )
+            : BoxDecoration(
+                image: DecorationImage(image: NetworkImage(_model.bgImgUrl)),
               ),
-            ),
-          );
-        } else {
-          return Center(child: CircularProgressIndicator());
-        }
-      },
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            _buildTopHeader(),
+            _buildContent(),
+            _buildBottomMenu(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -214,7 +240,7 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
                             style: TextStyle(color: Colors.white, fontSize: 24),
                           ),
                           Text(
-                            "${TimeUtils.getLunarMonth(today)}月${TimeUtils.getLunarDay(today)}",
+                            "${TimeUtils.getLunarMonth(_getDateTime())}月${TimeUtils.getLunarDay(_getDateTime())}",
                             style: TextStyle(color: Colors.white),
                           ),
                         ],
@@ -270,6 +296,15 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
       int colorInt = int.parse(_model.bgColor.substring(1), radix: 16);
       return Color(colorInt);
     }
+  }
+
+  DateTime _getDateTime() {
+    final dateString = _model.date.split("-");
+    return DateTime(
+      int.parse(dateString[0]),
+      int.parse(dateString[1]),
+      int.parse(dateString[2]),
+    );
   }
 }
 

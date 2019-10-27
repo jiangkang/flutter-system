@@ -38,7 +38,7 @@
 
   <img src="captures/products/xiyou.png" width="150"/>
 
-— You Qi
+- You Qi
 
   <img src="captures/products/youqi.png" width="150"/>
   

@@ -5,7 +5,7 @@
     {
       "date": "2019-10-25",
       "bgImgUrl": "",
-      "bgColor": "#ff333333",
+      "bgColor": "#FFFDD835",
       "content": "为天地立心，为生民立命\n为往圣继绝学,为万世开太平",
       "source": "张载 横渠四句 《横渠语录》",
       "contentDetail": "",
@@ -13,8 +13,8 @@
     },
     {
       "date": "2019-10-24",
-      "bgImgUrl": "https://c-ssl.duitang.com/uploads/item/201702/05/20170205213047_r5nvC.thumb.700_0.jpeg",
-      "bgColor": "#ff222222",
+      "bgImgUrl": "",
+      "bgColor": "#FFFFAB91",
       "content": "知之为知之，不知为不知，是知也",
       "source": "《论语》",
       "contentDetail": "",
@@ -23,7 +23,7 @@
     {
       "date": "2019-10-23",
       "bgImgUrl": "",
-      "bgColor": "#ff666666",
+      "bgColor": "#FF64B5F6",
       "content": "读书，行路，阅人",
       "source": "姜康-座右铭",
       "contentDetail": "",
@@ -32,7 +32,7 @@
     {
       "date": "2019-10-22",
       "bgImgUrl": "",
-      "bgColor": "#ffeeeeee",
+      "bgColor": "#FFB39DDB",
       "content": "时间是最宝贵的东西",
       "source": "姜康",
       "contentDetail": "",
