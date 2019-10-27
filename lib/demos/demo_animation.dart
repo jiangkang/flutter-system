@@ -8,6 +8,7 @@ enum SlideDirection { right2left, bottom2top }
 
 /// Animation Demos
 /// 1. PageRouter Animation
+/// 2. AnimatedContainer
 class AnimationDemo extends StatefulWidget {
   @override
   _AnimationDemoState createState() {

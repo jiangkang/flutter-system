@@ -1,8 +1,8 @@
 name: kicons
-description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+description: An Icon package project,you can use many icons which you like.Then,you can list all of the icons quickly!
+version: 1.0.2
+author: jiangkang<jiangkang0504@gmail.com>
+homepage: https://jiangkang.tech
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

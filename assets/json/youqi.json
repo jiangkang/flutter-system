@@ -1,0 +1,42 @@
+{
+  "code": "0",
+  "msg": "success",
+  "data": [
+    {
+      "date": "2019-10-25",
+      "bgImgUrl": "https://c-ssl.duitang.com/uploads/item/201507/22/20150722224100_t8MTc.thumb.700_0.jpeg",
+      "bgColor": "#ff333333",
+      "content": "成长是第一要务",
+      "source": "姜康",
+      "contentDetail": "",
+      "detailUrl": ""
+    },
+    {
+      "date": "2019-10-24",
+      "bgImgUrl": "https://c-ssl.duitang.com/uploads/item/201702/05/20170205213047_r5nvC.thumb.700_0.jpeg",
+      "bgColor": "#ff222222",
+      "content": "知之为知之，不知为不知，是知也",
+      "source": "《论语》",
+      "contentDetail": "",
+      "detailUrl": ""
+    },
+    {
+      "date": "2019-10-23",
+      "bgImgUrl": "",
+      "bgColor": "#ff666666",
+      "content": "读书，行路，阅人",
+      "source": "姜康-座右铭",
+      "contentDetail": "",
+      "detailUrl": ""
+    },
+    {
+      "date": "2019-10-22",
+      "bgImgUrl": "",
+      "bgColor": "#ffeeeeee",
+      "content": "时间是最宝贵的东西",
+      "source": "姜康",
+      "contentDetail": "",
+      "detailUrl": ""
+    }
+  ]
+}
