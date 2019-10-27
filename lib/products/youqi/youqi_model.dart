@@ -1,3 +1,5 @@
+import 'dart:math';
+
 /// YouQi Model
 class YouQiModel {
   /// 背景图片
@@ -64,5 +66,56 @@ class YouQiResponse {
           print(d);
           return YouQiModel.fromJson(d);
         }).toList());
+  }
+}
+
+class MonthAliasResponse {
+  final List<String> month1;
+  final List<String> month2;
+  final List<String> month3;
+  final List<String> month4;
+  final List<String> month5;
+  final List<String> month6;
+  final List<String> month7;
+  final List<String> month8;
+  final List<String> month9;
+  final List<String> month10;
+  final List<String> month11;
+  final List<String> month12;
+
+  MonthAliasResponse(
+      {this.month1,
+      this.month2,
+      this.month3,
+      this.month4,
+      this.month5,
+      this.month6,
+      this.month7,
+      this.month8,
+      this.month9,
+      this.month10,
+      this.month11,
+      this.month12});
+
+  factory MonthAliasResponse.fromJson(Map<String, List<String>> json) {
+    return MonthAliasResponse(
+        month1: json["month1"],
+        month2: json["month2"],
+        month3: json["month3"],
+        month4: json["month4"],
+        month5: json["month5"],
+        month6: json["month6"],
+        month7: json["month7"],
+        month8: json["month8"],
+        month9: json["month9"],
+        month10: json["month10"],
+        month11: json["month11"],
+        month12: json["month12"]);
+  }
+
+  /// 获取随机名字
+  String getRandomName(List<String> names) {
+    int index = Random().nextInt(names.length);
+    return names[index];
   }
 }

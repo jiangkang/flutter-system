@@ -47,42 +47,53 @@ class _GuidePageState extends State<GuidePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Guide Page"),
+      body: Stack(
+        alignment: AlignmentDirectional.topStart,
+        children: <Widget>[
+          Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: Colors.white,
+              child: Stack(
+                alignment: AlignmentDirectional.bottomCenter,
+                children: <Widget>[
+                  PageView.builder(
+                    itemBuilder: (BuildContext context, int index) =>
+                        _buildItem(context, index),
+                    itemCount: _itemCount,
+                    controller: _controller,
+                    pageSnapping: true,
+                    onPageChanged: _onPageChanged,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: List.generate(
+                          3,
+                          (index) => TabPageSelectorIndicator(
+                            backgroundColor: _currentIndex == index
+                                ? Colors.red
+                                : Colors.grey,
+                            borderColor: Colors.white,
+                            size: 12,
+                          ),
+                        )),
+                  ),
+                ],
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 40),
+            child: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                }),
+          ),
+        ],
       ),
-      body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: Colors.white,
-          child: Stack(
-            alignment: AlignmentDirectional.bottomCenter,
-            children: <Widget>[
-              PageView.builder(
-                itemBuilder: (BuildContext context, int index) =>
-                    _buildItem(context, index),
-                itemCount: _itemCount,
-                controller: _controller,
-                pageSnapping: true,
-                onPageChanged: _onPageChanged,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 16.0),
-                child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: List.generate(
-                      3,
-                      (index) => TabPageSelectorIndicator(
-                        backgroundColor:
-                            _currentIndex == index ? Colors.red : Colors.grey,
-                        borderColor: Colors.white,
-                        size: 12,
-                      ),
-                    )),
-              ),
-            ],
-          )),
     );
   }
 

@@ -1,8 +1,12 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:flutter_system/products/youqi/api_youqi.dart';
 import 'package:flutter_system/products/youqi/youqi_model.dart';
+import 'package:flutter_system/utils/nav_utils.dart';
+import 'package:flutter_system/utils/time_utils.dart';
 import 'package:kicons/kicons.dart';
 
 class YouQiHomePage extends StatefulWidget {
@@ -11,6 +15,8 @@ class YouQiHomePage extends StatefulWidget {
 }
 
 class _YouQiHomePageState extends State<YouQiHomePage> {
+  final today = DateTime.now();
+
   YouQiModel _model;
 
   @override
@@ -55,7 +61,7 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
 
   Padding _buildBottomMenu() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30, left: 20, right: 20),
+      padding: const EdgeInsets.only(bottom: 30),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,27 +72,56 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
             children: <Widget>[
               FlatButton.icon(
                 onPressed: null,
-                label: Text("123"),
-                icon: Icon(AliyunIcon.like),
+                label: Text(
+                  "123",
+                  style: TextStyle(color: Colors.white),
+                ),
+                icon: Icon(
+                  AliyunIcon.like,
+                  color: Colors.white,
+                ),
               ),
               FlatButton.icon(
                 onPressed: null,
-                label: Text("12"),
-                icon: Icon(AliyunIcon.star),
+                label: Text(
+                  "123",
+                  style: TextStyle(color: Colors.white),
+                ),
+                icon: Icon(
+                  AliyunIcon.star,
+                  color: Colors.white,
+                ),
               ),
               FlatButton.icon(
                 onPressed: null,
-                label: Text("123"),
-                icon: Icon(Icons.comment),
+                label: Text(
+                  "123",
+                  style: TextStyle(color: Colors.white),
+                ),
+                icon: Icon(
+                  Icons.comment,
+                  color: Colors.white,
+                ),
               ),
               InkWell(
-                child: Icon(Icons.share),
+                child: Icon(
+                  Icons.share,
+                  color: Colors.white,
+                ),
                 onTap: null,
               ),
             ],
           ),
-          CircleAvatar(
-            child: Icon(Icons.person_outline),
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: SizedBox(
+              width: 30,
+              height: 30,
+              child: ClipPath(
+                clipper: ShapeBorderClipper(shape: CircleBorder()),
+                child: Image.asset("images/landscape1.jpeg"),
+              ),
+            ),
           ),
         ],
       ),
@@ -97,30 +132,53 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Center(
-        child: SizedBox(
-          width: double.maxFinite,
-          height: 240,
-          child: Stack(
-            alignment: AlignmentDirectional.bottomCenter,
-            children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(6)),
-                child: Container(
-                  color: Colors.white,
-                  child: Center(
-                    child: Text(_model.content),
+        child: ClipRRect(
+          borderRadius: BorderRadius.all(Radius.circular(6)),
+          child: Container(
+            height: 300,
+            color: Colors.white,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        _model.content,
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              Row(
-                children: <Widget>[
-                  Text(_model.source),
-                  InkWell(
-                    child: Icon(Icons.details),
-                  )
-                ],
-              ),
-            ],
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      child: Text("「 ${_model.source} 」"),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        NavUtils.openWebView(context,
+                            _model.contentDetail ?? "https://jiangkang.tech");
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(Icons.arrow_forward),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -128,13 +186,81 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
   }
 
   Widget _buildTopHeader() {
-    return SizedBox(
-      height: 100,
-      child: Row(
-        children: <Widget>[
-          Text(_model.date),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        SizedBox(
+          height: 40,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              FutureBuilder(
+                future: requestMonthAliasResponseFromAssets(context),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    Map<String, List<String>> response = snapshot.data;
+                    final list =
+                        response[DateTime.now().month.toString()] ?? [""];
+                    final randomName = list[Random().nextInt(list.length)];
+                    return SizedBox(
+                      height: 60,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          Text(
+                            randomName,
+                            style: TextStyle(color: Colors.white, fontSize: 24),
+                          ),
+                          Text(
+                            "${TimeUtils.getLunarMonth(today)}月${TimeUtils.getLunarDay(today)}",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+                  return Container();
+                },
+              ),
+              Column(
+                children: <Widget>[
+                  CustomPaint(
+                    painter: DateBoxPainter(),
+                    child: SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Align(
+                                child: Text(
+                                  _model.date.split("-")[1],
+                                  style: prefix0.TextStyle(
+                                      color: Colors.white, fontSize: 21),
+                                ),
+                                alignment: AlignmentDirectional.topStart),
+                            Align(
+                              child: Text(
+                                _model.date.split("-")[2],
+                                style: prefix0.TextStyle(
+                                    color: Colors.white, fontSize: 21),
+                              ),
+                              alignment: AlignmentDirectional.bottomEnd,
+                            ),
+                          ],
+                        )),
+                  ),
+                ],
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 
@@ -146,5 +272,22 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
       int colorInt = int.parse(_model.bgColor.substring(1), radix: 16);
       return Color(colorInt);
     }
+  }
+}
+
+class DateBoxPainter extends CustomPainter {
+  final Paint _painter = Paint()
+    ..color = Colors.white
+    ..strokeWidth = 2;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawLine(
+        Offset(6, size.height - 6), Offset(size.height - 6, 6), _painter);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }
