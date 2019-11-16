@@ -13,7 +13,9 @@ final List<EntryItem> pageEntries = [
 final List<EntryItem> componentEntries = [
   EntryItem("Show Case 0", "/page/show0", icon: Icons.show_chart),
   EntryItem("Calendar", "/page/calendar", icon: Icons.calendar_today),
-  EntryItem("IconFont", "/component/iconfont", icon: Icons.insert_emoticon)
+  EntryItem("IconFont", "/component/iconfont", icon: Icons.insert_emoticon),
+  EntryItem("Dialogs", "/component/dialogs", icon: Icons.bubble_chart),
+  EntryItem("AppBar", "/component/appbar", icon: Icons.border_top)
 ];
 
 final List<EntryItem> demoEntries = [
@@ -39,6 +41,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Time", "/demo/time", icon: Icons.access_time),
   EntryItem("Progress Indicator", "/demo/progress_indicator", icon: Icons.loop),
   EntryItem("CustomPaint", "/demo/custompaint", icon: Icons.brush),
+  EntryItem("Chip", "/demo/chip", icon: Icons.crop_7_5),
 ];
 
 final Map<String, IconData> ICONS = {

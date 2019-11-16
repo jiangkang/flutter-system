@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/component/dialogs.dart';
 import 'package:flutter_system/component/iconfont.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_assets.dart';
@@ -33,6 +34,9 @@ import 'package:flutter_system/page/page_show0.dart';
 import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 import 'package:flutter_system/products/youqi/youqi.dart';
 
+import 'component/component_appbar.dart';
+import 'demos/demo_chip.dart';
+
 /// Page Routers
 final Map<String, WidgetBuilder> pageRouters = {
   "/page/settings": (BuildContext context) => SettingsPage(),
@@ -46,6 +50,8 @@ final Map<String, WidgetBuilder> pageRouters = {
 /// Component Routers
 final Map<String, WidgetBuilder> componentRouters = {
   "/component/iconfont": (BuildContext context) => IconFont(),
+  "/component/dialogs": (BuildContext context) => DialogsPage(),
+  "/component/appbar": (BuildContext context) => AppBarPage(),
 };
 
 /// Demo Routers
@@ -73,6 +79,7 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/time": (BuildContext context) => TimeDemo(),
   "/demo/progress_indicator": (BuildContext context) => ProgressIndicatorDemo(),
   "/demo/custompaint": (BuildContext context) => CustomPaintDemo(),
+  "/demo/chip": (BuildContext context) => ChipDemo(),
 };
 
 /// Product Routers

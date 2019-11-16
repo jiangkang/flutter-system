@@ -48,6 +48,7 @@ class _WebPageState extends State<WebPage> {
                 _loadFinished = true;
               });
             },
+            onWebViewCreated: (controller) {},
             navigationDelegate: (NavigationRequest request) {
               return NavigationDecision.navigate;
             },
