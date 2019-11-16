@@ -15,6 +15,7 @@ class ShowCaseOModel {
       this.radius, this.likeNum);
 }
 
+/// 信息流
 class Show0Page extends StatefulWidget {
   final List<ShowCaseOModel> dataList = [
     ShowCaseOModel(IMGS[0], IMGS[0], "大江东去浪淘尽", "小白", 6, 10),
@@ -34,7 +35,7 @@ class _Show0PageState extends State<Show0Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Show Case"),
+        title: Text("信息流"),
         centerTitle: true,
       ),
       body: SafeArea(

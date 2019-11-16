@@ -11,11 +11,12 @@ final List<EntryItem> pageEntries = [
 ];
 
 final List<EntryItem> componentEntries = [
-  EntryItem("Show Case 0", "/page/show0", icon: Icons.show_chart),
+  EntryItem("InfoStream", "/page/show0", icon: Icons.show_chart),
   EntryItem("Calendar", "/page/calendar", icon: Icons.calendar_today),
   EntryItem("IconFont", "/component/iconfont", icon: Icons.insert_emoticon),
   EntryItem("Dialogs", "/component/dialogs", icon: Icons.bubble_chart),
-  EntryItem("AppBar", "/component/appbar", icon: Icons.border_top)
+  EntryItem("AppBar", "/component/appbar", icon: Icons.border_top),
+  EntryItem("TopBanner", "/component/topbanner", icon: Icons.border_outer)
 ];
 
 final List<EntryItem> demoEntries = [

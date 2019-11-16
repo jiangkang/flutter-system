@@ -35,6 +35,7 @@ import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 import 'package:flutter_system/products/youqi/youqi.dart';
 
 import 'component/component_appbar.dart';
+import 'component/componet_topbanner.dart';
 import 'demos/demo_chip.dart';
 
 /// Page Routers
@@ -52,6 +53,7 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/iconfont": (BuildContext context) => IconFont(),
   "/component/dialogs": (BuildContext context) => DialogsPage(),
   "/component/appbar": (BuildContext context) => AppBarPage(),
+  "/component/topbanner": (BuildContext context) => TopBannerPage(),
 };
 
 /// Demo Routers
