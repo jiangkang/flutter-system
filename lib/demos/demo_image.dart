@@ -39,6 +39,7 @@ class ImageDemo extends StatelessWidget {
     );
   }
 
+  /// Container的Decoration实现圆角
   _buildRoundCornerImageByContainer() => Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -63,6 +64,7 @@ class ImageDemo extends StatelessWidget {
         ),
       );
 
+  ///Card + shape属性实现圆角
   _buildRoundCornerImageByCard() => Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: <Widget>[

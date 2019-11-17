@@ -36,6 +36,7 @@ import 'package:flutter_system/products/youqi/youqi.dart';
 
 import 'component/component_appbar.dart';
 import 'component/componet_topbanner.dart';
+import 'demos/animation/demo_transform.dart';
 import 'demos/demo_chip.dart';
 
 /// Page Routers
@@ -82,6 +83,7 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/progress_indicator": (BuildContext context) => ProgressIndicatorDemo(),
   "/demo/custompaint": (BuildContext context) => CustomPaintDemo(),
   "/demo/chip": (BuildContext context) => ChipDemo(),
+  "/demo/transform": (BuildContext context) => TransformDemo(),
 };
 
 /// Product Routers

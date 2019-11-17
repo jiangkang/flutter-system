@@ -43,6 +43,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Progress Indicator", "/demo/progress_indicator", icon: Icons.loop),
   EntryItem("CustomPaint", "/demo/custompaint", icon: Icons.brush),
   EntryItem("Chip", "/demo/chip", icon: Icons.crop_7_5),
+  EntryItem("Transform", "/demo/transform", icon: Icons.rotate_right),
 ];
 
 final Map<String, IconData> ICONS = {

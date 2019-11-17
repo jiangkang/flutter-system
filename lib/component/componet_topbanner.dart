@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/component/component_appbar.dart';
+import 'package:flutter_system/utils/ui_utils.dart';
 import 'package:kicons/kicons.dart';
 
 /// top banner page
@@ -34,8 +35,7 @@ class TopBannerPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    shape: roundedRectBorder(20),
                     color: Colors.white,
                   ),
                   child: Row(
