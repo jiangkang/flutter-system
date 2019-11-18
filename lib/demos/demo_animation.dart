@@ -30,6 +30,10 @@ class _AnimationDemoState extends State<AnimationDemo> {
           buildPageRouterAnimation(SlideDirection.bottom2top),
           buildPageRouterAnimation(SlideDirection.right2left),
           buildAnimatedContainer(),
+          ListTileCard(
+            title: Text("Transform"),
+            onTap: () => Navigator.of(context).pushNamed("/demo/transform"),
+          )
         ],
       )),
     );

@@ -37,7 +37,9 @@ import 'package:flutter_system/products/youqi/youqi.dart';
 import 'component/component_appbar.dart';
 import 'component/componet_topbanner.dart';
 import 'demos/animation/demo_transform.dart';
+import 'demos/demo_button.dart';
 import 'demos/demo_chip.dart';
+import 'demos/demo_slider.dart';
 
 /// Page Routers
 final Map<String, WidgetBuilder> pageRouters = {
@@ -84,6 +86,8 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/custompaint": (BuildContext context) => CustomPaintDemo(),
   "/demo/chip": (BuildContext context) => ChipDemo(),
   "/demo/transform": (BuildContext context) => TransformDemo(),
+  "/demo/button": (BuildContext context) => ButtonDemo(),
+  "/demo/slider": (BuildContext context) => SliderDemo(),
 };
 
 /// Product Routers

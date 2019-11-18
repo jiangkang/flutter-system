@@ -44,6 +44,8 @@ final List<EntryItem> demoEntries = [
   EntryItem("CustomPaint", "/demo/custompaint", icon: Icons.brush),
   EntryItem("Chip", "/demo/chip", icon: Icons.crop_7_5),
   EntryItem("Transform", "/demo/transform", icon: Icons.rotate_right),
+  EntryItem("Button", "/demo/button", icon: Icons.crop_square),
+  EntryItem("Slider", "/demo/slider", icon: Icons.slideshow),
 ];
 
 final Map<String, IconData> ICONS = {

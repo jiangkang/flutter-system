@@ -36,8 +36,16 @@ class _TransformDemoState extends State<TransformDemo>
 
     _animRotate = Tween<double>(begin: 0, end: pi * 2.3).animate(_curvedAnim)
       ..addListener(_callback);
-    _animScale = Tween(begin: 0.0, end: 0.9).animate(_curvedAnim)
-      ..addListener(_callback);
+    _animScale = Tween(begin: 0.0, end: 0.9).animate(_controller)
+      ..addListener(_callback)
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          // 动画恢复到初始状态时进行
+          _controller.forward();
+        }
+      });
     _animTranslate = Tween(begin: Offset(0, 0), end: Offset(100, 100))
         .animate(_curvedAnim)
           ..addListener(_callback);
@@ -70,7 +78,7 @@ class _TransformDemoState extends State<TransformDemo>
           Transform.scale(
             scale: _animScale.value,
             child: Image.asset(
-              "images/banner.jpg",
+              "images/landscape0.jpeg",
             ),
           ),
           Transform.translate(
