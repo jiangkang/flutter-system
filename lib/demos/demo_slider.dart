@@ -38,7 +38,7 @@ class _SlideDemoState extends State<SliderDemo> {
                 },
                 activeColor: Colors.redAccent,
                 inactiveColor: Colors.blueAccent,
-                label: "score",
+                label: _value1.toString(),
                 divisions: 3,
               ),
             ),
@@ -82,8 +82,13 @@ class _SlideDemoState extends State<SliderDemo> {
                 inactiveTrackColor: Colors.blueAccent,
                 trackShape: RoundedRectSliderTrackShape(),
               ),
-              child:
-                  Slider(value: 30, min: 0, max: 100, onChanged: (progress) {}),
+              child: Slider(
+                value: 30,
+                min: 0,
+                max: 100,
+                onChanged: (progress) {},
+                divisions: 10,
+              ),
             ),
           ),
           RangeSlider(

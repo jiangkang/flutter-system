@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
+import 'package:flutter_system/utils/ui_utils.dart';
 
 class DialogsPage extends StatefulWidget {
   @override
@@ -79,15 +80,96 @@ class _DialogsPageState extends State<DialogsPage> {
             },
           ),
           ListTileCard(
-            title: Text("General Dialog"),
+            title: Text("Dialog"),
             onTap: () {
-              showGeneralDialog<void>(
+              showDialog<void>(
                   context: context,
-                  pageBuilder: (BuildContext context,
-                      Animation<double> animation,
-                      Animation<double> secondaryAnimation) {
-                    return Text("sdsdsdsd");
-                  });
+                  builder: (context) => SimpleDialog(
+                        title: Text("警告"),
+                        children: <Widget>[
+                          SimpleDialogOption(
+                            onPressed: () {},
+                            child: Text("您的技能值过低！！！请及时补充技能！！"),
+                          ),
+                          SimpleDialogOption(
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("确认")),
+                                FlatButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("取消")),
+                              ],
+                            ),
+                          )
+                        ],
+                        shape: roundedRectBorder(6),
+                      ));
+            },
+          ),
+          Builder(
+            builder: (BuildContext context) => ListTileCard(
+              title: Text("获取操作结果"),
+              onTap: () async {
+                final result = await showDialog<String>(
+                    context: context,
+                    builder: (context) => SimpleDialog(
+                          title: Text("你喜欢Flutter还是React Native？"),
+                          children: <Widget>[
+                            SimpleDialogOption(
+                              onPressed: () {
+                                Navigator.of(context).pop("Flutter");
+                              },
+                              child: Text("Flutter"),
+                            ),
+                            SimpleDialogOption(
+                              onPressed: () {
+                                Navigator.of(context).pop("React Native");
+                              },
+                              child: Text("React Native"),
+                            )
+                          ],
+                          shape: roundedRectBorder(6),
+                        ));
+                Scaffold.of(context)
+                    .showSnackBar(SnackBar(content: Text(result)));
+              },
+            ),
+          ),
+          ListTileCard(
+            title: Text("AboutDialog"),
+            onTap: () {
+              showAboutDialog(
+                  context: context,
+                  applicationName: "Flutter System",
+                  applicationVersion: "1.0",
+                  applicationLegalese: "这里是一些说明");
+            },
+          ),
+          ListTileCard(
+            title: Text("AlertDialog"),
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                        title: Text("Title"),
+                        content: Text("Content Content Content Content"),
+                        actions: <Widget>[
+                          FlatButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text("Submit"))
+                        ],
+                      ));
             },
           )
         ],
