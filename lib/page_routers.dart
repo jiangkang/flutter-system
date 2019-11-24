@@ -31,6 +31,7 @@ import 'package:flutter_system/page/page_markdown.dart';
 import 'package:flutter_system/page/page_password.dart';
 import 'package:flutter_system/page/page_settings.dart';
 import 'package:flutter_system/page/page_show0.dart';
+import 'package:flutter_system/products/todo/todo_list.dart';
 import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 import 'package:flutter_system/products/youqi/youqi.dart';
 
@@ -94,6 +95,7 @@ final Map<String, WidgetBuilder> demoRouters = {
 final Map<String, WidgetBuilder> productRouters = {
   "/product/xiyou": (BuildContext context) => XiyouHome(),
   "/product/youqi": (BuildContext context) => YouQiHomePage(),
+  "/product/todo": (BuildContext context) => TodoListPage(),
 };
 
 /// App Routers
