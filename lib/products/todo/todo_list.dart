@@ -30,22 +30,8 @@ class _TodoListPageState extends State<TodoListPage> {
               final List<Task> _tasks = snapshot.data;
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  return ListTileCard(
-                    borderRadius: 4,
-                    title: Text(_tasks[index].taskName),
-                    leading: Checkbox(
-                        value: _tasks[index].taskStatus != TaskStatus.TODO,
-                        onChanged: (value) {
-                          setState(() {
-                            if (value) {
-                              _tasks[index].taskStatus = TaskStatus.DONE;
-                            } else {
-                              _tasks[index].taskStatus = TaskStatus.TODO;
-                            }
-                            updateTask(index, _tasks[index]);
-                          });
-                        }),
-                  );
+                  final _task = _tasks[index];
+                  return TaskListItem(index, _task);
                 },
                 itemCount: _tasks.length,
               );
@@ -67,6 +53,56 @@ class _TodoListPageState extends State<TodoListPage> {
         onPressed: () {},
         child: Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class TaskListItem extends StatefulWidget {
+  final Task task;
+
+  final int index;
+
+  TaskListItem(this.index, this.task);
+
+  @override
+  _TaskListItemState createState() => _TaskListItemState();
+}
+
+class _TaskListItemState extends State<TaskListItem> {
+  Task _task;
+
+  @override
+  void initState() {
+    super.initState();
+    _task = widget.task;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTileCard(
+      borderRadius: 4,
+      title: Text(
+        _task.taskName,
+        style: TextStyle(
+          decoration: _task.taskStatus == TaskStatus.DONE
+              ? TextDecoration.lineThrough
+              : TextDecoration.none,
+          decorationColor: Colors.grey,
+          decorationThickness: 2,
+        ),
+      ),
+      leading: Checkbox(
+          value: _task.taskStatus != TaskStatus.TODO,
+          onChanged: (value) {
+            setState(() {
+              if (value) {
+                _task.taskStatus = TaskStatus.DONE;
+              } else {
+                _task.taskStatus = TaskStatus.TODO;
+              }
+            });
+            updateTask(widget.index, _task);
+          }),
     );
   }
 }
