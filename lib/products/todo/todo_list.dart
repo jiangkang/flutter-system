@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/products/todo/todo_api.dart';
 import 'package:flutter_system/products/todo/todo_model.dart';
+import 'package:flutter_system/utils/ui_utils.dart';
 
 /// to do list
 class TodoListPage extends StatefulWidget {
@@ -49,9 +50,16 @@ class _TodoListPageState extends State<TodoListPage> {
           }
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
+      floatingActionButton: Builder(
+        builder: (context) => FloatingActionButton(
+          onPressed: () {
+            showBottomSheet(
+                shape: roundedRectBorder(4),
+                context: context,
+                builder: (context) => AddTaskDialog());
+          },
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
@@ -103,6 +111,48 @@ class _TaskListItemState extends State<TaskListItem> {
             });
             updateTask(widget.index, _task);
           }),
+    );
+  }
+}
+
+class AddTaskDialog extends StatefulWidget {
+  @override
+  _AddTaskDialogState createState() => _AddTaskDialogState();
+}
+
+class _AddTaskDialogState extends State<AddTaskDialog> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 140,
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(border: OutlineInputBorder()),
+                  ),
+                ),
+                IconButton(icon: Icon(Icons.send), onPressed: () {})
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Chip(label: Text("提醒时间")),
+                Chip(label: Text("起始/截止时间")),
+                Chip(label: Text("重复次数")),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
