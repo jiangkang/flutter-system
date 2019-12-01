@@ -13,6 +13,7 @@ import 'package:flutter_system/demos/demo_forms.dart';
 import 'package:flutter_system/demos/demo_gridview.dart';
 import 'package:flutter_system/demos/demo_http.dart';
 import 'package:flutter_system/demos/demo_image.dart';
+import 'package:flutter_system/demos/demo_listview.dart';
 import 'package:flutter_system/demos/demo_pageview.dart';
 import 'package:flutter_system/demos/demo_platform.dart';
 import 'package:flutter_system/demos/demo_progress_indicator.dart';
@@ -21,6 +22,7 @@ import 'package:flutter_system/demos/demo_safearea.dart';
 import 'package:flutter_system/demos/demo_sqlite.dart';
 import 'package:flutter_system/demos/demo_tabs.dart';
 import 'package:flutter_system/demos/demo_text.dart';
+import 'package:flutter_system/demos/demo_textfield.dart';
 import 'package:flutter_system/demos/demo_time.dart';
 import 'package:flutter_system/demos/demo_video.dart';
 import 'package:flutter_system/demos/demo_websocket.dart';
@@ -89,6 +91,8 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/transform": (BuildContext context) => TransformDemo(),
   "/demo/button": (BuildContext context) => ButtonDemo(),
   "/demo/slider": (BuildContext context) => SliderDemo(),
+  "/demo/textfield": (BuildContext context) => TextFieldDemo(),
+  "/demo/listview": (BuildContext context) => ListViewDemo(),
 };
 
 /// Product Routers

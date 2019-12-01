@@ -11,6 +11,10 @@ class TodoListPage extends StatefulWidget {
 }
 
 class _TodoListPageState extends State<TodoListPage> {
+  bool _fbVisible = true;
+
+  FocusNode _focusNode = FocusNode();
+
   @override
   void initState() {
     super.initState();
@@ -51,14 +55,21 @@ class _TodoListPageState extends State<TodoListPage> {
         },
       ),
       floatingActionButton: Builder(
-        builder: (context) => FloatingActionButton(
-          onPressed: () {
-            showBottomSheet(
+        builder: (context) => Visibility(
+          visible: _fbVisible,
+          child: FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                _fbVisible = !_fbVisible;
+              });
+              showBottomSheet(
                 shape: roundedRectBorder(4),
                 context: context,
-                builder: (context) => AddTaskDialog());
-          },
-          child: Icon(Icons.add),
+                builder: (context) => AddTaskDialog(focusNode: _focusNode),
+              );
+            },
+            child: Icon(Icons.add),
+          ),
         ),
       ),
     );
@@ -116,6 +127,10 @@ class _TaskListItemState extends State<TaskListItem> {
 }
 
 class AddTaskDialog extends StatefulWidget {
+  final FocusNode focusNode;
+
+  AddTaskDialog({this.focusNode});
+
   @override
   _AddTaskDialogState createState() => _AddTaskDialogState();
 }
@@ -145,9 +160,18 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Chip(label: Text("提醒时间")),
-                Chip(label: Text("起始/截止时间")),
-                Chip(label: Text("重复次数")),
+                Chip(
+                  label: Text("设置截止日期"),
+                  avatar: Icon(Icons.calendar_today),
+                ),
+                Chip(
+                  label: Text("提醒我"),
+                  avatar: Icon(Icons.alarm),
+                ),
+                Chip(
+                  label: Text("重复"),
+                  avatar: Icon(Icons.repeat),
+                ),
               ],
             ),
           ),
