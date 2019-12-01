@@ -1,3 +1,5 @@
+import 'package:flutter_system/utils/time_utils.dart';
+
 /// 任务模型
 class Task {
   /// 开始时间
@@ -29,15 +31,89 @@ class Task {
   /// 任务重复类型（日，星期，月，年为间隔重复，由于提醒是附着在任务上的，因此提醒也会重复）
   RepeatType repeatType;
 
-  Task(this.taskName,
-      {this.taskDetail,
-      this.startDate,
-      this.endDate,
-      this.deadline,
-      this.taskStatus = TaskStatus.TODO,
-      this.needRemind = false,
-      this.remindDate,
-      this.repeatType = RepeatType.NONE});
+  Task(
+    this.taskName, {
+    this.taskDetail,
+    this.startDate,
+    this.endDate,
+    this.deadline,
+    this.taskStatus = TaskStatus.TODO,
+    this.needRemind = false,
+    this.remindDate,
+    this.repeatType = RepeatType.NONE,
+  });
+
+  factory Task.fromMap(Map<String, dynamic> map) {
+    return Task(
+      map["taskName"],
+      taskDetail: map["taskDetail"],
+      startDate: TimeUtils.toDateTime(map["startDate"]),
+      endDate: TimeUtils.toDateTime(map["endDate"]),
+      deadline: TimeUtils.toDateTime(map["deadline"]),
+      taskStatus: fromIndex(map["taskStatus"] as int),
+      needRemind: map["needRemind"] == 0 ? false : true,
+      remindDate: TimeUtils.toDateTime(map["remindDate"]),
+      repeatType: repeatTypeFromIndex(map["repeatType"] as int),
+    );
+  }
+
+  static TaskStatus fromIndex(int index) {
+    TaskStatus status = TaskStatus.TODO;
+    switch (index) {
+      case 0:
+        status = TaskStatus.TODO;
+        break;
+      case 1:
+        status = TaskStatus.IN_PROGRESS;
+        break;
+      case 2:
+        status = TaskStatus.DONE;
+        break;
+      case 3:
+        status = TaskStatus.OVERDUE;
+        break;
+      default:
+        status = TaskStatus.TODO;
+        break;
+    }
+    return status;
+  }
+
+  static RepeatType repeatTypeFromIndex(int index) {
+    RepeatType type = RepeatType.NONE;
+    switch (index) {
+      case 0:
+        type = RepeatType.DAY;
+        break;
+      case 1:
+        type = RepeatType.WEEK;
+        break;
+      case 2:
+        type = RepeatType.MONTH;
+        break;
+      case 3:
+        type = RepeatType.YEAR;
+        break;
+      default:
+        type = RepeatType.NONE;
+        break;
+    }
+    return type;
+  }
+
+  Map<String, dynamic> toMap() {
+    return Map.from({
+      "taskName": taskName,
+      "taskDetail": taskDetail ?? "",
+      "startDate": TimeUtils.toTimeString(startDate),
+      "endDate": TimeUtils.toTimeString(endDate),
+      "deadline": TimeUtils.toTimeString(deadline),
+      "taskStatus": taskStatus.index,
+      "needRemind": needRemind,
+      "remindDate": TimeUtils.toTimeString(remindDate),
+      "repeatType": repeatType.index,
+    });
+  }
 }
 
 /// 任务状态

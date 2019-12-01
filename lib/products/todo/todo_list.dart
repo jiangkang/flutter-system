@@ -33,6 +33,9 @@ class _TodoListPageState extends State<TodoListPage> {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
               final List<Task> _tasks = snapshot.data;
+              if (_tasks.isEmpty) {
+                addTask(Task("新增计划"));
+              }
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final _task = _tasks[index];

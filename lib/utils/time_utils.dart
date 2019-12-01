@@ -24,4 +24,17 @@ class TimeUtils {
         Solar(solarYear: time.year, solarMonth: time.month, solarDay: time.day);
     return LunarSolarConverter.solarToLunar(solar);
   }
+
+  /// 转换为时间字符串 yyyy-mm-dd
+  static String toTimeString(DateTime time) {
+    if (time == null) return "";
+    return "${time.year}-${time.month}-${time.day}";
+  }
+
+  static DateTime toDateTime(String time) {
+    if (time == null || time.isEmpty || time.split("-").length != 3)
+      return null;
+    final t = time.split("-");
+    return DateTime(int.parse(t[0]), int.parse(t[1]), int.parse(t[2]));
+  }
 }
