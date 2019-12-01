@@ -13,6 +13,7 @@ import 'package:flutter_system/demos/demo_forms.dart';
 import 'package:flutter_system/demos/demo_gridview.dart';
 import 'package:flutter_system/demos/demo_http.dart';
 import 'package:flutter_system/demos/demo_image.dart';
+import 'package:flutter_system/demos/demo_list_wheel_scrollview.dart';
 import 'package:flutter_system/demos/demo_listview.dart';
 import 'package:flutter_system/demos/demo_pageview.dart';
 import 'package:flutter_system/demos/demo_platform.dart';
@@ -93,6 +94,7 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/slider": (BuildContext context) => SliderDemo(),
   "/demo/textfield": (BuildContext context) => TextFieldDemo(),
   "/demo/listview": (BuildContext context) => ListViewDemo(),
+  "/demo/listwheel": (BuildContext context) => ListWheelScrollViewDemo(),
 };
 
 /// Product Routers

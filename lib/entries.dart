@@ -49,6 +49,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("Slider", "/demo/slider", icon: Icons.slideshow),
   EntryItem("TextField", "/demo/textfield", icon: Icons.input),
   EntryItem("ListView", "/demo/listview", icon: Icons.list),
+  EntryItem("ListWheel", "/demo/listwheel", icon: Icons.view_list),
 ];
 
 final Map<String, IconData> ICONS = {

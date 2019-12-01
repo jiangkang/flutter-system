@@ -14,3 +14,7 @@ Future<List<Task>> requestTaskList() async {
 void updateTask(int index, Task newTask) {
   list[index] = newTask;
 }
+
+void addTask(Task task) {
+  list.add(task);
+}

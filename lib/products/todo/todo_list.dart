@@ -136,6 +136,14 @@ class AddTaskDialog extends StatefulWidget {
 }
 
 class _AddTaskDialogState extends State<AddTaskDialog> {
+  TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -148,10 +156,20 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
               children: <Widget>[
                 Expanded(
                   child: TextField(
+                    controller: _controller,
                     decoration: InputDecoration(border: OutlineInputBorder()),
                   ),
                 ),
-                IconButton(icon: Icon(Icons.send), onPressed: () {})
+                IconButton(
+                    icon: Icon(Icons.send),
+                    onPressed: () {
+                      String result = _controller.value as String;
+                      if (result == null || result.isEmpty) {
+                        showSnackBar(context, "内容不能为空");
+                      } else {
+                        addTask(Task(result));
+                      }
+                    })
               ],
             ),
           ),
