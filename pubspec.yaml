@@ -16,7 +16,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   provider:
-  cupertino_icons: ^0.1.2
+  cupertino_icons:
   webview_flutter:
   url_launcher:
   http:
@@ -38,7 +38,6 @@ dependencies:
 #  battery:
   flutter_markdown:
   dartdoc:
-  cached_network_image:
   web_socket_channel:
   sqflite:
   path:
@@ -47,7 +46,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  source_gen:
+#  source_gen:
   build_runner:
   flutter_driver:
     sdk: flutter

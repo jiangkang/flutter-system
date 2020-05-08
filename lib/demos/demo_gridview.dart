@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_system/common/res_constants.dart';
 
@@ -188,10 +187,8 @@ class GridViewCustomDemo extends StatelessWidget {
   }
 }
 
-buildCachedNetworkImage(int index) => CachedNetworkImage(
-      placeholder: (context, url) =>
-          SizedBox.shrink(child: Center(child: CircularProgressIndicator())),
-      imageUrl: IMGS[index % 8],
+buildCachedNetworkImage(int index) => Image.network(
+      IMGS[index % 8],
       fit: BoxFit.cover,
       colorBlendMode: BlendMode.colorBurn,
       color: Colors.white10,

@@ -11,8 +11,6 @@ class TodoListPage extends StatefulWidget {
 }
 
 class _TodoListPageState extends State<TodoListPage> {
-  bool _fbVisible = true;
-
   FocusNode _focusNode = FocusNode();
 
   @override
@@ -58,21 +56,16 @@ class _TodoListPageState extends State<TodoListPage> {
         },
       ),
       floatingActionButton: Builder(
-        builder: (context) => Visibility(
-          visible: _fbVisible,
-          child: FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                _fbVisible = !_fbVisible;
-              });
-              showBottomSheet(
-                shape: roundedRectBorder(4),
-                context: context,
-                builder: (context) => AddTaskDialog(focusNode: _focusNode),
-              );
-            },
-            child: Icon(Icons.add),
-          ),
+        builder: (context) => FloatingActionButton(
+          isExtended: true,
+          onPressed: () async {
+            showBottomSheet<bool>(
+              shape: roundedRectBorder(4),
+              context: context,
+              builder: (context) => AddTaskDialog(focusNode: _focusNode),
+            );
+          },
+          child: Icon(Icons.add),
         ),
       ),
     );
@@ -160,17 +153,16 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                 Expanded(
                   child: TextField(
                     controller: _controller,
-                    decoration: InputDecoration(border: OutlineInputBorder()),
                   ),
                 ),
                 IconButton(
                     icon: Icon(Icons.send),
                     onPressed: () {
-                      String result = _controller.value as String;
-                      if (result == null || result.isEmpty) {
+                      final result = _controller.value;
+                      if (result == null || result.text.isEmpty) {
                         showSnackBar(context, "内容不能为空");
                       } else {
-                        addTask(Task(result));
+                        addTask(Task(result.text));
                       }
                     })
               ],

@@ -9,6 +9,7 @@ final List<EntryItem> pageEntries = [
   EntryItem("Xi You", "/product/xiyou"),
   EntryItem("You Qi", "/product/youqi"),
   EntryItem("To Do", "/product/todo"),
+  EntryItem("Clocks", "/product/clock"),
 ];
 
 final List<EntryItem> componentEntries = [
