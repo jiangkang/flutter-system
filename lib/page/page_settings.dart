@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_system/common/model_binding.dart';
 import 'package:flutter_system/constants/const_key_value.dart';
 import 'package:flutter_system/theme/custom_themes.dart';
 import 'package:flutter_system/utils/sp_utils.dart';
-import 'package:provider/provider.dart';
 
 /// 设置页
 class SettingsPage extends StatefulWidget {
@@ -40,8 +40,10 @@ class _SettingsPageState extends State<SettingsPage> {
               setState(() {
                 SpUtils.saveBool(keyIsDarkMode, newValue);
                 _isDarkMode = newValue;
-                Provider.of<ThemesNotifier>(context)
-                    .setCurrentTheme(newValue ? dartTheme : lightTheme);
+                AppSettings.update(
+                    context,
+                    AppSettings(
+                        themeData: _isDarkMode ? dartTheme : lightTheme));
               });
             },
             activeColor: Theme.of(context).accentColor,

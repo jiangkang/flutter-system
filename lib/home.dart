@@ -65,11 +65,11 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       Text(
                         "Flutter System",
-                        style: Theme.of(context).primaryTextTheme.title,
+                        style: Theme.of(context).primaryTextTheme.headline6,
                       ),
                       Text(
                         "姜康",
-                        style: Theme.of(context).primaryTextTheme.title,
+                        style: Theme.of(context).primaryTextTheme.headline6,
                       ),
                     ],
                   ),
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                         ListTile(
                           title: Text(
                             "设置",
-                            style: Theme.of(context).textTheme.title,
+                            style: Theme.of(context).textTheme.headline6,
                           ),
                           onTap: () {
                             NavUtils.navByRouterName(context, "/page/settings");
