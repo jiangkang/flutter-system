@@ -56,3 +56,7 @@
 /android/.idea/
 /android/android.iml
 /.idea/libraries/
+/android/.idea/
+/android/app/app.iml
+/.idea/libraries/
+*.iml
