@@ -13,7 +13,7 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-       channel: 'master' # or: 'dev' or 'beta'
+       channel: 'beta' # or: 'dev' or 'beta'
     - run: flutter doctor
     - run: flutter pub get
     - run: flutter build apk --debug
