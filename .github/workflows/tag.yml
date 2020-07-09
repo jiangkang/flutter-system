@@ -1,4 +1,4 @@
-name: Flutter Tag to release apks
+name: release
 
 on:
   push:
