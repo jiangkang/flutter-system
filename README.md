@@ -6,47 +6,35 @@
 ## 首页
 
 <div>
-   <img src="captures/home_demo.png" width="150"/> 
-   <img src="captures/home_demo_dark.png" width="150"/> 
+   <img src="https://oss.jiangkang.tech/jk/home_demo.png" width="150"/> 
+   <img src="https://oss.jiangkang.tech/jk/home_demo_dark.png" width="150"/> 
 </div>
 
 ## 页面
 
 - Guide Page
   
-  <img src="captures/page/guide.gif" width="150"/>
+  ![Guide Page](https://oss.jiangkang.tech/jk/guide.gif)
   
-- Xi You
+- 西柚
 
-  <img src="captures/products/xiyou.png" width="150"/>
+  ![西柚](https://oss.jiangkang.tech/jk/xiyou.png)
 
-- You Qi
+- 有期
 
-  <img src="captures/products/youqi.png" width="150"/>
+  ![有期](https://oss.jiangkang.tech/jk/youqi.png)
   
 - Calendar
 
-  <img src="captures/page/calendar.png" width="150"/>
+  ![](https://oss.jiangkang.tech/jk/calendar.png)
   
 - CustomPaint
 
-  <img src="captures/page/custompaint.png" width="150"/>
+  ![](https://oss.jiangkang.tech/jk/custompaint.png)
   
 - Icon Font
   
-  <img src="captures/packages/IconFont.png" width="150"/>
-  
-## Demos
-
-- GridView Demo
-  
-  <div>
-     <img src="captures/demos/gridview_count_basic.png" width="150"/>
-     <img src="captures/demos/gridview_count_3.png" width="150"/>
-     <img src="captures/demos/gridview_count_aspect_ratio.png" width="150"/>
-     <img src="captures/demos/gridview_count_axis.png" width="150"/>
-  </div>
-  
+  ![](https://oss.jiangkang.tech/jk/IconFont.png)
 
 
 ## 说明
