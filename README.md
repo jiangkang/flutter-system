@@ -1,6 +1,8 @@
 # flutter-system
 
-![Flutter BUILD](https://github.com/jiangkang/flutter-system/workflows/Flutter%20BUILD/badge.svg?branch=master)
+![build](https://github.com/jiangkang/flutter-system/workflows/Flutter%20BUILD/badge.svg?branch=master)
+
+![release](https://github.com/jiangkang/flutter-system/workflows/Flutter%20Tag%20to%20release%20apks/badge.svg?branch=v0.1.0)
 
 ## 首页
 
@@ -8,8 +10,6 @@
    <img src="captures/home_demo.png" width="150"/> 
    <img src="captures/home_demo_dark.png" width="150"/> 
 </div>
-
-
 
 ## 页面
 
