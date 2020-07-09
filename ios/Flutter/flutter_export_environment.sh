@@ -2,7 +2,7 @@
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/jiangkang/Env/googletool/flutter"
 export "FLUTTER_APPLICATION_PATH=/Users/jiangkang/MyProjects/flutter_system"
-export "FLUTTER_TARGET=/Users/jiangkang/MyProjects/flutter_system/lib/try/animation/anim_two.dart"
+export "FLUTTER_TARGET=/Users/jiangkang/MyProjects/flutter_system/lib/try/animation/demo_fade_in.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "OTHER_LDFLAGS=$(inherited) -framework Flutter"
@@ -13,3 +13,4 @@ export "DART_DEFINES=flutter.inspector.structuredErrors%3Dtrue"
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
+export "PACKAGE_CONFIG=.packages"
