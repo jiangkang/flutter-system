@@ -1,6 +1,6 @@
 # flutter-system
 
-[![Build Status](https://travis-ci.com/jiangkang/flutter-system.svg?branch=master)](https://travis-ci.com/jiangkang/flutter-system)
+![Flutter BUILD](https://github.com/jiangkang/flutter-system/workflows/Flutter%20BUILD/badge.svg?branch=master)
 
 ## 首页
 
