@@ -1,22 +1,27 @@
-name: Dart CI
+name: Flutter Tag to release apks
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+      - v*
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    container:
-      image:  google/dart:latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: pub get
-    - name: Run tests
-      run: pub run test
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1.3.0
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+       channel: 'stable' # or: 'dev' or 'beta'
+    - run: flutter doctor
+    - run: flutter pub get
+    - run: flutter build apk --debug
+    - name: Release apk
+      uses: ncipollo/release-action@v1.5.0
+      with:
+       artifacts: "build/app/outputs/apk/debug/*.apk"
+       token: ${{ secrets.FLUTTER_CI }}
