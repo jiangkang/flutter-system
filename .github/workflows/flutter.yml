@@ -1,10 +1,10 @@
 name: Flutter CI
 
-# on: [push]
-on:
-  push:
-    tags:
-      - v*
+on: [push]
+# on:
+#   push:
+#     tags:
+#       - v*
 
 jobs:
   build:
@@ -17,13 +17,13 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-       channel: 'beta' # or: 'dev' or 'beta'
+       channel: 'stable' # or: 'dev' or 'beta'
     - run: flutter doctor
     - run: flutter pub get
     - run: flutter build apk --debug
     - name: Release apk
       uses: ncipollo/release-action@v1.5.0
       with:
-       artifacts: "build/app/outputs/apk/release/*.apk"
+       artifacts: "build/app/outputs/apk/debug/*.apk"
        token: ${{ secrets.FLUTTER_CI }}
     
