@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_system/model/model_entry.dart';
-import 'package:flutter_system/products/youqi/youqi_model.dart';
 
 class AssetUtils {
   AssetUtils._();
@@ -21,6 +20,4 @@ class AssetUtils {
     return DefaultAssetBundle.of(context).loadStructuredData<List<Article>>(
         "assets/json/articles.json", _articleListParser);
   }
-
-  static Future<YouQiResponse> getYouQi(BuildContext context) async {}
 }

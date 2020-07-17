@@ -135,6 +135,6 @@ class Lunar {
         result += _lunarDayList[lunarDay - 1];
       }
     }
-    return result.length < 1 ? "非法日期" : result;
+    return result.isEmpty ? "非法日期" : result;
   }
 }

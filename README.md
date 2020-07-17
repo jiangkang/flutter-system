@@ -47,7 +47,7 @@
 - [Flutter Tabs](https://www.jiangkang.tech/2020/05/08/flutter/flutter-tabs-de-shi-yong/)
 - [Flutter Text](https://www.jiangkang.tech/2020/05/08/flutter/flutter-text-de-shi-yong/)
 - [调试flutter_tools](https://www.jiangkang.tech/2020/05/15/flutter/diao-shi-flutter-tools/)
-- [Flutter-自定义闪屏夜(Splash Screen)](https://www.jiangkang.tech/2020/06/19/flutter/flutter-zi-ding-yi-shan-ping-ye-splashscreen/)
+- [Flutter-自定义闪屏页(Splash Screen)](https://www.jiangkang.tech/2020/06/19/flutter/flutter-zi-ding-yi-shan-ping-ye-splashscreen/)
 
 
 

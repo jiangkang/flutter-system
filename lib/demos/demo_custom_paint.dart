@@ -112,7 +112,6 @@ class SimplePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     double cellWidth = size.width / 18;
-    double cellHeight = size.height / 18;
 
     blacks.forEach((offset) {
       blackPaint

@@ -57,17 +57,12 @@ class _CalendarState extends State<Calendar> {
 
   CalendarLanguage _calendarLanguage;
 
-  DateTime _startSelectionDay;
-
-  DateTime _endSelectionDay;
-
   @override
   void initState() {
     _selectedYearAndMonth = DateTime.now();
     _startDayOfWeek = widget.startDayOfWeek;
     _calendarLanguage = widget.calendarLanguage;
     _startDayOfWeek = widget.startDayOfWeek;
-    _endSelectionDay = widget.endSelectionDay;
     super.initState();
   }
 
@@ -225,7 +220,7 @@ class _DayCellState extends State<DayCell> {
                   widget.dateTime.day.toString(),
                   style: TextStyle(
                       color: isCurrentMonth
-                          ? Theme.of(context).textTheme.body1.color
+                          ? Theme.of(context).textTheme.bodyText2.color
                           : Colors.grey,
                       fontSize: 21),
                 ),

@@ -9,11 +9,27 @@ import 'package:flutter_system/utils/sp_utils.dart';
 
 /// App Entry
 void main() {
-  // runApp(ChangeNotifierProvider<ThemesNotifier>.value(
-  //   value: ThemesNotifier(),
-  //   child: MyApp(),
-  // ));
+  /// 错误处理
+  handleError();
+
   runApp(MyApp());
+}
+
+void handleError() {
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    debugPrint(details.exceptionAsString());
+    return Container(
+      alignment: Alignment.center,
+      color: Colors.white,
+      child: Center(
+        child: Text(
+          "好像发生了什么错误！",
+          textDirection: TextDirection.ltr,
+          style: TextStyle(color: Colors.blueAccent, fontSize: 32),
+        ),
+      ),
+    );
+  };
 }
 
 /// App Entry
