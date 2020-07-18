@@ -17,7 +17,6 @@ void main() {
 
 void handleError() {
   ErrorWidget.builder = (FlutterErrorDetails details) {
-    debugPrint(details.exceptionAsString());
     return Container(
       alignment: Alignment.center,
       color: Colors.white,

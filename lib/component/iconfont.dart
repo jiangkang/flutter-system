@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kicons/kicons.dart';
 
 class IconFont extends StatefulWidget {
   @override
@@ -38,13 +37,13 @@ class _IconFontState extends State<IconFont> {
                     ),
                   ),
                 ),
-                GridView.count(
-                  shrinkWrap: true,
-                  children: EmojiIcon.toList().map((data) {
-                    return Icon(data);
-                  }).toList(),
-                  crossAxisCount: 7,
-                ),
+//                GridView.count(
+//                  shrinkWrap: true,
+//                  children: EmojiIcon.toList().map((data) {
+//                    return Icon(data);
+//                  }).toList(),
+//                  crossAxisCount: 7,
+//                ),
               ],
             ),
           ),
@@ -70,13 +69,13 @@ class _IconFontState extends State<IconFont> {
                     ),
                   ),
                 ),
-                GridView.count(
-                  shrinkWrap: true,
-                  children: AliyunIcon.toList().map((data) {
-                    return Icon(data);
-                  }).toList(),
-                  crossAxisCount: 7,
-                ),
+//                GridView.count(
+//                  shrinkWrap: true,
+//                  children: AliyunIcon.toList().map((data) {
+//                    return Icon(data);
+//                  }).toList(),
+//                  crossAxisCount: 7,
+//                ),
               ],
             ),
           ),

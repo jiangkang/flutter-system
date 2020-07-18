@@ -150,11 +150,11 @@ class AliyunIcon {
       IconData(0xe679, fontFamily: _family, fontPackage: package);
 
   /// 返回IconData列表
-  static List<IconData> toList() {
-    final result = <IconData>[];
-    for (int i = 0xe633; i <= 0xe679; i++) {
-      result.add(IconData(i, fontFamily: _family, fontPackage: package));
-    }
-    return result;
-  }
+//  static List<IconData> toList() {
+//    final result = <IconData>[];
+//    for (int i = 0xe633; i <= 0xe679; i++) {
+//      result.add(IconData(i, fontFamily: _family, fontPackage: package));
+//    }
+//    return result;
+//  }
 }

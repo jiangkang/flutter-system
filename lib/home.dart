@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/generated/i18n.dart';
+import 'package:flutter_system/utils/app_utils.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -126,13 +127,18 @@ class _HomePageState extends State<HomePage> {
           });
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          launch("https://github.com/jiangkang/flutter-system");
+      floatingActionButton: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return FloatingActionButton(
+            onPressed: () {
+              Scaffold.of(context).showSnackBar(
+                  SnackBar(content: Text("当前是否为Debug模式：${isDebug()}")));
+            },
+            child: Icon(
+              Icons.favorite,
+            ),
+          );
         },
-        child: Icon(
-          Icons.favorite,
-        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
