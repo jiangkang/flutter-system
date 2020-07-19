@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
           return FloatingActionButton(
             onPressed: () {
               Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text("当前是否为Debug模式：${isDebug()}")));
+                  SnackBar(content: Text("当前是否为Release模式：${isReleaseMode}")));
             },
             child: Icon(
               Icons.favorite,
