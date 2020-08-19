@@ -7,4 +7,8 @@
         <item name="android:windowBackground">@drawable/launch_background</item>
     </style>
 
+    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+       
+    </style>
+
 </resources>

@@ -25,8 +25,7 @@ class _TransformDemoState extends State<TransformDemo>
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(duration: Duration(seconds: 5), vsync: this);
+    _controller = AnimationController(duration: Duration(seconds: 5));
     _curvedAnim = CurvedAnimation(
         parent: _controller, curve: Curves.fastLinearToSlowEaseIn);
 

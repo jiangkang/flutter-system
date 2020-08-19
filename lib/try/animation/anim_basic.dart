@@ -14,7 +14,7 @@ class _AnimBasicState extends State<AnimBasic>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      vsync: this,
+      value: this,
       duration: Duration(seconds: 10),
     );
     _animation = Tween(begin: 100.0, end: 360.0).animate(_animationController)
