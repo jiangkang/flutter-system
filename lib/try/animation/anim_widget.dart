@@ -32,7 +32,7 @@ class _AnimatedDemoState extends State<AnimatedDemo>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      value: this,
+      vsync: this,
       duration: Duration(seconds: 3),
     );
     _animation = Tween<double>(begin: 100.0, end: 360.0).animate(_controller)

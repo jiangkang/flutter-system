@@ -14,7 +14,7 @@ class _AnimTwoDemoState extends State<AnimTwoDemo>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      value: this,
+      vsync: this,
       duration: Duration(seconds: 3),
     );
     _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn)

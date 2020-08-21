@@ -51,7 +51,7 @@ class _DraggableCardState extends State<DraggableCard>
   @override
   void initState() {
     _controller = AnimationController(
-      value: this,
+      vsync: this,
       duration: Duration(seconds: 3),
     );
     _controller.addListener(() {
