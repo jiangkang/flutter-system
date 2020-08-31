@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/component/dialogs.dart';
 import 'package:flutter_system/component/iconfont.dart';
+import 'package:flutter_system/component/toast_demo.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_assets.dart';
 import 'package:flutter_system/demos/demo_camera.dart';
@@ -62,6 +63,7 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/dialogs": (BuildContext context) => DialogsPage(),
   "/component/appbar": (BuildContext context) => AppBarPage(),
   "/component/topbanner": (BuildContext context) => TopBannerPage(),
+  "/component/toast": (BuildContext context) => ToastDemo(),
 };
 
 /// Demo Routers

@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## v1.0.2 - 2020/09/01
 
-* TODO: Describe initial release.
+* emoj and aliyun icons

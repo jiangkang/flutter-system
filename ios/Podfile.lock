@@ -52,7 +52,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter/ios"
 
 SPEC CHECKSUMS:
-  camera: 38cc83ae9a5667bb5a71c7d9edaf60a91920fd4e
+  camera: a0ca5080336f7af47b88436e5e26da3dee5568f0
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c

@@ -18,7 +18,8 @@ final List<EntryItem> componentEntries = [
   EntryItem("IconFont", "/component/iconfont", icon: Icons.insert_emoticon),
   EntryItem("Dialogs", "/component/dialogs", icon: Icons.bubble_chart),
   EntryItem("AppBar", "/component/appbar", icon: Icons.border_top),
-  EntryItem("TopBanner", "/component/topbanner", icon: Icons.border_outer)
+  EntryItem("TopBanner", "/component/topbanner", icon: Icons.border_outer),
+  EntryItem("TopBanner", "/component/toast", icon: Icons.message),
 ];
 
 final List<EntryItem> demoEntries = [
