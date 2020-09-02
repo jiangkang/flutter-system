@@ -13,8 +13,8 @@ dependencies:
     sdk: flutter
   kicons:
     path: kicons
-  flutter_toast:
-    path: flutter_toast
+  best_toast:
+    path: best_toast
   flutter_localizations:
     sdk: flutter
   provider:

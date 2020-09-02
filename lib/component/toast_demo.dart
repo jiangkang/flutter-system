@@ -1,5 +1,5 @@
+import 'package:best_toast/best_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_toast/flutter_toast.dart';
 
 class ToastDemo extends StatefulWidget {
   @override
