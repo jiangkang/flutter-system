@@ -8,14 +8,23 @@ class CustomScrollViewDemo extends StatefulWidget {
   }
 }
 
-class _CustomScrollViewDemoState extends State<CustomScrollViewDemo> {
+class _CustomScrollViewDemoState extends State<CustomScrollViewDemo>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 3, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            title: Text("Floting App bar"),
+            title: Text("Floating App bar"),
             centerTitle: true,
             floating: true,
             expandedHeight: 200,
@@ -26,6 +35,17 @@ class _CustomScrollViewDemoState extends State<CustomScrollViewDemo> {
             ),
             pinned: true,
             snap: true,
+            bottom: TabBar(controller: _tabController, tabs: [
+              Tab(
+                text: "Tab1",
+              ),
+              Tab(
+                text: "Tab2",
+              ),
+              Tab(
+                text: "Tab3",
+              )
+            ]),
           ),
           SliverList(
               delegate: SliverChildListDelegate(

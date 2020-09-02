@@ -23,14 +23,11 @@ class _RealListDemoState extends State<RealListDemo> {
             },
           ),
           ListTile(
-            title: Text("下拉刷新"),
+            title: Text("下拉刷新/上拉加载"),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => RefreshListViewDemo()));
             },
-          ),
-          ListTile(
-            title: Text("上拉加载"),
           ),
           ListTile(
             title: Text("瀑布流"),
