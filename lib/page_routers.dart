@@ -20,6 +20,7 @@ import 'package:flutter_system/demos/demo_pageview.dart';
 import 'package:flutter_system/demos/demo_platform.dart';
 import 'package:flutter_system/demos/demo_progress_indicator.dart';
 import 'package:flutter_system/demos/demo_read_write_files.dart';
+import 'package:flutter_system/demos/demo_real_list.dart';
 import 'package:flutter_system/demos/demo_safearea.dart';
 import 'package:flutter_system/demos/demo_sqlite.dart';
 import 'package:flutter_system/demos/demo_tabs.dart';
@@ -98,6 +99,7 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/textfield": (BuildContext context) => TextFieldDemo(),
   "/demo/listview": (BuildContext context) => ListViewDemo(),
   "/demo/listwheel": (BuildContext context) => ListWheelScrollViewDemo(),
+  "/demo/real_listview": (BuildContext context) => RealListDemo(),
 };
 
 /// Product Routers

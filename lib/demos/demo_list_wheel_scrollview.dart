@@ -20,8 +20,12 @@ class _ListWheelScrollViewDemoState extends State<ListWheelScrollViewDemo> {
         physics: FixedExtentScrollPhysics(),
         children: List.generate(
             100,
-            (index) => ListTile(
-                  title: Text("$index"),
+            (index) => Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6)),
+                  child: ListTile(
+                    title: Text("$index"),
+                  ),
                 )),
       ),
     );

@@ -52,6 +52,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("TextField", "/demo/textfield", icon: Icons.input),
   EntryItem("ListView", "/demo/listview", icon: Icons.list),
   EntryItem("ListWheel", "/demo/listwheel", icon: Icons.view_list),
+  EntryItem("Real ListView", "/demo/real_listview", icon: Icons.view_list),
 ];
 
 final Map<String, IconData> ICONS = {
