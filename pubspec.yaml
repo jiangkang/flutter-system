@@ -24,7 +24,7 @@ dependencies:
   http:
   video_player:
   shared_preferences:
-#  share:
+  share:
 #  sensors:
 #  quick_actions:
   path_provider:

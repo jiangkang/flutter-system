@@ -21,6 +21,7 @@ final List<EntryItem> componentEntries = [
   EntryItem("TopBanner", "/component/topbanner", icon: Icons.border_outer),
   EntryItem("Toast", "/component/toast", icon: Icons.message),
   EntryItem("Pickers", "/component/pickers", icon: Icons.photo_album),
+  EntryItem("Share", "/component/share", icon: Icons.share),
 ];
 
 final List<EntryItem> demoEntries = [

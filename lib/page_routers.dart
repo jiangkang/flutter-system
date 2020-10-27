@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_system/component/component_pickers.dart';
+import 'package:flutter_system/component/component_share.dart';
 import 'package:flutter_system/component/dialogs.dart';
 import 'package:flutter_system/component/iconfont.dart';
 import 'package:flutter_system/component/toast_demo.dart';
@@ -67,6 +68,7 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/topbanner": (BuildContext context) => TopBannerPage(),
   "/component/toast": (BuildContext context) => ToastDemo(),
   "/component/pickers": (BuildContext context) => PickersPage(),
+  "/component/share": (BuildContext context) => ShareDemoPage(),
 };
 
 /// Demo Routers

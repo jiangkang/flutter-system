@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/utils/pickers_utils.dart';
 import 'package:video_player/video_player.dart';
 
@@ -13,7 +14,7 @@ class PickersPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          ListTile(
+          ListTileCard(
             leading: Icon(Icons.image),
             title: Text("Image Picker From Gallery"),
             onTap: () async {
@@ -21,7 +22,7 @@ class PickersPage extends StatelessWidget {
               showImageDialog(context, file);
             },
           ),
-          ListTile(
+          ListTileCard(
             leading: Icon(Icons.camera),
             title: Text("Image Picker From Camera"),
             onTap: () async {
@@ -29,7 +30,7 @@ class PickersPage extends StatelessWidget {
               showImageDialog(context, file);
             },
           ),
-          ListTile(
+          ListTileCard(
             leading: Icon(Icons.video_library),
             title: Text("Video Picker From Gallery"),
             onTap: () async {
@@ -37,7 +38,7 @@ class PickersPage extends StatelessWidget {
               showVideoDialog(context, file);
             },
           ),
-          ListTile(
+          ListTileCard(
             leading: Icon(Icons.video_collection),
             title: Text("Video Picker From Camera"),
             onTap: () async {

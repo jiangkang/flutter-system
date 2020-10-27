@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart';
@@ -25,35 +27,55 @@ class _CameraDemoState extends State<CameraDemo> {
     super.initState();
     _getFirstCamera().then((value) {
       _cameraController = CameraController(value, ResolutionPreset.medium);
-      _initControllerFuture = _cameraController.initialize();
+      _cameraController.initialize().then((_) {
+        if (!mounted) {
+          return;
+        }
+        setState(() {});
+      });
     });
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    var bodyView;
+    if (!_cameraController.value.isInitialized) {
+      bodyView = Center(
+        child: Text("Not Initialize"),
+      );
+    } else {
+      bodyView = AspectRatio(
+          aspectRatio: _cameraController.value.aspectRatio,
+          child: CameraPreview(_cameraController));
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text("Camera Demo"),
         centerTitle: true,
       ),
-      body: SafeArea(
-          child: FutureBuilder(
-              future: _initControllerFuture,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  return CameraPreview(_cameraController);
-                } else {
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-              })),
+      body: SafeArea(child: bodyView),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await _initControllerFuture;
           final path = join(
               (await getTemporaryDirectory()).path, "${DateTime.now()}.png");
           await _cameraController.takePicture(path);
+          await showDialog<void>(
+            context: context,
+            builder: (context) => Center(
+              child: SizedBox(
+                width: 360,
+                child: Image.file(
+                  File(path),
+                ),
+              ),
+            ),
+          );
         },
         child: Icon(Icons.camera),
       ),
@@ -62,7 +84,7 @@ class _CameraDemoState extends State<CameraDemo> {
 
   @override
   void dispose() {
-    _cameraController.dispose();
+    _cameraController?.dispose();
     super.dispose();
   }
 }
