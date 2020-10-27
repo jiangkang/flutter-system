@@ -28,7 +28,7 @@ dependencies:
 #  sensors:
 #  quick_actions:
   path_provider:
-#  image_picker:
+  image_picker:
 #  google_sign_in:
 #  package_info:
 #  local_auth:

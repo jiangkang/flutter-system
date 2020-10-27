@@ -31,11 +31,13 @@ class ButtonDemo extends StatelessWidget {
             textColor: Colors.white,
             child: Container(
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Color(0xFF0D47A1),
-                  Color(0xFF1976D2),
-                  Color(0xFF42A5F5),
-                ]),
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xFF0D47A1),
+                    Color(0xFF1976D2),
+                    Color(0xFF42A5F5),
+                  ],
+                ),
               ),
               child: Text("Gradient", style: TextStyle(fontSize: 20)),
             ),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_system/frouter/router.dart';
 
-@Router("/demo/progress_indicator")
 class ProgressIndicatorDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

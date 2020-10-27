@@ -20,6 +20,7 @@ final List<EntryItem> componentEntries = [
   EntryItem("AppBar", "/component/appbar", icon: Icons.border_top),
   EntryItem("TopBanner", "/component/topbanner", icon: Icons.border_outer),
   EntryItem("Toast", "/component/toast", icon: Icons.message),
+  EntryItem("Pickers", "/component/pickers", icon: Icons.photo_album),
 ];
 
 final List<EntryItem> demoEntries = [
