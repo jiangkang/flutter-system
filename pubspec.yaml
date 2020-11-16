@@ -23,7 +23,7 @@ dependencies:
   url_launcher:
   http:
   video_player:
-  shared_preferences:
+  shared_preferences: ^0.5.12+4
   share:
 #  sensors:
 #  quick_actions:
@@ -36,7 +36,7 @@ dependencies:
 #  google_maps_flutter:
 #  device_info:
 #  connectivity:
-  camera:
+#  camera: ^0.5.8+11
 #  battery:
   flutter_markdown:
   dartdoc:
@@ -44,11 +44,13 @@ dependencies:
   sqflite:
   path:
   source_gen:
+  firebase_ml_vision:
+  flutter_dynamic_ui:
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-#  source_gen:
   build_runner:
   flutter_driver:
     sdk: flutter

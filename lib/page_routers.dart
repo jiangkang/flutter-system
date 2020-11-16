@@ -4,9 +4,9 @@ import 'package:flutter_system/component/component_share.dart';
 import 'package:flutter_system/component/dialogs.dart';
 import 'package:flutter_system/component/iconfont.dart';
 import 'package:flutter_system/component/toast_demo.dart';
+import 'package:flutter_system/demos/animation/demo_native_view.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
 import 'package:flutter_system/demos/demo_assets.dart';
-import 'package:flutter_system/demos/demo_camera.dart';
 import 'package:flutter_system/demos/demo_container.dart';
 import 'package:flutter_system/demos/demo_custom_paint.dart';
 import 'package:flutter_system/demos/demo_custom_scrollview.dart';
@@ -45,9 +45,11 @@ import 'package:flutter_system/products/youqi/youqi.dart';
 
 import 'component/component_appbar.dart';
 import 'component/componet_topbanner.dart';
+import 'component/dynamic_ui_page.dart';
 import 'demos/animation/demo_transform.dart';
 import 'demos/demo_button.dart';
 import 'demos/demo_chip.dart';
+import 'demos/demo_fitted_box.dart';
 import 'demos/demo_slider.dart';
 
 /// Page Routers
@@ -69,6 +71,7 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/toast": (BuildContext context) => ToastDemo(),
   "/component/pickers": (BuildContext context) => PickersPage(),
   "/component/share": (BuildContext context) => ShareDemoPage(),
+  "/component/dynamic_ui": (BuildContext context) => DynamicUIPage(),
 };
 
 /// Demo Routers
@@ -90,7 +93,7 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/websocket": (BuildContext context) => WebSocketDemo(),
   "/demo/sqlite": (BuildContext context) => SQLiteDemo(),
   "/demo/io": (BuildContext context) => ReadWriteFileDemo(),
-  "/demo/camera": (BuildContext context) => CameraDemo(),
+  // "/demo/camera": (BuildContext context) => CameraDemo(),
   "/demo/assets": (BuildContext context) => AssetsDemo(),
   "/demo/platform": (BuildContext context) => PlatformDemo(),
   "/demo/time": (BuildContext context) => TimeDemo(),
@@ -104,6 +107,8 @@ final Map<String, WidgetBuilder> demoRouters = {
   "/demo/listview": (BuildContext context) => ListViewDemo(),
   "/demo/listwheel": (BuildContext context) => ListWheelScrollViewDemo(),
   "/demo/real_listview": (BuildContext context) => RealListDemo(),
+  "/demo/native_view": (BuildContext context) => NativeViewDemo(),
+  "/demo/fitted_box": (BuildContext context) => FittedBoxDemo(),
 };
 
 /// Product Routers

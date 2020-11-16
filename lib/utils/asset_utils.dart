@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_system/model/model_entry.dart';
 
 class AssetUtils {
@@ -19,5 +20,13 @@ class AssetUtils {
     };
     return DefaultAssetBundle.of(context).loadStructuredData<List<Article>>(
         "assets/json/articles.json", _articleListParser);
+  }
+
+  static Future<String> getString(String filename, bool cache) async {
+    return rootBundle.loadString(filename, cache: cache);
+  }
+
+  static Future<ByteData> getByteData(String filename) async {
+    return rootBundle.load(filename);
   }
 }

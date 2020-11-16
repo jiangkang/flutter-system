@@ -22,6 +22,7 @@ final List<EntryItem> componentEntries = [
   EntryItem("Toast", "/component/toast", icon: Icons.message),
   EntryItem("Pickers", "/component/pickers", icon: Icons.photo_album),
   EntryItem("Share", "/component/share", icon: Icons.share),
+  EntryItem("Dynamic UI", "/component/dynamic_ui", icon: Icons.dynamic_feed),
 ];
 
 final List<EntryItem> demoEntries = [
@@ -41,7 +42,7 @@ final List<EntryItem> demoEntries = [
   EntryItem("WebSocket", "/demo/websocket", icon: Icons.web),
   EntryItem("SQLite", "/demo/sqlite", icon: Icons.data_usage),
   EntryItem("File IO", "/demo/io", icon: Icons.insert_drive_file),
-  EntryItem("Camera", "/demo/camera", icon: Icons.camera),
+  // EntryItem("Camera", "/demo/camera", icon: Icons.camera),
   EntryItem("Assets", "/demo/assets", icon: Icons.web_asset),
   EntryItem("Platform", "/demo/platform", icon: Icons.phone_android),
   EntryItem("Time", "/demo/time", icon: Icons.access_time),
@@ -55,6 +56,8 @@ final List<EntryItem> demoEntries = [
   EntryItem("ListView", "/demo/listview", icon: Icons.list),
   EntryItem("ListWheel", "/demo/listwheel", icon: Icons.view_list),
   EntryItem("Real ListView", "/demo/real_listview", icon: Icons.view_list),
+  EntryItem("NativeView", "/demo/native_view", icon: Icons.android),
+  EntryItem("FittedBox", "/demo/fitted_box", icon: Icons.web),
 ];
 
 final Map<String, IconData> ICONS = {
