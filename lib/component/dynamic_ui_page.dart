@@ -29,7 +29,7 @@ class _DynamicUIPageState extends State<DynamicUIPage> {
         title: Text("Test App"),
       ),
       body: PageBuilder.buildPage(
-          AssetParser().parsePageData("assets/json/basic.json")),
+          context, AssetParser().parsePageData("assets/json/basic.json")),
     );
   }
 }
@@ -54,11 +54,12 @@ class MyBlockRegistry extends BlockRegistry {
 
 class Card_0 extends BaseCard {
   @override
-  Widget createWidget(CardData cardData) {
+  Widget createWidget(BuildContext context, CardData cardData) {
     List<BlockData> blocks = cardData.blockList;
     final blockWidgets = <Widget>[];
     blocks.forEach((block) {
-      blockWidgets.add(BlockManager.getInstance().getBlockWidget(block));
+      blockWidgets
+          .add(BlockManager.getInstance().getBlockWidget(context, block));
     });
     return Column(
       children: blockWidgets,
@@ -68,7 +69,7 @@ class Card_0 extends BaseCard {
 
 class Block_0 extends BaseBlock {
   @override
-  Widget createWidget(BlockData data) {
+  Widget createWidget(BuildContext context, BlockData data) {
     List<Meta> metaList = data.metaList;
     List<Btn> btnList = data.btnList;
     List<Img> imgList = data.imgList;

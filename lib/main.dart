@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_system/common/model_binding.dart';
 import 'package:flutter_system/constants/const_key_value.dart';
@@ -11,8 +12,11 @@ import 'package:flutter_system/utils/sp_utils.dart';
 void main() {
   /// 错误处理
   handleError();
-
   runApp(MyApp());
+  SystemUiOverlayStyle style = SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.transparent,
+      statusBarColor: Colors.transparent);
+  SystemChrome.setSystemUIOverlayStyle(style);
 }
 
 void handleError() {

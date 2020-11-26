@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'model/model_entry.dart';
 
 final List<EntryItem> pageEntries = [
-  EntryItem("Guide Page", "/page/guide"),
-  EntryItem("MarkDown Editor", "/page/markdown"),
-  EntryItem("Password", "/page/password"),
-  EntryItem("Xi You", "/product/xiyou"),
+  // EntryItem("Guide Page", "/page/guide"),
+  // EntryItem("MarkDown Editor", "/page/markdown"),
+  // EntryItem("Password", "/page/password"),
+  // EntryItem("Xi You", "/product/xiyou"),
   EntryItem("You Qi", "/product/youqi"),
   EntryItem("To Do", "/product/todo"),
-  EntryItem("Clocks", "/product/clock"),
+  // EntryItem("Clocks", "/product/clock"),
 ];
 
 final List<EntryItem> componentEntries = [
@@ -23,6 +23,7 @@ final List<EntryItem> componentEntries = [
   EntryItem("Pickers", "/component/pickers", icon: Icons.photo_album),
   EntryItem("Share", "/component/share", icon: Icons.share),
   EntryItem("Dynamic UI", "/component/dynamic_ui", icon: Icons.dynamic_feed),
+  EntryItem("Painter", "/component/painter", icon: Icons.brush_outlined),
 ];
 
 final List<EntryItem> demoEntries = [

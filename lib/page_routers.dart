@@ -3,6 +3,7 @@ import 'package:flutter_system/component/component_pickers.dart';
 import 'package:flutter_system/component/component_share.dart';
 import 'package:flutter_system/component/dialogs.dart';
 import 'package:flutter_system/component/iconfont.dart';
+import 'package:flutter_system/component/painter_set.dart';
 import 'package:flutter_system/component/toast_demo.dart';
 import 'package:flutter_system/demos/animation/demo_native_view.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
@@ -38,7 +39,6 @@ import 'package:flutter_system/page/page_markdown.dart';
 import 'package:flutter_system/page/page_password.dart';
 import 'package:flutter_system/page/page_settings.dart';
 import 'package:flutter_system/page/page_show0.dart';
-import 'package:flutter_system/products/clocks/clock_list_page.dart';
 import 'package:flutter_system/products/todo/todo_list.dart';
 import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 import 'package:flutter_system/products/youqi/youqi.dart';
@@ -72,6 +72,7 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/pickers": (BuildContext context) => PickersPage(),
   "/component/share": (BuildContext context) => ShareDemoPage(),
   "/component/dynamic_ui": (BuildContext context) => DynamicUIPage(),
+  "/component/painter": (BuildContext context) => PainterDemoPage(),
 };
 
 /// Demo Routers
@@ -116,7 +117,7 @@ final Map<String, WidgetBuilder> productRouters = {
   "/product/xiyou": (BuildContext context) => XiyouHome(),
   "/product/youqi": (BuildContext context) => YouQiHomePage(),
   "/product/todo": (BuildContext context) => TodoListPage(),
-  "/product/clock": (BuildContext context) => ClockListPage(),
+  // "/product/clock": (BuildContext context) => ClockListPage(),
 };
 
 /// App Routers

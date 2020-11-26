@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_system/generated/i18n.dart';
-import 'package:flutter_system/utils/app_utils.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
           return FloatingActionButton(
             onPressed: () {
               Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text("当前是否为Release模式：${isReleaseMode}")));
+                  SnackBar(content: Text("当前是否为Release模式：${kReleaseMode}")));
             },
             child: Icon(
               Icons.favorite,
