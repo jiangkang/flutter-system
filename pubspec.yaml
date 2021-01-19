@@ -44,7 +44,6 @@ dependencies:
   sqflite:
   path:
   source_gen:
-  firebase_ml_vision:
   flutter_dynamic_ui:
 
 
