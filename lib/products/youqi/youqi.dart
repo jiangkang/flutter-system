@@ -94,7 +94,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              FlatButton.icon(
+              TextButton.icon(
                 onPressed: null,
                 label: Text(
                   "123",
@@ -105,7 +105,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                   color: Colors.white,
                 ),
               ),
-              FlatButton.icon(
+              TextButton.icon(
                 onPressed: null,
                 label: Text(
                   "123",
@@ -116,7 +116,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                   color: Colors.white,
                 ),
               ),
-              FlatButton.icon(
+              TextButton.icon(
                 onPressed: null,
                 label: Text(
                   "123",

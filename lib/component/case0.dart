@@ -73,7 +73,7 @@ class ShowCase0 extends StatelessWidget {
                   ],
                 ),
               ),
-              FlatButton.icon(
+              TextButton.icon(
                   onPressed: null,
                   icon: Icon(Icons.favorite_border),
                   label: Text(likeNum.toString()))

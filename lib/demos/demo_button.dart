@@ -75,9 +75,9 @@ class ButtonDemo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            FlatButton(onPressed: () {}, child: Text("FlatButton")),
-            FlatButton(onPressed: null, child: Text("Disabled")),
-            FlatButton.icon(
+            TextButton(onPressed: () {}, child: Text("TextButton")),
+            TextButton(onPressed: null, child: Text("Disabled")),
+            TextButton.icon(
                 onPressed: () {}, icon: Icon(Icons.check), label: Text("Icon"))
           ],
         ),

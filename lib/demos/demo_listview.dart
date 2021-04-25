@@ -29,7 +29,7 @@ class _ListViewDemoState extends State<ListViewDemo> {
         title: Text("ListView"),
         centerTitle: true,
         actions: <Widget>[
-          FlatButton(
+          TextButton(
               onPressed: () async {
                 _physicsType = await showMenu<ScrollPhysics>(
                   context: context,

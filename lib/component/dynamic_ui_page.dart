@@ -80,7 +80,7 @@ class Block_0 extends BaseBlock {
         height: 30,
       ),
       title: Text(metaList[0].text),
-      trailing: FlatButton(
+      trailing: TextButton(
         onPressed: () {},
         child: Text(btnList[0].text),
       ),

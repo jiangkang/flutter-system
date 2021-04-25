@@ -36,7 +36,7 @@ class _DialogsPageState extends State<DialogsPage> {
                             ? "你还未选中日期"
                             : "你选中的日期是${dateSelected.year}-${dateSelected.month}-${dateSelected.day}"),
                         actions: <Widget>[
-                          FlatButton(
+                          TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
@@ -97,12 +97,12 @@ class _DialogsPageState extends State<DialogsPage> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                FlatButton(
+                                TextButton(
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
                                     child: Text("确认")),
-                                FlatButton(
+                                TextButton(
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
@@ -163,7 +163,7 @@ class _DialogsPageState extends State<DialogsPage> {
                         title: Text("Title"),
                         content: Text("Content Content Content Content"),
                         actions: <Widget>[
-                          FlatButton(
+                          TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
