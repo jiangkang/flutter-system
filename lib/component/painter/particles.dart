@@ -36,6 +36,12 @@ class _BasicParticlesState extends State<BasicParticles>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(
       size: MediaQuery.of(context).size,

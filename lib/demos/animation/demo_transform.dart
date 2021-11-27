@@ -54,8 +54,8 @@ class _TransformDemoState extends State<TransformDemo>
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
