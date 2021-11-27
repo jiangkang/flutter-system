@@ -40,8 +40,8 @@ class _HomePageState extends State<HomePage> {
           InkWell(
             child: Padding(
               padding: const EdgeInsets.only(right: 20),
-              child: Image.network(
-                "https://github.com/fluidicon.png",
+              child: Image.asset(
+                "images/github.png",
                 width: 32,
                 height: 32,
               ),
@@ -103,19 +103,19 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.pageview),
-              title: Text(S.of(context).page),
+              label: S.of(context).page,
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
               icon: Icon(Icons.category),
-              title: Text(S.of(context).component),
+              label: S.of(context).component,
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
               icon: Icon(Icons.gps_fixed),
-              title: Text(S.of(context).demo),
+              label: S.of(context).demo,
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            title: Text(S.of(context).article),
+            label: S.of(context).article,
             backgroundColor: Theme.of(context).primaryColor,
           ),
         ],

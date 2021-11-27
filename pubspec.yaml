@@ -44,16 +44,11 @@ dependencies:
   sqflite:
   path:
   source_gen:
-  flutter_dynamic_ui:
+  flutter_dynamic_ui: ^0.1.0
 
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   build_runner:
-  flutter_driver:
-    sdk: flutter
-  test:
 
 
 

@@ -187,12 +187,17 @@ class TextDemo extends StatelessWidget {
           ListTile(
             title: RichText(
                 text: TextSpan(
-              children: <TextSpan>[
+              children: <InlineSpan>[
                 TextSpan(
                     text: "Text 1", style: TextStyle(color: Colors.blueAccent)),
                 TextSpan(
                     text: "Text 2",
                     style: TextStyle(color: Colors.pinkAccent, fontSize: 28)),
+                WidgetSpan(
+                    child: Icon(
+                  Icons.ac_unit,
+                  size: 28,
+                )),
               ],
             )),
           )

@@ -18,27 +18,27 @@ Future<ImageResponse> fetchImages() async {
   });
 }
 
-Future<Response> getImages() => get("$HOST_DEMO/getImages",
+Future<Response> getImages() => get(Uri.parse("$HOST_DEMO/getImages"),
     headers: {"page": defaultPage, "count": defaultCount});
 
 /// 获取新闻列表
-Future<Response> getNews() => get("$HOST_DEMO/getWangYiNews",
+Future<Response> getNews() => get(Uri.parse("$HOST_DEMO/getWangYiNews") ,
     headers: {"page": defaultPage, "count": defaultCount});
 
 /// 获取城市列表
 Future<Response> getWeather(String city) =>
-    get("$HOST_DEMO/weatherApi", headers: {"city": city});
+    get(Uri.parse("$HOST_DEMO/weatherApi"), headers: {"city": city});
 
 /// 获取唐诗列表
-Future<Response> getTangPoets() => get("$HOST_DEMO/getTangPoetry",
+Future<Response> getTangPoets() => get(Uri.parse("$HOST_DEMO/getTangPoetry"),
     headers: {"page": defaultPage, "count": defaultCount});
 
 /// 获取宋诗列表
-Future<Response> getSongPoets() => get("$HOST_DEMO/getSongPoetry",
+Future<Response> getSongPoets() => get(Uri.parse("$HOST_DEMO/getSongPoetry"),
     headers: {"page": defaultPage, "count": defaultCount});
 
 /// 获取一首随机的诗词
-Future<Response> getRecPoet() => get("$HOST_DEMO/recommendPoetry");
+Future<Response> getRecPoet() => get(Uri.parse("$HOST_DEMO/recommendPoetry"));
 
 /// Model:图片列表响应
 class ImageResponse {

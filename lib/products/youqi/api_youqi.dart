@@ -8,7 +8,8 @@ import 'package:flutter_system/products/youqi/youqi_model.dart';
 import 'package:http/http.dart';
 
 Future<YouQiResponse> requestYouQiResponseFromApi(String url) async {
-  return get(url).then((value) {
+  final uri = Uri.parse(url);
+  return get(uri).then((value) {
     return YouQiResponse.fromJson(jsonDecode(value.body));
   }).catchError((err) {
     throw HttpException(err.toString());
