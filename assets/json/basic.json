@@ -1,24 +1,24 @@
 {
     "id": "id_0",
-    "cards": [
+    "cardList": [
         {
             "id": "card_0",
             "type": "card_type_0",
-            "blocks": [
+            "blockList": [
                 {
                     "id": "block_0",
                     "type": "block_type_0",
-                    "metas": [
+                    "metaList": [
                         {
                             "text":"Text 0"
                         }
                     ],
-                    "btns":[
+                    "btnList":[
                         {
                             "text":"Button 0"
                         }
                     ],
-                    "imgs":[
+                    "imgList":[
                         {
                             "url":"https://cdn.jsdelivr.net/gh/flutterchina/website@1.0/images/flutter-mark-square-100.png"
                         }
@@ -29,21 +29,21 @@
         {
             "id": "card_0",
             "type": "card_type_0",
-            "blocks": [
+            "blockList": [
                 {
                     "id": "block_0",
                     "type": "block_type_0",
-                    "metas": [
+                    "metaList": [
                         {
                             "text":"Text 1"
                         }
                     ],
-                    "btns":[
+                    "btnList":[
                         {
                             "text":"Button 1"
                         }
                     ],
-                    "imgs":[
+                    "imgList":[
                         {
                             "url":"https://cdn.jsdelivr.net/gh/flutterchina/website@1.0/images/flutter-mark-square-100.png"
                         }
@@ -54,21 +54,21 @@
         {
             "id": "card_0",
             "type": "card_type_0",
-            "blocks": [
+            "blockList": [
                 {
                     "id": "block_0",
                     "type": "block_type_0",
-                    "metas": [
+                    "metaList": [
                         {
                             "text":"Text 2"
                         }
                     ],
-                    "btns":[
+                    "btnList":[
                         {
                             "text":"Button 2"
                         }
                     ],
-                    "imgs":[
+                    "imgList":[
                         {
                             "url":"https://cdn.jsdelivr.net/gh/flutterchina/website@1.0/images/flutter-mark-square-100.png"
                         }

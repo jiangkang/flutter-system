@@ -23,12 +23,12 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               YouQiResponse response = snapshot.data as YouQiResponse;
-              final modelList = response.data!;
+              final modelList = response.data ?? [];
               return PageView.builder(
                 itemBuilder: (context, index) {
                   return YouQiContentPage(modelList[index]);
                 },
-                itemCount: modelList.length ?? 0,
+                itemCount: modelList.length,
                 pageSnapping: true,
                 reverse: true,
               );
