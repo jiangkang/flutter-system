@@ -35,7 +35,7 @@ packages:
       path: best_toast
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   boolean_selector:
     dependency: transitive
     description:
@@ -229,7 +229,7 @@ packages:
       name: flutter_dynamic_ui
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "0.3.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -370,7 +370,7 @@ packages:
       path: kicons
       relative: true
     source: path
-    version: "1.0.2"
+    version: "1.0.3"
   lints:
     dependency: transitive
     description:

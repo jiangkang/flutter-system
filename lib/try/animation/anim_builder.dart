@@ -7,8 +7,8 @@ class AnimBuilderDemo extends StatefulWidget {
 
 class _AnimBuilderDemoState extends State<AnimBuilderDemo>
     with SingleTickerProviderStateMixin {
-  Animation<double> _animation;
-  AnimationController _controller;
+  Animation<double>? _animation;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -20,9 +20,9 @@ class _AnimBuilderDemoState extends State<AnimBuilderDemo>
     _animation = Tween<double>(begin: 100.0, end: 360.0).animate(_controller)
       ..addStatusListener((status) {
         setState(() {
-          if (_animation.isCompleted) {
+          if (_animation!.isCompleted) {
             _controller.reverse();
-          } else if (_animation.isDismissed) {
+          } else if (_animation!.isDismissed) {
             _controller.forward();
           }
         });
@@ -53,17 +53,17 @@ class _AnimBuilderDemoState extends State<AnimBuilderDemo>
 }
 
 class GrowTransition extends StatelessWidget {
-  final Widget child;
-  final Animation<double> animation;
+  final Widget? child;
+  final Animation<double>? animation;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: AnimatedBuilder(
-        animation: animation,
+        animation: animation!,
         builder: (context, w) => Container(
-          width: animation.value,
-          height: animation.value,
+          width: animation!.value,
+          height: animation!.value,
           child: w,
         ),
         child: child,

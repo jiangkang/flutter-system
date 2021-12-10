@@ -3,19 +3,19 @@ import 'package:flutter_system/utils/time_utils.dart';
 /// 任务模型
 class Task {
   /// 开始时间
-  DateTime startDate;
+  DateTime? startDate;
 
   /// 完成时间
-  DateTime endDate;
+  DateTime? endDate;
 
   /// 截止日期
-  DateTime deadline;
+  DateTime? deadline;
 
   /// 任务
-  String taskName;
+  String? taskName;
 
   /// 任务详情/说明/备注
-  String taskDetail;
+  String? taskDetail;
 
   /// 任务状态
   /// 1. to do
@@ -26,7 +26,7 @@ class Task {
 
   bool needRemind;
 
-  DateTime remindDate;
+  DateTime? remindDate;
 
   /// 任务重复类型（日，星期，月，年为间隔重复，由于提醒是附着在任务上的，因此提醒也会重复）
   RepeatType repeatType;
@@ -50,14 +50,14 @@ class Task {
       startDate: TimeUtils.toDateTime(map["startDate"]),
       endDate: TimeUtils.toDateTime(map["endDate"]),
       deadline: TimeUtils.toDateTime(map["deadline"]),
-      taskStatus: fromIndex(map["taskStatus"] as int),
+      taskStatus: fromIndex(map["taskStatus"] as int?),
       needRemind: map["needRemind"] == 0 ? false : true,
       remindDate: TimeUtils.toDateTime(map["remindDate"]),
-      repeatType: repeatTypeFromIndex(map["repeatType"] as int),
+      repeatType: repeatTypeFromIndex(map["repeatType"] as int?),
     );
   }
 
-  static TaskStatus fromIndex(int index) {
+  static TaskStatus fromIndex(int? index) {
     TaskStatus status = TaskStatus.TODO;
     switch (index) {
       case 0:
@@ -79,7 +79,7 @@ class Task {
     return status;
   }
 
-  static RepeatType repeatTypeFromIndex(int index) {
+  static RepeatType repeatTypeFromIndex(int? index) {
     RepeatType type = RepeatType.NONE;
     switch (index) {
       case 0:

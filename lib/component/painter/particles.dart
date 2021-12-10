@@ -11,9 +11,9 @@ class BasicParticles extends StatefulWidget {
 
 class _BasicParticlesState extends State<BasicParticles>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animation;
-  Tween<double> _angletween;
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+  late Tween<double> _angletween;
 
   @override
   void initState() {

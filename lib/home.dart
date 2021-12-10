@@ -26,10 +26,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<String> _titles = [
-      S.of(context).page,
-      S.of(context).component,
-      S.of(context).demo,
-      S.of(context).article,
+      "Article",
+      "Component",
+      "Demo",
+      "Page"
     ];
 
     return Scaffold(
@@ -103,19 +103,19 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.pageview),
-              label: S.of(context).page,
+              label: "Page",
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
               icon: Icon(Icons.category),
-              label: S.of(context).component,
+              label: "Component",
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
               icon: Icon(Icons.gps_fixed),
-              label: S.of(context).demo,
+              label: "Demo",
               backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            label: S.of(context).article,
+            label: "Article",
             backgroundColor: Theme.of(context).primaryColor,
           ),
         ],

@@ -34,7 +34,7 @@ class Toast {
                 ),
               ),
             ));
-    Overlay.of(context).insert(entry);
+    Overlay.of(context)?.insert(entry);
     Future.delayed(Duration(seconds: duration))
         .then<void>((value) => {entry.remove()});
   }

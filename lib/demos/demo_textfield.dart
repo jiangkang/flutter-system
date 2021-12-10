@@ -8,13 +8,13 @@ class TextFieldDemo extends StatefulWidget {
 class _TextFieldDemoState extends State<TextFieldDemo> {
   String _value = "";
 
-  TextEditingController _controller;
+  TextEditingController? _controller;
 
   @override
   void initState() {
     super.initState();
     _controller = TextEditingController();
-    _controller.addListener(() {});
+    _controller!.addListener(() {});
   }
 
   @override

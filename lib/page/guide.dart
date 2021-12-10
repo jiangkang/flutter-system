@@ -10,18 +10,20 @@ class GuideData {
 
 /// Guide Page
 class GuidePage extends StatefulWidget {
+  const GuidePage({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _GuidePageState();
 }
 
 class _GuidePageState extends State<GuidePage> {
-  final List<GuideData> data = List();
+  final List<GuideData> data = [];
 
-  int _itemCount;
+  int? _itemCount;
 
-  ValueChanged<int> _onPageChanged;
+  ValueChanged<int>? _onPageChanged;
 
-  int _currentIndex;
+  int? _currentIndex;
 
   final PageController _controller = PageController();
 

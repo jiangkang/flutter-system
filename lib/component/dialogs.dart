@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/utils/ui_utils.dart';
@@ -58,7 +60,7 @@ class _DialogsPageState extends State<DialogsPage> {
                     return MediaQuery(
                       data: MediaQuery.of(context)
                           .copyWith(alwaysUse24HourFormat: false),
-                      child: child,
+                      child: child!,
                     );
                   });
             },
@@ -74,7 +76,7 @@ class _DialogsPageState extends State<DialogsPage> {
                     return MediaQuery(
                       data: MediaQuery.of(context)
                           .copyWith(alwaysUse24HourFormat: true),
-                      child: child,
+                      child: child!,
                     );
                   });
             },
@@ -119,7 +121,7 @@ class _DialogsPageState extends State<DialogsPage> {
             builder: (BuildContext context) => ListTileCard(
               title: Text("获取操作结果"),
               onTap: () async {
-                final result = await showDialog<String>(
+                final result = await (showDialog<String>(
                     context: context,
                     builder: (context) => SimpleDialog(
                           title: Text("你喜欢Flutter还是React Native？"),
@@ -138,7 +140,7 @@ class _DialogsPageState extends State<DialogsPage> {
                             )
                           ],
                           shape: roundedRectBorder(6),
-                        ));
+                        )) as FutureOr<String>);
                 Scaffold.of(context)
                     .showSnackBar(SnackBar(content: Text(result)));
               },

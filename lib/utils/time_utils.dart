@@ -8,7 +8,7 @@ class TimeUtils {
   }
 
   /// 获取农历年份
-  static int getLunarYear(DateTime time) =>
+  static int? getLunarYear(DateTime time) =>
       _getLunarFromSolarTime(time).lunarYear;
 
   /// 获取农历月份
@@ -26,12 +26,12 @@ class TimeUtils {
   }
 
   /// 转换为时间字符串 yyyy-mm-dd
-  static String toTimeString(DateTime time) {
+  static String toTimeString(DateTime? time) {
     if (time == null) return "";
     return "${time.year}-${time.month}-${time.day}";
   }
 
-  static DateTime toDateTime(String time) {
+  static DateTime? toDateTime(String? time) {
     if (time == null || time.isEmpty || time.split("-").length != 3) {
       return null;
     }

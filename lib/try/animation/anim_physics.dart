@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
 class PhysicsAnimationDemo extends StatefulWidget {
+
+  const PhysicsAnimationDemo({Key? key}) : super(key: key);
+
   @override
   _PhysicsAnimationDemoState createState() => _PhysicsAnimationDemoState();
 }
@@ -31,9 +34,9 @@ class DraggableCard extends StatefulWidget {
 
 class _DraggableCardState extends State<DraggableCard>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
   Alignment _dragAlignment = Alignment.center;
-  Animation<Alignment> _animation;
+  late Animation<Alignment> _animation;
 
   void _runAnimation(Offset pixelsPerSecond, Size size) {
     _animation = _controller
@@ -42,7 +45,7 @@ class _DraggableCardState extends State<DraggableCard>
     final unitsPerSecondY = pixelsPerSecond.dy / size.height;
     final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
     final unitVelocity = unitsPerSecond.distance;
-    const spring = SpringDescription();
+    const spring = SpringDescription(damping: 1.0, mass: 1.0, stiffness: 1.0);
     //mass: 30, stiffness: 1, damping: 1
     final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
     _controller.animateWith(simulation);

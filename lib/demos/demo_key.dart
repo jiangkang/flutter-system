@@ -41,7 +41,7 @@ class RandomColorBlock extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _RandomColorBlockState();
 
-  RandomColorBlock({Key key}) : super(key: key);
+  RandomColorBlock({Key? key}) : super(key: key);
 }
 
 class _RandomColorBlockState extends State<RandomColorBlock> {

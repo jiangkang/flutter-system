@@ -5,14 +5,14 @@ class ListTileCard extends StatelessWidget {
   /// A widget to display before the title.
   ///
   /// Typically an [Icon] or a [CircleAvatar] widget.
-  final Widget leading;
+  final Widget? leading;
 
   /// The primary content of the list tile.
   ///
   /// Typically a [Text] widget.
   ///
   /// This should not wrap.
-  final Widget title;
+  final Widget? title;
 
   /// Additional content displayed below the title.
   ///
@@ -22,7 +22,7 @@ class ListTileCard extends StatelessWidget {
   ///
   /// If [isThreeLine] is true, this should be configured to take a maximum of
   /// two lines.
-  final Widget subtitle;
+  final Widget? subtitle;
 
   /// A widget to display after the title.
   ///
@@ -33,7 +33,7 @@ class ListTileCard extends StatelessWidget {
   /// [MainAxisAlign.baseline] alignment whose first item is [Expanded] and
   /// whose second child is the metadata text, instead of using the [trailing]
   /// property.
-  final Widget trailing;
+  final Widget? trailing;
 
   /// Whether this list tile is intended to display three lines of text.
   ///
@@ -49,7 +49,7 @@ class ListTileCard extends StatelessWidget {
   /// If this property is null then its value is based on [ListTileTheme.dense].
   ///
   /// Dense list tiles default to a smaller height.
-  final bool dense;
+  final bool? dense;
 
   /// The tile's internal padding.
   ///
@@ -57,7 +57,7 @@ class ListTileCard extends StatelessWidget {
   /// and [trailing] widgets.
   ///
   /// If null, `EdgeInsets.symmetric(horizontal: 16.0)` is used.
-  final EdgeInsetsGeometry contentPadding;
+  final EdgeInsetsGeometry? contentPadding;
 
   /// Whether this list tile is interactive.
   ///
@@ -69,12 +69,12 @@ class ListTileCard extends StatelessWidget {
   /// Called when the user taps this list tile.
   ///
   /// Inoperative if [enabled] is false.
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
   /// Called when the user long-presses on this list tile.
   ///
   /// Inoperative if [enabled] is false.
-  final GestureLongPressCallback onLongPress;
+  final GestureLongPressCallback? onLongPress;
 
   /// If this tile is also [enabled] then icons and text are rendered with the same color.
   ///
@@ -106,7 +106,7 @@ class ListTileCard extends StatelessWidget {
   }
 
   const ListTileCard(
-      {Key key,
+      {Key? key,
       this.leading,
       this.title,
       this.subtitle,

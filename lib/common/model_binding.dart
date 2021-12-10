@@ -2,10 +2,10 @@ import "package:flutter/material.dart";
 
 class ModelBinding extends StatefulWidget {
   final AppSettings initialSettings;
-  final Widget child;
+  final Widget? child;
 
   const ModelBinding({
-    Key key,
+    Key? key,
     this.initialSettings = const AppSettings(),
     this.child,
   }) : super(key: key);
@@ -15,7 +15,7 @@ class ModelBinding extends StatefulWidget {
 }
 
 class _ModelBindingState extends State<ModelBinding> {
-  AppSettings currentSettings;
+  AppSettings? currentSettings;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _ModelBindingState extends State<ModelBinding> {
   Widget build(BuildContext context) {
     return _ModelBindingScope(
       modelBindingState: this,
-      child: widget.child,
+      child: widget.child!,
     );
   }
 
@@ -43,7 +43,7 @@ class _ModelBindingState extends State<ModelBinding> {
 class _ModelBindingScope extends InheritedWidget {
   final _ModelBindingState modelBindingState;
 
-  _ModelBindingScope({Key key, @required this.modelBindingState, Widget child})
+  _ModelBindingScope({Key? key, required this.modelBindingState, required Widget child})
       : assert(modelBindingState != null),
         super(key: key, child: child);
 
@@ -59,18 +59,18 @@ class AppSettings {
     this.locale,
   });
 
-  final ThemeData themeData;
-  final Locale locale;
+  final ThemeData? themeData;
+  final Locale? locale;
 
-  static AppSettings of(BuildContext context) {
+  static AppSettings? of(BuildContext context) {
     final scope =
-        context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
+        context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>()!;
     return scope.modelBindingState.currentSettings;
   }
 
   static void update(BuildContext context, AppSettings newSettings) {
     final scope =
-        context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>();
+        context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>()!;
     scope.modelBindingState.updateModel(newSettings);
   }
 

@@ -3,25 +3,25 @@ import 'dart:math';
 /// YouQi Model
 class YouQiModel {
   /// 背景图片
-  final String bgImgUrl;
+  final String? bgImgUrl;
 
   /// 背景色
-  final String bgColor;
+  final String? bgColor;
 
   /// 日期: yyyy-MM-dd,同时作为ID
-  final String date;
+  final String? date;
 
   /// 内容
-  final String content;
+  final String? content;
 
   /// 内容来源
-  final String source;
+  final String? source;
 
   /// 内容细节
-  final String contentDetail;
+  final String? contentDetail;
 
   /// 内容细节网页版url
-  final String detailUrl;
+  final String? detailUrl;
 
   YouQiModel(
       {this.bgImgUrl = "",
@@ -50,11 +50,11 @@ class YouQiModel {
 }
 
 class YouQiResponse {
-  final String code;
+  final String? code;
 
-  final String msg;
+  final String? msg;
 
-  final List<YouQiModel> data;
+  final List<YouQiModel>? data;
 
   YouQiResponse({this.code, this.msg, this.data});
 
@@ -70,18 +70,18 @@ class YouQiResponse {
 }
 
 class MonthAliasResponse {
-  final List<String> month1;
-  final List<String> month2;
-  final List<String> month3;
-  final List<String> month4;
-  final List<String> month5;
-  final List<String> month6;
-  final List<String> month7;
-  final List<String> month8;
-  final List<String> month9;
-  final List<String> month10;
-  final List<String> month11;
-  final List<String> month12;
+  final List<String>? month1;
+  final List<String>? month2;
+  final List<String>? month3;
+  final List<String>? month4;
+  final List<String>? month5;
+  final List<String>? month6;
+  final List<String>? month7;
+  final List<String>? month8;
+  final List<String>? month9;
+  final List<String>? month10;
+  final List<String>? month11;
+  final List<String>? month12;
 
   MonthAliasResponse(
       {this.month1,

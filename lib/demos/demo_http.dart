@@ -27,10 +27,10 @@ class _HttpDemoState extends State<HttpDemo> {
               child: ListView.builder(
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.only(left: 10, right: 10, top: 6),
-                  itemCount: snapshot.data.result.length,
+                  itemCount: snapshot.data!.result.length,
                   itemBuilder: (context, index) {
                     final Map<String, dynamic> bean =
-                        (snapshot.data.result)[index];
+                        (snapshot.data!.result)[index];
                     return Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4)),
@@ -52,7 +52,7 @@ class _HttpDemoState extends State<HttpDemo> {
                   return null;
                 });
                 return null;
-              },
+              } as Future<void> Function(),
             );
           } else if (snapshot.hasError) {
             return Center(child: Text("Error occurs! ${snapshot.error}"));

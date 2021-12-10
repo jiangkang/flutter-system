@@ -3,8 +3,8 @@ import 'package:flutter_system/page/web_page.dart';
 
 class NavUtils {
   /// 打开WebView
-  static Future openWebView(BuildContext context, String webUrl,
-      {String title = ""}) async {
+  static Future openWebView(BuildContext context, String? webUrl,
+      {String? title = ""}) async {
     await Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
       return WebPage(title, webUrl);
     }));

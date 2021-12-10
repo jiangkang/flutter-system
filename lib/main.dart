@@ -37,7 +37,7 @@ void handleError() {
 
 /// App Entry
 class MyApp extends StatefulWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -63,16 +63,14 @@ class _MyAppState extends State<MyApp> {
           return MaterialApp(
             title: 'Flutter System',
             // theme: themeProvider?.currentTheme ?? lightTheme,
-            theme: AppSettings.of(context).themeData,
+            theme: AppSettings.of(context)!.themeData,
             debugShowCheckedModeBanner: false,
             initialRoute: '/',
             routes: appRouters,
-            localizationsDelegates: [
-              S.delegate,
+            localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
             ],
-            supportedLocales: S.delegate.supportedLocales,
           );
         },
       ),

@@ -116,14 +116,14 @@ class SimplePainter extends CustomPainter {
     blacks.forEach((offset) {
       blackPaint
         ..shader = prefix0.Gradient.radial(
-            offset * cellWidth, 9, [Colors.black, Colors.grey[850]]);
+            offset * cellWidth, 9, [Colors.black, Colors.grey[850]!]);
       canvas.drawCircle(offset * cellWidth, 9, blackPaint);
     });
 
     whites.forEach((offset) {
       whitePaint
         ..shader = prefix0.Gradient.radial(
-            offset * cellWidth, 9, [Colors.white, Colors.grey[100]]);
+            offset * cellWidth, 9, [Colors.white, Colors.grey[100]!]);
       canvas.drawCircle(offset * cellWidth, 9, whitePaint);
     });
   }

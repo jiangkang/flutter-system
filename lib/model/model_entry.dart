@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 @immutable
 class Article {
-  final String title;
-  final String url;
+  final String? title;
+  final String? url;
 
   Article(this.title, this.url);
 
   factory Article.fromJson(Map<String, dynamic> json) {
-    return Article(json["title"] as String, json["url"] as String);
+    return Article(json["title"] as String?, json["url"] as String?);
   }
 
-  Map<String, String> toJson(Article article) {
+  Map<String, String?> toJson(Article article) {
     return {"title": article.title, "url": article.url};
   }
 }
@@ -21,7 +21,7 @@ class Article {
 class EntryItem {
   final String title;
   final String routerName;
-  final IconData icon;
+  final IconData? icon;
 
   EntryItem(this.title, this.routerName, {this.icon});
 }

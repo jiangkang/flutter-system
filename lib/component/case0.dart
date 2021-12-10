@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// TODO: 瀑布流
 class ShowCase0 extends StatelessWidget {
   const ShowCase0(
-      {Key key,
+      {Key? key,
       this.radius,
       this.imgUrl,
       this.title,
@@ -14,28 +14,28 @@ class ShowCase0 extends StatelessWidget {
       : super(key: key);
 
   /// card半径
-  final double radius;
+  final double? radius;
 
   /// 图片url
-  final String imgUrl;
+  final String? imgUrl;
 
   /// 标题文本
-  final String title;
+  final String? title;
 
   /// 图像url
-  final String avatarUrl;
+  final String? avatarUrl;
 
   /// 用户名
-  final String username;
+  final String? username;
 
   /// 点赞数
-  final int likeNum;
+  final int? likeNum;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusDirectional.circular(radius)),
+          borderRadius: BorderRadiusDirectional.circular(radius!)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -44,9 +44,9 @@ class ShowCase0 extends StatelessWidget {
           Expanded(
             child: Center(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(radius),
+                borderRadius: BorderRadius.circular(radius!),
                 child: Image.network(
-                  imgUrl,
+                  imgUrl!,
                   fit: BoxFit.cover,
                   width: double.maxFinite,
                 ),
@@ -55,7 +55,7 @@ class ShowCase0 extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10, top: 6),
-            child: Text(title),
+            child: Text(title!),
           ),
           Row(
             mainAxisSize: MainAxisSize.max,
@@ -67,9 +67,9 @@ class ShowCase0 extends StatelessWidget {
                   children: <Widget>[
                     CircleAvatar(
                       maxRadius: 8,
-                      child: Image.network(avatarUrl),
+                      child: Image.network(avatarUrl!),
                     ),
-                    Text(username),
+                    Text(username!),
                   ],
                 ),
               ),

@@ -42,22 +42,22 @@ Future<Response> getRecPoet() => get(Uri.parse("$HOST_DEMO/recommendPoetry"));
 
 /// Model:图片列表响应
 class ImageResponse {
-  final int code;
-  final String message;
+  final int? code;
+  final String? message;
   final List<Map<String, dynamic>> result;
 
   ImageResponse(this.code, this.message, this.result);
 
   factory ImageResponse.fromJson(Map<String, dynamic> json) => ImageResponse(
-      json["code"] as int,
-      json["message"] as String,
+      json["code"] as int?,
+      json["message"] as String?,
       List<Map<String, dynamic>>.from(json["result"]));
 }
 
 /// Model:图片数据
 class ImageBean {
-  final String img;
-  final String publishedAt;
+  final String? img;
+  final String? publishedAt;
 
   ImageBean({this.img, this.publishedAt});
 

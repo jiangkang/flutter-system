@@ -10,17 +10,17 @@ class TransformDemo extends StatefulWidget {
 
 class _TransformDemoState extends State<TransformDemo>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
-  Animation<double> _animRotate;
+  late Animation<double> _animRotate;
 
-  Animation<double> _animScale;
+  late Animation<double> _animScale;
 
-  Animation<Offset> _animTranslate;
+  late Animation<Offset> _animTranslate;
 
-  Animation _curvedAnim;
+  late Animation _curvedAnim;
 
-  VoidCallback _callback;
+  late VoidCallback _callback;
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _TransformDemoState extends State<TransformDemo>
       setState(() {});
     };
 
-    _animRotate = Tween<double>(begin: 0, end: pi * 2.3).animate(_curvedAnim)
+    _animRotate = Tween<double>(begin: 0, end: pi * 2.3).animate(_curvedAnim as Animation<double>)
       ..addListener(_callback);
     _animScale = Tween(begin: 0.0, end: 0.9).animate(_controller)
       ..addListener(_callback)
@@ -47,7 +47,7 @@ class _TransformDemoState extends State<TransformDemo>
         }
       });
     _animTranslate = Tween(begin: Offset(0, 0), end: Offset(100, 100))
-        .animate(_curvedAnim)
+        .animate(_curvedAnim as Animation<double>)
           ..addListener(_callback);
     _controller.forward();
   }

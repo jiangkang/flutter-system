@@ -10,7 +10,7 @@ class CustomScrollViewDemo extends StatefulWidget {
 
 class _CustomScrollViewDemoState extends State<CustomScrollViewDemo>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {

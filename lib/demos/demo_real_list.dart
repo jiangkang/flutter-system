@@ -91,16 +91,16 @@ class RefreshListViewDemo extends StatefulWidget {
 }
 
 class _RefreshListViewDemoState extends State<RefreshListViewDemo> {
-  List<String> _dataList;
-  ScrollController _scrollController;
+  late List<String> _dataList;
+  ScrollController? _scrollController;
 
   @override
   void initState() {
     _dataList = List.generate(100, (index) => "title $index");
     _scrollController = ScrollController();
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
+    _scrollController!.addListener(() {
+      if (_scrollController!.position.pixels ==
+          _scrollController!.position.maxScrollExtent) {
         setState(() {
           List<String> nextList =
               List.generate(100, (index) => "next page $index");
@@ -113,7 +113,7 @@ class _RefreshListViewDemoState extends State<RefreshListViewDemo> {
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    _scrollController!.dispose();
     super.dispose();
   }
 

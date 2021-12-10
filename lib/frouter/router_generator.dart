@@ -8,7 +8,7 @@ class RouterGenerator extends GeneratorForAnnotation<Router> {
   @override
   generateForAnnotatedElement(
       Element element, ConstantReader annotation, BuildStep buildStep) {
-    String routerName = annotation.peek("name").stringValue;
+    String routerName = annotation.peek("name")!.stringValue;
     return "final maps = {'$routerName':${element.name}()}";
   }
 }

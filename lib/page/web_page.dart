@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebPage extends StatefulWidget {
-  final String title;
+  final String? title;
 
-  final String webUrl;
+  final String? webUrl;
 
   @override
   _WebPageState createState() {
@@ -15,7 +15,7 @@ class WebPage extends StatefulWidget {
 }
 
 class _WebPageState extends State<WebPage> {
-  bool _loadFinished;
+  late bool _loadFinished;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _WebPageState extends State<WebPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title!),
         centerTitle: true,
         leading: Builder(builder: (BuildContext context) {
           return IconButton(

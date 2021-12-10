@@ -7,8 +7,8 @@ class AnimTwoDemo extends StatefulWidget {
 
 class _AnimTwoDemoState extends State<AnimTwoDemo>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _animation;
+  late AnimationController _controller;
+  late Animation<double> _animation;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class AnimatedLogo extends AnimatedWidget {
   static final _tweenOpacity = Tween<double>(begin: 0.0, end: 1.0);
   static final _tweenSize = Tween<double>(begin: 100.0, end: 360.0);
 
-  AnimatedLogo({Key key, Animation<double> animation})
+  AnimatedLogo({Key? key, required Animation<double> animation})
       : super(key: key, listenable: animation);
 
   @override

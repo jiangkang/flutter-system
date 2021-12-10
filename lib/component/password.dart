@@ -15,15 +15,15 @@ class PasswordBox extends StatefulWidget {
 
   final bool autoFocus;
 
-  final Function onSubmit;
+  final Function? onSubmit;
 
-  final Function onClear;
+  final Function? onClear;
 
   final double spaceBetween;
 
   final double containerHeight;
 
-  final double containerWidth;
+  final double? containerWidth;
 
   final InputDecoration inputDecoration;
 
@@ -59,10 +59,10 @@ class PasswordBox extends StatefulWidget {
 }
 
 class _PasswordBoxState extends State<PasswordBox> {
-  Widget _actionButton;
-  List<FocusNode> _nodes;
-  List<TextEditingController> _controllers;
-  String _clipText;
+  late Widget _actionButton;
+  late List<FocusNode> _nodes;
+  late List<TextEditingController> _controllers;
+  late String _clipText;
 
   final _onchangeSinkCtrl = StreamController<FieldModel>();
 
@@ -83,7 +83,7 @@ class _PasswordBoxState extends State<PasswordBox> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: widget.containerWidth,
       height: widget.containerHeight,
       child: _buildTextFields(context),
@@ -91,7 +91,7 @@ class _PasswordBoxState extends State<PasswordBox> {
   }
 
   _buildTextFields(BuildContext context) {
-    List<Widget> fields = List();
+    List<Widget> fields = [];
     for (int i = 0; i < widget.boxCount; i++) {
       fields.add(SizedBox(
         width: widget.boxWidth,
@@ -152,22 +152,22 @@ class _PasswordBoxState extends State<PasswordBox> {
   }
 
   _onTextChanged(FieldModel model) {
-    _focusNext(model.text, model.index);
+    _focusNext(model.text!, model.index);
   }
 
-  _focusNext(String value, int index) {
+  _focusNext(String value, int? index) {
     if (value.isNotEmpty) {
       if (index == widget.boxCount - 1) {
         _submit();
       } else {
-        FocusScope.of(context).requestFocus(_nodes[index + 1]);
+        FocusScope.of(context).requestFocus(_nodes[index! + 1]);
       }
     }
   }
 
   /// Get the text of the clipboard
   Future<bool> checkClipboard() async {
-    ClipboardData clipboardData = await Clipboard.getData('text/plain');
+    ClipboardData? clipboardData = await Clipboard.getData('text/plain');
     _clipText = clipboardData?.text ?? '';
     return _clipText.isNotEmpty;
   }
@@ -178,7 +178,7 @@ class _PasswordBoxState extends State<PasswordBox> {
 }
 
 class FieldModel {
-  final int index;
-  final String text;
+  final int? index;
+  final String? text;
   FieldModel({this.index, this.text});
 }

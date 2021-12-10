@@ -7,8 +7,8 @@ class AnimBasic extends StatefulWidget {
 
 class _AnimBasicState extends State<AnimBasic>
     with SingleTickerProviderStateMixin {
-  Animation<double> _animation;
-  AnimationController _animationController;
+  late Animation<double> _animation;
+  late AnimationController _animationController;
 
   @override
   void initState() {

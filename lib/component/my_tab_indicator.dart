@@ -7,13 +7,14 @@ class RoundCornerTabIndicator extends Decoration {
 
   final EdgeInsetsGeometry insets;
 
-  RoundCornerTabIndicator({
+  const RoundCornerTabIndicator({
     this.borderSide = const BorderSide(width: 4.0, color: Colors.white),
     this.insets = EdgeInsets.zero,
   });
 
+
   @override
-  BoxPainter createBoxPainter([onChanged]) {
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
     return _RoundCornerTabPainter(this, onChanged);
   }
 }
@@ -29,8 +30,8 @@ class _RoundCornerTabPainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    final Rect rect = offset & configuration.size;
-    final TextDirection textDirection = configuration.textDirection;
+    final Rect rect = offset & configuration.size!;
+    final TextDirection textDirection = configuration.textDirection!;
     final Rect indicator =
         _indicatorRectFor(rect, textDirection).deflate(borderSide.width / 2.0);
     final Paint paint = borderSide.toPaint()..strokeCap = StrokeCap.round;

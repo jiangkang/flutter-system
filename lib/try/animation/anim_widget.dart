@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AnimatedLogo extends AnimatedWidget {
-  AnimatedLogo({Key key, Animation<double> animation})
+  AnimatedLogo({Key? key, required Animation<double> animation})
       : super(key: key, listenable: animation);
 
   @override
@@ -25,8 +25,8 @@ class AnimatedDemo extends StatefulWidget {
 
 class _AnimatedDemoState extends State<AnimatedDemo>
     with SingleTickerProviderStateMixin {
-  Animation<double> _animation;
-  AnimationController _controller;
+  late Animation<double> _animation;
+  late AnimationController _controller;
 
   @override
   void initState() {

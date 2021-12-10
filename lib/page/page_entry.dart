@@ -109,7 +109,7 @@ class ArticleEntry extends StatelessWidget {
             future: AssetStorage.getArticleList(context),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                final _articles = snapshot.data;
+                final _articles = snapshot.data!;
                 return ListView.builder(
                     itemCount: _articles.length,
                     itemBuilder: (context, index) {

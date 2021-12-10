@@ -71,12 +71,12 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return ListView.builder(
-                        itemCount: snapshot.data.length,
+                        itemCount: snapshot.data!.length,
                         itemBuilder: (context, index) {
                           return ListTileCard(
                             borderRadius: 4,
                             title:
-                                Text(snapshot.data[index].toMap().toString()),
+                                Text(snapshot.data![index].toMap().toString()),
                           );
                         });
                   }
@@ -137,9 +137,9 @@ Future<void> deleteDog(int id) async {
 }
 
 class Dog {
-  final int id;
-  final String name;
-  final int age;
+  final int? id;
+  final String? name;
+  final int? age;
 
   Dog({this.id, this.name, this.age});
 

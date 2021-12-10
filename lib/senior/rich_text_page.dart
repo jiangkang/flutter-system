@@ -25,7 +25,7 @@ void main() {
 }
 
 class RichTextPage extends StatefulWidget {
-  const RichTextPage({Key key}) : super(key: key);
+  const RichTextPage({Key? key}) : super(key: key);
 
   @override
   _RichTextPageState createState() => _RichTextPageState();

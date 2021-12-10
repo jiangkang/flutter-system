@@ -24,7 +24,7 @@ class _TabsDemoState extends State<TabsDemo>
     DemoEntry(),
   ];
 
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
@@ -74,6 +74,6 @@ class _TabsDemoState extends State<TabsDemo>
 
   void _showSnackBar(BuildContext context) {
     Scaffold.of(context).showSnackBar(
-        SnackBar(content: Text("当前选中index为${_tabController.index}")));
+        SnackBar(content: Text("当前选中index为${_tabController!.index}")));
   }
 }

@@ -6,7 +6,7 @@ const int MIN_OF_HOUR = 60;
 
 /// 时钟盘面
 class ClockFacePainter extends CustomPainter {
-  final Color color;
+  final Color? color;
 
   ClockFacePainter({this.color});
 
@@ -18,7 +18,7 @@ class ClockFacePainter extends CustomPainter {
     var dotRadius = radius * 0.012;
 
     var paint = Paint()
-      ..color = color
+      ..color = color!
       ..strokeWidth = dotRadius * 0.5;
 
     for (var i = 0; i < MIN_OF_HOUR; i++) {

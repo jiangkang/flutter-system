@@ -1,10 +1,10 @@
 name: best_toast
 description: A pure dart toast plugin
-version: 0.0.2
+version: 0.0.3
 homepage: https://www.jiangkang.tech
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=2.5.0 <3.0.0"
 
 dependencies:

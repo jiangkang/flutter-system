@@ -55,7 +55,7 @@ class MyBlockRegistry extends BlockRegistry {
 class Card_0 extends BaseCard {
   @override
   Widget createWidget(BuildContext context, CardData cardData) {
-    List<BlockData> blocks = cardData.blockList;
+    List<BlockData> blocks = cardData.blockList!;
     final blockWidgets = <Widget>[];
     blocks.forEach((block) {
       blockWidgets
@@ -70,19 +70,19 @@ class Card_0 extends BaseCard {
 class Block_0 extends BaseBlock {
   @override
   Widget createWidget(BuildContext context, BlockData data) {
-    List<Meta> metaList = data.metaList;
-    List<Btn> btnList = data.btnList;
-    List<Img> imgList = data.imgList;
+    List<Meta> metaList = data.metaList!;
+    List<Btn> btnList = data.btnList!;
+    List<Img> imgList = data.imgList!;
     return ListTile(
       leading: Image.network(
-        imgList[0].url,
+        imgList[0].url!,
         width: 30,
         height: 30,
       ),
-      title: Text(metaList[0].text),
+      title: Text(metaList[0].text!),
       trailing: TextButton(
         onPressed: () {},
-        child: Text(btnList[0].text),
+        child: Text(btnList[0].text!),
       ),
     );
   }

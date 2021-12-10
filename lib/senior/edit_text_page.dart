@@ -8,7 +8,7 @@ void main() {
 }
 
 class EditTextPage extends StatefulWidget {
-  const EditTextPage({Key key}) : super(key: key);
+  const EditTextPage({Key? key}) : super(key: key);
 
   @override
   _EditTextPageState createState() => _EditTextPageState();
@@ -16,7 +16,7 @@ class EditTextPage extends StatefulWidget {
 
 class _EditTextPageState extends State<EditTextPage>
     with WidgetsBindingObserver {
-  List<String> _list;
+  late List<String> _list;
   double _keyboardHeight = 0.0;
 
   @override
@@ -26,20 +26,20 @@ class _EditTextPageState extends State<EditTextPage>
       "Item generated 1",
       "Item generated 2",
     ];
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance!.addObserver(this);
     super.initState();
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance!.removeObserver(this);
     super.dispose();
   }
 
   @override
   void didChangeMetrics() {
     super.didChangeMetrics();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
       _keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
     });
   }
@@ -86,19 +86,19 @@ class _EditTextPageState extends State<EditTextPage>
 }
 
 class KEditText extends StatefulWidget {
-  const KEditText({Key key}) : super(key: key);
+  const KEditText({Key? key}) : super(key: key);
 
   @override
   _KEditTextState createState() => _KEditTextState();
 }
 
 class _KEditTextState extends State<KEditText> {
-  KEditTextController _editTextController;
-  FocusNode _focusNode;
-  TextStyle _textStyle;
-  Color _cursorColor;
-  Color _backgroundCursorColor;
-  GlobalKey<EditableTextState> _editableTextKey;
+  late KEditTextController _editTextController;
+  late FocusNode _focusNode;
+  late TextStyle _textStyle;
+  late Color _cursorColor;
+  late Color _backgroundCursorColor;
+  GlobalKey<EditableTextState>? _editableTextKey;
 
   @override
   void initState() {
@@ -176,7 +176,7 @@ class KEditTextController extends TextEditingController {
 
   @override
   TextSpan buildTextSpan(
-      {BuildContext context, TextStyle style, bool withComposing}) {
+      {required BuildContext context, TextStyle? style, required bool withComposing}) {
     return super.buildTextSpan(
         context: context, style: style, withComposing: withComposing);
   }

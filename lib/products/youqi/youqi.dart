@@ -1,7 +1,5 @@
 import 'dart:math';
-import 'dart:ui';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_system/products/youqi/api_youqi.dart';
 import 'package:flutter_system/products/youqi/youqi_model.dart';
@@ -10,6 +8,8 @@ import 'package:flutter_system/utils/time_utils.dart';
 import 'package:kicons/kicons.dart';
 
 class YouQiHomePage extends StatefulWidget {
+  const YouQiHomePage({Key? key}) : super(key: key);
+
   @override
   _YouQiHomePageState createState() => _YouQiHomePageState();
 }
@@ -22,8 +22,8 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
           future: requestYouQiResponseFromAssets(context),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              YouQiResponse response = snapshot.data;
-              final modelList = response.data;
+              YouQiResponse response = snapshot.data as YouQiResponse;
+              final modelList = response.data!;
               return PageView.builder(
                 itemBuilder: (context, index) {
                   return YouQiContentPage(modelList[index]);
@@ -49,7 +49,7 @@ class YouQiContentPage extends StatefulWidget {
 }
 
 class _YouQiContentPageState extends State<YouQiContentPage> {
-  YouQiModel _model;
+  late YouQiModel _model;
 
   @override
   void initState() {
@@ -68,7 +68,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                 color: _getBgColor(),
               )
             : BoxDecoration(
-                image: DecorationImage(image: NetworkImage(_model.bgImgUrl)),
+                image: DecorationImage(image: NetworkImage(_model.bgImgUrl!)),
               ),
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -170,7 +170,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                     child: Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Text(
-                        _model.content,
+                        _model.content!,
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           fontSize: 24,
@@ -225,7 +225,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                 future: requestMonthAliasResponseFromAssets(context),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
-                    Map<String, List<String>> response = snapshot.data;
+                    Map<String, List<String>> response = snapshot.data as Map<String, List<String>>;
                     final list =
                         response[DateTime.now().month.toString()] ?? [""];
                     final randomName = list[Random().nextInt(list.length)];
@@ -263,14 +263,14 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                           children: <Widget>[
                             Align(
                                 child: Text(
-                                  _model.date.split("-")[1],
+                                  _model.date!.split("-")[1],
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 21),
                                 ),
                                 alignment: AlignmentDirectional.topStart),
                             Align(
                               child: Text(
-                                _model.date.split("-")[2],
+                                _model.date!.split("-")[2],
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 21),
                               ),
@@ -290,16 +290,16 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
 
   /// 从色值字符串中获取背景色
   Color _getBgColor() {
-    if (_model.bgColor == null || _model.bgColor.isEmpty) {
+    if (_model.bgColor == null || _model.bgColor!.isEmpty) {
       return Colors.transparent;
     } else {
-      int colorInt = int.parse(_model.bgColor.substring(1), radix: 16);
+      int colorInt = int.parse(_model.bgColor!.substring(1), radix: 16);
       return Color(colorInt);
     }
   }
 
   DateTime _getDateTime() {
-    final dateString = _model.date.split("-");
+    final dateString = _model.date!.split("-");
     return DateTime(
       int.parse(dateString[0]),
       int.parse(dateString[1]),

@@ -32,7 +32,7 @@ class _NativeViewDemoState extends State<NativeViewDemo> {
                 surfaceFactory:
                     (BuildContext context, PlatformViewController controller) {
                   return AndroidViewSurface(
-                    controller: controller,
+                    controller: controller as AndroidViewController,
                     gestureRecognizers: const <
                         Factory<OneSequenceGestureRecognizer>>{},
                     hitTestBehavior: PlatformViewHitTestBehavior.opaque,

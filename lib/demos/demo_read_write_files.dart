@@ -6,6 +6,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ReadWriteFileDemo extends StatefulWidget {
+  const ReadWriteFileDemo({Key? key}) : super(key: key);
+
   @override
   _ReadWriteFileDemoState createState() {
     return _ReadWriteFileDemoState();
@@ -13,7 +15,7 @@ class ReadWriteFileDemo extends StatefulWidget {
 }
 
 class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
-  int _counter;
+  int _counter = 0;
   final CounterStorage _counterStorage = CounterStorage();
 
   @override
@@ -73,7 +75,7 @@ class _ReadWriteFileDemoState extends State<ReadWriteFileDemo> {
             onTap: () {
               getExternalStorageDirectory().then((value) {
                 _showDialog(
-                    "getExternalStorageDirectory()", value.absolute.path);
+                    "getExternalStorageDirectory()", value!.absolute.path);
               }).catchError((err) {
                 _showDialog("Error", err.toString());
               });
@@ -197,7 +199,7 @@ class CounterStorage {
     return int.parse(content);
   }
 
-  Future<File> writeCounter(int counter) async {
+  Future<File> writeCounter(int? counter) async {
     final file = await _localFile;
     return file.writeAsString("$counter");
   }

@@ -6,12 +6,14 @@ import 'package:flutter_system/utils/ui_utils.dart';
 
 /// to do list
 class TodoListPage extends StatefulWidget {
+  const TodoListPage({Key? key}) : super(key: key);
+
   @override
   _TodoListPageState createState() => _TodoListPageState();
 }
 
 class _TodoListPageState extends State<TodoListPage> {
-  FocusNode _focusNode = FocusNode();
+  final FocusNode _focusNode = FocusNode();
 
   @override
   void initState() {
@@ -30,7 +32,7 @@ class _TodoListPageState extends State<TodoListPage> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
-              final List<Task> _tasks = snapshot.data;
+              final List<Task> _tasks = snapshot.data as List<Task>;
               if (_tasks.isEmpty) {
                 addTask(Task("新增计划"));
               }
@@ -84,7 +86,7 @@ class TaskListItem extends StatefulWidget {
 }
 
 class _TaskListItemState extends State<TaskListItem> {
-  Task _task;
+  late Task _task;
 
   @override
   void initState() {
@@ -97,7 +99,7 @@ class _TaskListItemState extends State<TaskListItem> {
     return ListTileCard(
       borderRadius: 4,
       title: Text(
-        _task.taskName,
+        _task.taskName!,
         style: TextStyle(
           decoration: _task.taskStatus == TaskStatus.DONE
               ? TextDecoration.lineThrough
@@ -110,7 +112,7 @@ class _TaskListItemState extends State<TaskListItem> {
           value: _task.taskStatus != TaskStatus.TODO,
           onChanged: (value) {
             setState(() {
-              if (value) {
+              if (value!) {
                 _task.taskStatus = TaskStatus.DONE;
               } else {
                 _task.taskStatus = TaskStatus.TODO;
@@ -123,7 +125,7 @@ class _TaskListItemState extends State<TaskListItem> {
 }
 
 class AddTaskDialog extends StatefulWidget {
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
 
   AddTaskDialog({this.focusNode});
 
@@ -132,7 +134,7 @@ class AddTaskDialog extends StatefulWidget {
 }
 
 class _AddTaskDialogState extends State<AddTaskDialog> {
-  TextEditingController _controller;
+  TextEditingController? _controller;
 
   @override
   void initState() {
@@ -158,7 +160,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                 IconButton(
                     icon: Icon(Icons.send),
                     onPressed: () {
-                      final result = _controller.value;
+                      final result = _controller!.value;
                       if (result == null || result.text.isEmpty) {
                         showSnackBar(context, "内容不能为空");
                       } else {

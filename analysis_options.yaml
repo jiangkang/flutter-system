@@ -11,4 +11,7 @@ analyzer:
 
 linter:
   rules:
-    - cancel_subscriptions
+    cancel_subscriptions: true
+    constant_identifier_names: false
+    prefer_const_constructors: false
+    non_constant_identifier_names: false

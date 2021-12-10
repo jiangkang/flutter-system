@@ -6,9 +6,9 @@ class ListViewDemo extends StatefulWidget {
 }
 
 class _ListViewDemoState extends State<ListViewDemo> {
-  ScrollPhysics _physicsType;
+  ScrollPhysics? _physicsType;
 
-  ScrollController _controller;
+  ScrollController? _controller;
 
   @override
   void initState() {
@@ -19,7 +19,7 @@ class _ListViewDemoState extends State<ListViewDemo> {
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    _controller!.dispose();
   }
 
   @override
@@ -75,20 +75,20 @@ class _ListViewDemoState extends State<ListViewDemo> {
       floatingActionButton: InkWell(
         onDoubleTap: () {
           if (_controller != null) {
-            _controller.animateTo(0,
+            _controller!.animateTo(0,
                 duration: Duration(seconds: 3), curve: Curves.linear);
           }
         },
         onLongPress: () {
           if (_controller != null) {
-            _controller.jumpTo(0);
+            _controller!.jumpTo(0);
           }
         },
         child: FloatingActionButton(
           onPressed: () {
             if (_controller != null) {
-              debugPrint("offset:${_controller.offset.toString()}");
-              debugPrint("position:${_controller.position.toString()}");
+              debugPrint("offset:${_controller!.offset.toString()}");
+              debugPrint("position:${_controller!.position.toString()}");
             }
           },
           child: Icon(Icons.info),

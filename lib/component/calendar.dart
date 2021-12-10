@@ -33,12 +33,12 @@ const weekDaysStartWithSundayEnglish = [
 class Calendar extends StatefulWidget {
   final StartDayOfWeek startDayOfWeek;
   final CalendarLanguage calendarLanguage;
-  final DateTime startSelectionDay;
-  final DateTime endSelectionDay;
+  final DateTime? startSelectionDay;
+  final DateTime? endSelectionDay;
   final TextStyle weekTextStyle;
 
   const Calendar(
-      {Key key,
+      {Key? key,
       this.startDayOfWeek = StartDayOfWeek.sunday,
       this.calendarLanguage = CalendarLanguage.chinese,
       this.startSelectionDay,
@@ -51,11 +51,11 @@ class Calendar extends StatefulWidget {
 }
 
 class _CalendarState extends State<Calendar> {
-  DateTime _selectedYearAndMonth;
+  DateTime? _selectedYearAndMonth;
 
-  StartDayOfWeek _startDayOfWeek;
+  StartDayOfWeek? _startDayOfWeek;
 
-  CalendarLanguage _calendarLanguage;
+  CalendarLanguage? _calendarLanguage;
 
   @override
   void initState() {
@@ -89,9 +89,9 @@ class _CalendarState extends State<Calendar> {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text("${_selectedYearAndMonth.year} /",
+              Text("${_selectedYearAndMonth!.year} /",
                   style: TextStyle(fontSize: 21)),
-              Text(" ${_selectedYearAndMonth.month}",
+              Text(" ${_selectedYearAndMonth!.month}",
                   style: TextStyle(fontSize: 21))
             ],
           ),
@@ -105,22 +105,22 @@ class _CalendarState extends State<Calendar> {
 
   _selectPreMonth() {
     setState(() {
-      if (_selectedYearAndMonth.month == 1) {
-        _selectedYearAndMonth = DateTime(_selectedYearAndMonth.year - 1, 12);
+      if (_selectedYearAndMonth!.month == 1) {
+        _selectedYearAndMonth = DateTime(_selectedYearAndMonth!.year - 1, 12);
       } else {
         _selectedYearAndMonth = DateTime(
-            _selectedYearAndMonth.year, _selectedYearAndMonth.month - 1, 12);
+            _selectedYearAndMonth!.year, _selectedYearAndMonth!.month - 1, 12);
       }
     });
   }
 
   _selectNextMonth() {
     setState(() {
-      if (_selectedYearAndMonth.month == 12) {
-        _selectedYearAndMonth = DateTime(_selectedYearAndMonth.year + 1, 1, 12);
+      if (_selectedYearAndMonth!.month == 12) {
+        _selectedYearAndMonth = DateTime(_selectedYearAndMonth!.year + 1, 1, 12);
       } else {
         _selectedYearAndMonth = DateTime(
-            _selectedYearAndMonth.year, _selectedYearAndMonth.month + 1, 12);
+            _selectedYearAndMonth!.year, _selectedYearAndMonth!.month + 1, 12);
       }
     });
   }
@@ -146,7 +146,7 @@ class _CalendarState extends State<Calendar> {
 
   List<TableRow> _buildDays() {
     final result = <TableRow>[];
-    final daysInMonth = getDaysInMonth(_selectedYearAndMonth, _startDayOfWeek);
+    final daysInMonth = getDaysInMonth(_selectedYearAndMonth!, _startDayOfWeek);
     int i = 0;
     while (i < daysInMonth.length) {
       result.add(_buildTableRow(daysInMonth.skip(i).take(7).toList()));
@@ -187,11 +187,11 @@ class _CalendarState extends State<Calendar> {
 }
 
 class DayCell extends StatefulWidget {
-  final DateTime dateTime;
+  final DateTime? dateTime;
 
-  final DateTime currentMonth;
+  final DateTime? currentMonth;
 
-  const DayCell({Key key, this.dateTime, this.currentMonth}) : super(key: key);
+  const DayCell({Key? key, this.dateTime, this.currentMonth}) : super(key: key);
 
   @override
   _DayCellState createState() => _DayCellState();
@@ -202,10 +202,10 @@ class _DayCellState extends State<DayCell> {
 
   @override
   Widget build(BuildContext context) {
-    final isToday = widget.dateTime.day == today.day &&
-        widget.dateTime.month == today.month &&
-        widget.dateTime.year == today.year;
-    final isCurrentMonth = widget.currentMonth.month == widget.dateTime.month;
+    final isToday = widget.dateTime!.day == today.day &&
+        widget.dateTime!.month == today.month &&
+        widget.dateTime!.year == today.year;
+    final isCurrentMonth = widget.currentMonth!.month == widget.dateTime!.month;
     return TableCell(
         verticalAlignment: TableCellVerticalAlignment.middle,
         child: Container(
@@ -217,10 +217,10 @@ class _DayCellState extends State<DayCell> {
                   isToday ? Theme.of(context).primaryColorDark : Colors.white10,
               child: Center(
                 child: Text(
-                  widget.dateTime.day.toString(),
+                  widget.dateTime!.day.toString(),
                   style: TextStyle(
                       color: isCurrentMonth
-                          ? Theme.of(context).textTheme.bodyText2.color
+                          ? Theme.of(context).textTheme.bodyText2!.color
                           : Colors.grey,
                       fontSize: 21),
                 ),
@@ -232,7 +232,7 @@ class _DayCellState extends State<DayCell> {
 }
 
 /// get the day list of the month
-List<DateTime> getDaysInMonth(DateTime date, StartDayOfWeek startDayOfWeek) {
+List<DateTime> getDaysInMonth(DateTime date, StartDayOfWeek? startDayOfWeek) {
   final firstDayInMonth = DateTime.utc(date.year, date.month, 1, 12);
   // 上个月的天数
   final daysBefore = startDayOfWeek == StartDayOfWeek.sunday

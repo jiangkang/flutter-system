@@ -93,8 +93,8 @@ class _FormsDemoState extends State<FormsDemo> {
     );
   }
 
-  String _validateFiledValue(String value) {
-    if (value.isEmpty) {
+  String? _validateFiledValue(String? value) {
+    if (value!.isEmpty) {
       return "内容不能为空";
     } else {
       return null;
@@ -104,7 +104,7 @@ class _FormsDemoState extends State<FormsDemo> {
   void _login(BuildContext context) {
     var tipMsg =
         "${_userController.value.text}:${_passwordController.value.text}";
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text("恭喜你，登录成功,${tipMsg}")));
     }
