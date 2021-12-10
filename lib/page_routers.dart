@@ -42,6 +42,7 @@ import 'package:flutter_system/page/page_show0.dart';
 import 'package:flutter_system/products/todo/todo_list.dart';
 import 'package:flutter_system/products/xiyou/xiyou_home.dart';
 import 'package:flutter_system/products/youqi/youqi.dart';
+import 'package:flutter_system/senior/rich_text_page.dart';
 
 import 'component/component_appbar.dart';
 import 'component/componet_topbanner.dart';
@@ -120,6 +121,10 @@ final Map<String, WidgetBuilder> productRouters = {
   // "/product/clock": (BuildContext context) => ClockListPage(),
 };
 
+final Map<String,WidgetBuilder> seniorRouters = {
+  "/senior/rich_text": (BuildContext context) => RichTextPage(),
+};
+
 /// App Routers
 /// include of [pageRouters],[componentRouters],[demoRouters],[productRouters]
 final Map<String, WidgetBuilder> appRouters = {
@@ -128,4 +133,5 @@ final Map<String, WidgetBuilder> appRouters = {
   ..addAll(pageRouters)
   ..addAll(componentRouters)
   ..addAll(demoRouters)
+  ..addAll(seniorRouters)
   ..addAll(productRouters);

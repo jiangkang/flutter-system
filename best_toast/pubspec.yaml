@@ -5,11 +5,12 @@ homepage: https://www.jiangkang.tech
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
+  flutter: ">=2.5.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_lints: ^1.0.4
 
 dev_dependencies:
   flutter_test:

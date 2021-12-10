@@ -17,18 +17,18 @@ dependencies:
     path: best_toast
   flutter_localizations:
     sdk: flutter
-  provider:
-  cupertino_icons:
-  webview_flutter:
-  url_launcher:
-  http:
-  video_player:
-  shared_preferences: ^2.0.3
-  share:
+  provider: ^6.0.1
+  cupertino_icons: ^1.0.4
+  webview_flutter: ^3.0.0
+  url_launcher: ^6.0.17
+  http: ^0.13.4
+  video_player: ^2.2.7
+  shared_preferences: ^2.0.10
+  share: ^2.0.4
 #  sensors:
 #  quick_actions:
-  path_provider:
-  image_picker:
+  path_provider: ^2.0.8
+  image_picker: ^0.8.4+4
 #  google_sign_in:
 #  package_info:
 #  local_auth:
@@ -38,33 +38,25 @@ dependencies:
 #  connectivity:
 #  camera: ^0.5.8+11
 #  battery:
-  flutter_markdown:
-  dartdoc:
-  web_socket_channel:
-  sqflite:
-  path:
-  source_gen:
-  flutter_dynamic_ui: ^0.1.0
+  flutter_markdown: ^0.6.8
+  web_socket_channel: ^2.1.0
+  sqflite: ^2.0.1
+  path: ^1.8.0
+  source_gen: ^1.2.0
+  flutter_dynamic_ui: ^0.2.0
 
 
 dev_dependencies:
-  build_runner:
-
-
+  build_runner: ^2.1.5
+  flutter_lints: ^1.0.4
 
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
     - images/
     - assets/video/
     - assets/json/
-
+    - assets/emojis/
   fonts:
     - family: FangZhengFangSongJianTi
       fonts:
