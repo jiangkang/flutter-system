@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kicons/kicons.dart';
 
 class IconFont extends StatefulWidget {
+  const IconFont({Key? key}) : super(key: key);
+
   @override
   _IconFontState createState() => _IconFontState();
 }
@@ -21,14 +24,14 @@ class _IconFontState extends State<IconFont> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     "Emoji",
                     style: TextStyle(fontSize: 21),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: SizedBox(
                     width: 50,
                     child: Divider(
@@ -37,13 +40,13 @@ class _IconFontState extends State<IconFont> {
                     ),
                   ),
                 ),
-//                GridView.count(
-//                  shrinkWrap: true,
-//                  children: EmojiIcon.toList().map((data) {
-//                    return Icon(data);
-//                  }).toList(),
-//                  crossAxisCount: 7,
-//                ),
+               GridView.count(
+                 shrinkWrap: true,
+                 children: EmojiIcon.toList().map((data) {
+                   return Icon(data);
+                 }).toList(),
+                 crossAxisCount: 7,
+               ),
               ],
             ),
           ),
@@ -69,13 +72,13 @@ class _IconFontState extends State<IconFont> {
                     ),
                   ),
                 ),
-//                GridView.count(
-//                  shrinkWrap: true,
-//                  children: AliyunIcon.toList().map((data) {
-//                    return Icon(data);
-//                  }).toList(),
-//                  crossAxisCount: 7,
-//                ),
+               GridView.count(
+                 shrinkWrap: true,
+                 children: AliyunIcon.toList().map((data) {
+                   return Icon(data);
+                 }).toList(),
+                 crossAxisCount: 7,
+               ),
               ],
             ),
           ),
