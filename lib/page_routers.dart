@@ -74,7 +74,7 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/toast": (BuildContext context) => ToastDemo(),
   "/component/pickers": (BuildContext context) => PickersPage(),
   "/component/share": (BuildContext context) => ShareDemoPage(),
-  "/component/dynamic_ui": (BuildContext context) => DynamicUIPage(),
+  // "/component/dynamic_ui": (BuildContext context) => DynamicUIPage(),
   "/component/painter": (BuildContext context) => PainterDemoPage(),
 };
 

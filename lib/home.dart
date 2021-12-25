@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_system/generated/i18n.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -9,28 +9,20 @@ import 'page/page_entry.dart';
 /// Home page
 /// basic sketch : drawer + bottom navigation bar
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Widget> pages = [
-    PageEntry(),
-    ComponentEntry(),
-    DemoEntry(),
-    ArticleEntry()
-  ];
+  final List<Widget> pages = [PageEntry(), ComponentEntry(), DemoEntry(), ArticleEntry()];
 
   int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    List<String> _titles = [
-      "Article",
-      "Component",
-      "Demo",
-      "Page"
-    ];
+    List<String> _titles = ["Article", "Component", "Demo", "Page"];
 
     return Scaffold(
       appBar: AppBar(
@@ -58,8 +50,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: <Widget>[
                 DrawerHeader(
-                  decoration:
-                      BoxDecoration(color: Theme.of(context).primaryColor),
+                  decoration: BoxDecoration(color: Theme.of(context).primaryColor),
                   curve: Curves.bounceInOut,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -77,8 +68,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Expanded(
                   child: Container(
-                    decoration: BoxDecoration(
-                        color: Theme.of(context).scaffoldBackgroundColor),
+                    decoration: BoxDecoration(color: Theme.of(context).scaffoldBackgroundColor),
                     child: ListView(
                       padding: EdgeInsets.all(10),
                       children: <Widget>[
@@ -102,17 +92,11 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.pageview),
-              label: "Page",
-              backgroundColor: Theme.of(context).primaryColor),
+              icon: Icon(Icons.pageview), label: "Page", backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: "Component",
-              backgroundColor: Theme.of(context).primaryColor),
+              icon: Icon(Icons.category), label: "Component", backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
-              icon: Icon(Icons.gps_fixed),
-              label: "Demo",
-              backgroundColor: Theme.of(context).primaryColor),
+              icon: Icon(Icons.gps_fixed), label: "Demo", backgroundColor: Theme.of(context).primaryColor),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
             label: "Article",
@@ -131,8 +115,15 @@ class _HomePageState extends State<HomePage> {
         builder: (BuildContext context, BoxConstraints constraints) {
           return FloatingActionButton(
             onPressed: () {
-              Scaffold.of(context).showSnackBar(
-                  SnackBar(content: Text("当前是否为Release模式：${kReleaseMode}")));
+              setState(() {
+                // debugPaintSizeEnabled = !debugPaintSizeEnabled;
+                // debugPaintLayerBordersEnabled = !debugPaintLayerBordersEnabled;
+                // debugPaintPointersEnabled = !debugPaintPointersEnabled;
+                // WidgetsApp.debugShowWidgetInspectorOverride = !WidgetsApp.debugShowWidgetInspectorOverride;
+                // WidgetsApp.showPerformanceOverlayOverride = !WidgetsApp.showPerformanceOverlayOverride;
+                WidgetsBinding.instance?.reassembleApplication();
+              });
+              Scaffold.of(context).showSnackBar(SnackBar(content: Text("当前是否为Release模式：$kReleaseMode")));
             },
             child: Icon(
               Icons.favorite,

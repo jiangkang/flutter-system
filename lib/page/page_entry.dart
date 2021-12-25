@@ -36,6 +36,8 @@ class PageEntry extends StatelessWidget {
 
 /// Component 入口
 class ComponentEntry extends StatelessWidget {
+  const ComponentEntry({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

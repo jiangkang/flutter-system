@@ -22,7 +22,7 @@ final List<EntryItem> componentEntries = [
   EntryItem("Toast", "/component/toast", icon: Icons.message),
   EntryItem("Pickers", "/component/pickers", icon: Icons.photo_album),
   EntryItem("Share", "/component/share", icon: Icons.share),
-  EntryItem("Dynamic UI", "/component/dynamic_ui", icon: Icons.dynamic_feed),
+  // EntryItem("Dynamic UI", "/component/dynamic_ui", icon: Icons.dynamic_feed),
   EntryItem("Painter", "/component/painter", icon: Icons.brush_outlined),
 ];
 

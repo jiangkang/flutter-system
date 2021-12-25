@@ -3,6 +3,9 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_system/common/res_constants.dart';
 
 class MarkDownEditorPage extends StatefulWidget {
+
+  const MarkDownEditorPage({Key? key}) : super(key: key);
+
   @override
   _MarkDownEditorPageState createState() {
     return _MarkDownEditorPageState();
@@ -10,6 +13,12 @@ class MarkDownEditorPage extends StatefulWidget {
 }
 
 class _MarkDownEditorPageState extends State<MarkDownEditorPage> {
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

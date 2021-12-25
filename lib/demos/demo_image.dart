@@ -20,6 +20,9 @@ const List<String> IMGS = [
 /// 4. 资源/网络/内存加载
 /// 5. 缓存
 class ImageDemo extends StatelessWidget {
+
+  const ImageDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

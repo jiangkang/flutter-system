@@ -79,7 +79,7 @@ class TaskListItem extends StatefulWidget {
 
   final int index;
 
-  TaskListItem(this.index, this.task);
+  const TaskListItem(this.index, this.task,{Key? key}):super(key: key);
 
   @override
   _TaskListItemState createState() => _TaskListItemState();

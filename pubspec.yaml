@@ -43,7 +43,7 @@ dependencies:
   sqflite: ^2.0.1
   path: ^1.8.0
   source_gen: ^1.2.0
-  flutter_dynamic_ui: ^0.3.0
+#  flutter_dynamic_ui: ^0.3.0
 
 
 dev_dependencies:

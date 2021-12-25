@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListViewDemo extends StatefulWidget {
+  const ListViewDemo({Key? key}) : super(key: key);
+
   @override
   _ListViewDemoState createState() => _ListViewDemoState();
 }
