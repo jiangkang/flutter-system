@@ -62,10 +62,7 @@ class _FormsDemoState extends State<FormsDemo> {
                 padding: const EdgeInsets.all(8.0),
                 child: Builder(
                   builder: (BuildContext context) {
-                    return RaisedButton(
-                      color: Theme.of(context).primaryColor,
-                      textColor: Colors.white,
-                      padding: EdgeInsets.all(10),
+                    return TextButton(
                       onPressed: () {
                         _login(context);
                       },
@@ -105,8 +102,8 @@ class _FormsDemoState extends State<FormsDemo> {
     var tipMsg =
         "${_userController.value.text}:${_passwordController.value.text}";
     if (_formKey.currentState!.validate()) {
-      Scaffold.of(context)
-          .showSnackBar(SnackBar(content: Text("恭喜你，登录成功,${tipMsg}")));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("恭喜你，登录成功,$tipMsg")));
     }
   }
 

@@ -3,6 +3,8 @@ import 'package:flutter_system/component/listview_item.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerDemo extends StatefulWidget {
+  const DrawerDemo({Key? key}) : super(key: key);
+
   @override
   _DrawerDemoState createState() => _DrawerDemoState();
 }
@@ -27,7 +29,7 @@ class _DrawerDemoState extends State<DrawerDemo> {
       drawer: Drawer(
         child: SafeArea(
             child: ListView(
-          children: <Widget>[
+          children: const <Widget>[
             DrawerHeader(
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -65,7 +67,7 @@ class _DrawerDemoState extends State<DrawerDemo> {
                   borderRadius: 4.0,
                   title: Text("Show a SnackBar"),
                   onTap: () {
-                    Scaffold.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text("欢迎关注微信公众号:超光速"),
                       backgroundColor: Theme.of(context).accentColor,
                       action: SnackBarAction(

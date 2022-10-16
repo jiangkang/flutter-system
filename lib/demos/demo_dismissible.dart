@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
 
 class SwipeDismissDemo extends StatefulWidget {
+  const SwipeDismissDemo({Key? key}) : super(key: key);
+
   @override
   _SwipeDismissDemoState createState() {
     return _SwipeDismissDemoState();
@@ -45,7 +47,7 @@ class _SwipeDismissDemoState extends State<SwipeDismissDemo> {
                     setState(() {
                       _items.removeAt(index);
                     });
-                    Scaffold.of(context).showSnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("${_items[index]}已删除！")));
                   },
                 );

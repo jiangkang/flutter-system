@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -26,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
 
   NoteType currentType = NoteType.TODO;
 
@@ -50,9 +52,9 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   void initState() {
-    notesMap[NoteType.TODO].add(Note("这里是待办事项", NoteType.TODO));
-    notesMap[NoteType.DOING].add(Note("这里是正在做的任务", NoteType.DOING));
-    notesMap[NoteType.DONE].add(Note("这里是完成的任务", NoteType.DONE));
+    notesMap[NoteType.TODO]?.add(Note("这里是待办事项", NoteType.TODO));
+    notesMap[NoteType.DOING]?.add(Note("这里是正在做的任务", NoteType.DOING));
+    notesMap[NoteType.DONE]?.add(Note("这里是完成的任务", NoteType.DONE));
     super.initState();
     _tabController = TabController(length: tabs.length, vsync: this);
   }
@@ -93,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage>
                 currentType = NoteType.DONE;
                 break;
             }
-            notesMap[currentType].add(Note("测试一下", currentType));
+            notesMap[currentType]?.add(Note("测试一下", currentType));
           });
         },
       ),
@@ -103,9 +105,9 @@ class _MyHomePageState extends State<MyHomePage>
   Widget _buildTabView(NoteType noteType) {
     return ListView.builder(
       itemBuilder: (context, index) => ListTile(
-        title: Text(notesMap[noteType][index].content),
+        title: Text(notesMap[noteType]![index].content),
       ),
-      itemCount: notesMap[noteType].length,
+      itemCount: notesMap[noteType]!.length,
     );
   }
 

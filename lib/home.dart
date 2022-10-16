@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -121,9 +120,9 @@ class _HomePageState extends State<HomePage> {
                 // debugPaintPointersEnabled = !debugPaintPointersEnabled;
                 // WidgetsApp.debugShowWidgetInspectorOverride = !WidgetsApp.debugShowWidgetInspectorOverride;
                 // WidgetsApp.showPerformanceOverlayOverride = !WidgetsApp.showPerformanceOverlayOverride;
-                WidgetsBinding.instance?.reassembleApplication();
+                WidgetsBinding.instance.reassembleApplication();
               });
-              Scaffold.of(context).showSnackBar(SnackBar(content: Text("当前是否为Release模式：$kReleaseMode")));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("当前是否为Release模式：$kReleaseMode")));
             },
             child: Icon(
               Icons.favorite,

@@ -3,7 +3,6 @@ import 'package:flutter_system/component/component_pickers.dart';
 import 'package:flutter_system/component/component_share.dart';
 import 'package:flutter_system/component/dialogs.dart';
 import 'package:flutter_system/component/iconfont.dart';
-import 'package:flutter_system/component/painter_set.dart';
 import 'package:flutter_system/component/toast_demo.dart';
 import 'package:flutter_system/demos/animation/demo_native_view.dart';
 import 'package:flutter_system/demos/demo_animation.dart';
@@ -74,8 +73,6 @@ final Map<String, WidgetBuilder> componentRouters = {
   "/component/toast": (BuildContext context) => ToastDemo(),
   "/component/pickers": (BuildContext context) => PickersPage(),
   "/component/share": (BuildContext context) => ShareDemoPage(),
-  // "/component/dynamic_ui": (BuildContext context) => DynamicUIPage(),
-  "/component/painter": (BuildContext context) => PainterDemoPage(),
 };
 
 /// Demo Routers

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Button Demo
 class ButtonDemo extends StatelessWidget {
+  const ButtonDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final raisedButtons = Container(
@@ -11,28 +13,27 @@ class ButtonDemo extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-          RaisedButton(
+          TextButton(
             onPressed: () {},
-            child: Text("RaisedButton"),
+            child: Text("TextButton"),
           ),
           SizedBox(width: 10),
-          RaisedButton(
+          TextButton(
             onPressed: null,
             child: Text("Disabled"),
           ),
           SizedBox(width: 10),
-          RaisedButton.icon(
+          TextButton.icon(
               onPressed: () {},
               icon: Icon(Icons.favorite_border),
               label: Text("Icon")),
           SizedBox(width: 10),
-          RaisedButton(
+          TextButton(
             onPressed: () {},
-            textColor: Colors.white,
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [
+                  colors: const [
                     Color(0xFF0D47A1),
                     Color(0xFF1976D2),
                     Color(0xFF42A5F5),
@@ -53,15 +54,15 @@ class ButtonDemo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            OutlineButton(
+            ElevatedButton(
               onPressed: () {},
-              child: Text("OutlineButton"),
+              child: Text("ElevatedButton"),
             ),
-            OutlineButton(
+            ElevatedButton(
               onPressed: null,
               child: Text("Disabled"),
             ),
-            OutlineButton.icon(
+            ElevatedButton.icon(
                 onPressed: () {}, icon: Icon(Icons.info), label: Text("Icon"))
           ],
         ),
@@ -88,11 +89,11 @@ class ButtonDemo extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: ToggleButtons(onPressed: (index) {}, children: <Icon>[
+          child: ToggleButtons(onPressed: (index) {}, children: const <Icon>[
             Icon(Icons.ac_unit),
             Icon(Icons.call),
             Icon(Icons.cake),
-          ], isSelected: [
+          ], isSelected: const [
             false,
             true,
             false

@@ -7,5 +7,5 @@ ShapeBorder roundedRectBorder(double radius) => RoundedRectangleBorder(
 
 /// 显示SnackBar
 void showSnackBar(BuildContext context, String content) {
-  Scaffold.of(context).showSnackBar(SnackBar(content: Text(content)));
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(content)));
 }

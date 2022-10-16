@@ -5,6 +5,8 @@ import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/utils/ui_utils.dart';
 
 class DialogsPage extends StatefulWidget {
+  const DialogsPage({Key? key}) : super(key: key);
+
   @override
   _DialogsPageState createState() => _DialogsPageState();
 }
@@ -141,7 +143,7 @@ class _DialogsPageState extends State<DialogsPage> {
                           ],
                           shape: roundedRectBorder(6),
                         )) as FutureOr<String>);
-                Scaffold.of(context)
+                ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text(result)));
               },
             ),

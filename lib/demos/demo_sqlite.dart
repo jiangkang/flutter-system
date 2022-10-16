@@ -27,7 +27,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
+          TextButton(
             onPressed: () {
               insertDog(Dog(
                 id: Random().nextInt(100),
@@ -41,7 +41,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
             },
             child: Text("Insert"),
           ),
-          RaisedButton(
+          TextButton(
             onPressed: () {
               updateDog(Dog(
                 id: Random().nextInt(100),
@@ -55,7 +55,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
             },
             child: Text("Update"),
           ),
-          RaisedButton(
+          TextButton(
             onPressed: () {
               deleteDog(Random().nextInt(100)).then((value) {
                 setState(() {});
