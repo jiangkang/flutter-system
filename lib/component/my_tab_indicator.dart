@@ -47,8 +47,6 @@ class _RoundCornerTabPainter extends BoxPainter {
   }
 
   Rect _indicatorRectFor(Rect rect, TextDirection textDirection) {
-    assert(rect != null);
-    assert(textDirection != null);
     final Rect indicator = insets.resolve(textDirection).deflateRect(rect);
     return Rect.fromLTWH(
       indicator.left,

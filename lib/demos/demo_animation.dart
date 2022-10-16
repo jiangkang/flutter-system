@@ -10,6 +10,8 @@ enum SlideDirection { right2left, bottom2top }
 /// 1. PageRouter Animation
 /// 2. AnimatedContainer
 class AnimationDemo extends StatefulWidget {
+  const AnimationDemo({Key? key}) : super(key: key);
+
   @override
   _AnimationDemoState createState() {
     return _AnimationDemoState();
@@ -52,9 +54,9 @@ class _AnimationDemoState extends State<AnimationDemo> {
     );
   }
 
-  Route _createPageRouter(SlideDirection slideDirection) {
+  Route<dynamic> _createPageRouter(SlideDirection slideDirection) {
     return PageRouteBuilder(pageBuilder: (BuildContext context,
-        Animation animation, Animation secondaryAnimation) {
+        Animation<dynamic> animation, Animation<dynamic> secondaryAnimation) {
       return ImageDemo();
     }, transitionsBuilder: (BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
@@ -67,8 +69,8 @@ class _AnimationDemoState extends State<AnimationDemo> {
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
       var offsetAnimation = animation.drive(tween);
       return SlideTransition(
-        child: child,
         position: offsetAnimation,
+        child: child,
       );
     });
   }

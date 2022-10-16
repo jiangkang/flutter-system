@@ -2,6 +2,8 @@ import 'package:best_toast/best_toast.dart';
 import 'package:flutter/material.dart';
 
 class RealListDemo extends StatefulWidget {
+  const RealListDemo({Key? key}) : super(key: key);
+
   @override
   _RealListDemoState createState() => _RealListDemoState();
 }
@@ -48,6 +50,8 @@ class _RealListDemoState extends State<RealListDemo> {
 }
 
 class ReorderListViewDemo extends StatefulWidget {
+  const ReorderListViewDemo({Key? key}) : super(key: key);
+
   @override
   _ReorderListViewDemoState createState() => _ReorderListViewDemoState();
 }
@@ -86,6 +90,8 @@ class _ReorderListViewDemoState extends State<ReorderListViewDemo> {
 }
 
 class RefreshListViewDemo extends StatefulWidget {
+  const RefreshListViewDemo({Key? key}) : super(key: key);
+
   @override
   _RefreshListViewDemoState createState() => _RefreshListViewDemoState();
 }

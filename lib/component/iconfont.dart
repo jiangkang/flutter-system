@@ -5,10 +5,10 @@ class IconFont extends StatefulWidget {
   const IconFont({Key? key}) : super(key: key);
 
   @override
-  _IconFontState createState() => _IconFontState();
+  IconFontState createState() => IconFontState();
 }
 
-class _IconFontState extends State<IconFont> {
+class IconFontState extends State<IconFont> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,13 +40,13 @@ class _IconFontState extends State<IconFont> {
                     ),
                   ),
                 ),
-               GridView.count(
-                 shrinkWrap: true,
-                 children: EmojiIcon.toList().map((data) {
-                   return Icon(data);
-                 }).toList(),
-                 crossAxisCount: 7,
-               ),
+                GridView.count(
+                  shrinkWrap: true,
+                  crossAxisCount: 7,
+                  children: EmojiIcon.toList().map((data) {
+                    return Icon(data);
+                  }).toList(),
+                ),
               ],
             ),
           ),
@@ -72,13 +72,13 @@ class _IconFontState extends State<IconFont> {
                     ),
                   ),
                 ),
-               GridView.count(
-                 shrinkWrap: true,
-                 children: AliyunIcon.toList().map((data) {
-                   return Icon(data);
-                 }).toList(),
-                 crossAxisCount: 7,
-               ),
+                GridView.count(
+                  shrinkWrap: true,
+                  crossAxisCount: 7,
+                  children: AliyunIcon.toList().map((data) {
+                    return Icon(data);
+                  }).toList(),
+                ),
               ],
             ),
           ),

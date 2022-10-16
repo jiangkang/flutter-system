@@ -15,6 +15,8 @@ const List<Color> colors = [
 class PageViewDemo extends StatelessWidget {
   final _controller = PageController();
 
+  PageViewDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

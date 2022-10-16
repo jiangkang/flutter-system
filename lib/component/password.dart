@@ -33,7 +33,7 @@ class PasswordBox extends StatefulWidget {
 
   final bool enableActionButton;
 
-  PasswordBox({
+  const PasswordBox({Key? key,
     this.boxCount = 4,
     this.boxWidth = 30,
     this.boxHeight = 60,
@@ -50,7 +50,7 @@ class PasswordBox extends StatefulWidget {
     this.clearIcon = const Icon(Icons.backspace),
     this.pasteIcon = const Icon(Icons.content_paste),
     this.enableActionButton = false,
-  });
+  }) : super(key: key);
 
   @override
   _PasswordBoxState createState() {
@@ -124,8 +124,8 @@ class _PasswordBoxState extends State<PasswordBox> {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
-      children: fields,
       verticalDirection: VerticalDirection.down,
+      children: fields,
     );
   }
 
@@ -142,6 +142,7 @@ class _PasswordBoxState extends State<PasswordBox> {
           case ActionType.delete:
             button = widget.clearIcon;
             break;
+          default:
         }
         return IconButton(
           icon: button,

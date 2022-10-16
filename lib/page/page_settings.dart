@@ -6,6 +6,8 @@ import 'package:flutter_system/utils/sp_utils.dart';
 
 /// 设置页
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({Key? key}) : super(key: key);
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -46,7 +48,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         themeData: _isDarkMode ? dartTheme : lightTheme));
               });
             },
-            activeColor: Theme.of(context).accentColor,
+            activeColor: Theme.of(context).colorScheme.secondary,
           ),
         ],
       )),

@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimContainerDemo extends StatefulWidget {
+  const AnimContainerDemo({Key? key}) : super(key: key);
+
   @override
   _AnimContainerDemoState createState() => _AnimContainerDemoState();
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 /// 是否为Release模式
-const bool isReleaseMode = const bool.fromEnvironment("dart.vm.product");
+const bool isReleaseMode = bool.fromEnvironment("dart.vm.product");
 
 /// 判断是否为Debug模式
 bool isDebug() {

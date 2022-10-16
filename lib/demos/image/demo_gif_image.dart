@@ -17,7 +17,7 @@ class _GifDemoState extends State<GifDemo> {
       ),
       body: SafeArea(
         child: ListView(
-          children: [],
+          children: const [],
         ),
       ),
     );

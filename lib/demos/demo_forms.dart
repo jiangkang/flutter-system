@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Forms Demo
 class FormsDemo extends StatefulWidget {
+  const FormsDemo({Key? key}) : super(key: key);
+
   @override
   _FormsDemoState createState() {
     return _FormsDemoState();
@@ -28,7 +30,7 @@ class _FormsDemoState extends State<FormsDemo> {
         title: Text("Forms Demo"),
         centerTitle: true,
       ),
-      body: Container(
+      body: SizedBox(
         width: double.maxFinite,
         height: double.infinity,
         child: Form(
@@ -115,7 +117,7 @@ class _FormsDemoState extends State<FormsDemo> {
   }
 
   void _printFieldValue() {
-    print("username:${_userController.text}");
-    print("password:${_passwordController.text}");
+    debugPrint("username:${_userController.text}");
+    debugPrint("password:${_passwordController.text}");
   }
 }

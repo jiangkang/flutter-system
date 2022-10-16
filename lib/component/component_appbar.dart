@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppBarPage extends StatelessWidget {
+  const AppBarPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +18,7 @@ AppBar buildAppBarWithMiddleSearch() {
       backgroundColor: Colors.white,
       label: Row(
         mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
+        children: const <Widget>[
           Icon(
             Icons.search,
             color: Colors.grey,

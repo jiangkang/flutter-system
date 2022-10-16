@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
 
 class CustomScrollViewDemo extends StatefulWidget {
+  const CustomScrollViewDemo({Key? key}) : super(key: key);
+
   @override
   _CustomScrollViewDemoState createState() {
     return _CustomScrollViewDemoState();
@@ -35,7 +37,7 @@ class _CustomScrollViewDemoState extends State<CustomScrollViewDemo>
             ),
             pinned: true,
             snap: true,
-            bottom: TabBar(controller: _tabController, tabs: [
+            bottom: TabBar(controller: _tabController, tabs: const [
               Tab(
                 text: "Tab1",
               ),

@@ -4,11 +4,13 @@ import 'package:flutter_system/utils/pickers_utils.dart';
 import 'package:share/share.dart';
 
 class ShareDemoPage extends StatefulWidget {
+  const ShareDemoPage({Key? key}) : super(key: key);
+
   @override
-  _ShareDemoPageState createState() => _ShareDemoPageState();
+  ShareDemoPageState createState() => ShareDemoPageState();
 }
 
-class _ShareDemoPageState extends State<ShareDemoPage> {
+class ShareDemoPageState extends State<ShareDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class _ShareDemoPageState extends State<ShareDemoPage> {
             title: Text("Share Files"),
             onTap: () async {
               final pickedFile = await Pickers.pickImageFromGallery();
-              await Share.shareFiles(["${pickedFile.path}"], text: "美图");
+              await Share.shareFiles([(pickedFile.path)], text: "美图");
             },
           ),
         ],

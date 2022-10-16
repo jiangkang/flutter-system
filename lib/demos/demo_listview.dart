@@ -38,20 +38,20 @@ class _ListViewDemoState extends State<ListViewDemo> {
                   position: RelativeRect.fromLTRB(160, 100, 0, 0),
                   items: [
                     PopupMenuItem(
-                      child: Text("NeverScroll"),
                       value: NeverScrollableScrollPhysics(),
+                      child: Text("NeverScroll"),
                     ),
                     PopupMenuItem(
-                      child: Text("AlwaysScroll"),
                       value: AlwaysScrollableScrollPhysics(),
+                      child: Text("AlwaysScroll"),
                     ),
                     PopupMenuItem(
-                      child: Text("ClampingScroll"),
                       value: ClampingScrollPhysics(),
+                      child: Text("ClampingScroll"),
                     ),
                     PopupMenuItem(
-                      child: Text("BounceScroll"),
                       value: BouncingScrollPhysics(),
+                      child: Text("BounceScroll"),
                     ),
                   ],
                 );

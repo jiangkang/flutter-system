@@ -8,6 +8,8 @@ import 'package:flutter_system/utils/nav_utils.dart';
 /// 1. 读取字符串
 /// 2. 读取结构性数据
 class AssetsDemo extends StatefulWidget {
+  const AssetsDemo({Key? key}) : super(key: key);
+
   @override
   _AssetsDemoState createState() {
     return _AssetsDemoState();
@@ -27,16 +29,16 @@ class _AssetsDemoState extends State<AssetsDemo> {
               future: AssetStorage.getArticleList(context),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
-                  final _articles = snapshot.data!;
+                  final articles = snapshot.data!;
                   return ListView.builder(
-                      itemCount: _articles.length,
+                      itemCount: articles.length,
                       itemBuilder: (context, index) {
                         return ListTileCard(
                           borderRadius: 4,
-                          title: Text("${_articles[index].title}"),
+                          title: Text("${articles[index].title}"),
                           onTap: () {
-                            NavUtils.openWebView(context, _articles[index].url,
-                                title: _articles[index].title);
+                            NavUtils.openWebView(context, articles[index].url,
+                                title: articles[index].title);
                           },
                         );
                       });

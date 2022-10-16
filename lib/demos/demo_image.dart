@@ -55,6 +55,7 @@ class ImageDemo extends StatelessWidget {
           width: double.maxFinite,
           height: 300,
           child: Align(
+            alignment: Alignment.bottomCenter,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
@@ -62,7 +63,6 @@ class ImageDemo extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            alignment: Alignment.bottomCenter,
           ),
         ),
       );
@@ -114,7 +114,7 @@ class ImageDemo extends StatelessWidget {
   /// Color Blend Mode, 以蓝色为基准色
   _buildImageBlendColor() => Padding(
         padding: EdgeInsets.all(8),
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: 120,
           child: ListView.builder(

@@ -5,7 +5,15 @@ import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/utils/pickers_utils.dart';
 import 'package:video_player/video_player.dart';
 
-class PickersPage extends StatelessWidget {
+class PickersPage extends StatefulWidget {
+
+  const PickersPage({Key? key}) : super(key: key);
+
+  @override
+  State<PickersPage> createState() => _PickersPageState();
+}
+
+class _PickersPageState extends State<PickersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +27,7 @@ class PickersPage extends StatelessWidget {
             title: Text("Image Picker From Gallery"),
             onTap: () async {
               final file = await Pickers.pickImageFromGallery();
+              if (!mounted) return;
               showImageDialog(context, file);
             },
           ),
@@ -27,6 +36,7 @@ class PickersPage extends StatelessWidget {
             title: Text("Image Picker From Camera"),
             onTap: () async {
               final file = await Pickers.pickImageFromCamera();
+              if (!mounted) return;
               showImageDialog(context, file);
             },
           ),
@@ -35,6 +45,7 @@ class PickersPage extends StatelessWidget {
             title: Text("Video Picker From Gallery"),
             onTap: () async {
               final file = await Pickers.pickVideoFromGallery();
+              if (!mounted) return;
               showVideoDialog(context, file);
             },
           ),
@@ -43,6 +54,7 @@ class PickersPage extends StatelessWidget {
             title: Text("Video Picker From Camera"),
             onTap: () async {
               final file = await Pickers.pickVideoFromCamera();
+              if (!mounted) return;
               showVideoDialog(context, file);
             },
           ),
@@ -53,26 +65,28 @@ class PickersPage extends StatelessWidget {
 
   void showImageDialog(BuildContext context, File file) async {
     await showDialog<void>(
-        barrierDismissible: true,
-        context: context,
-        builder: (context) => Container(
-              width: 100,
-              height: 100,
-              child: Image.file(file),
-            ));
+      barrierDismissible: true,
+      context: context,
+      builder: (context) => SizedBox(
+        width: 100,
+        height: 100,
+        child: Image.file(file),
+      ),
+    );
   }
 
   void showVideoDialog(BuildContext context, File file) async {
-    final _controller = VideoPlayerController.file(file);
-    await _controller.initialize();
-    await _controller.play();
+    final controller = VideoPlayerController.file(file);
+    await controller.initialize();
+    await controller.play();
     await showDialog<void>(
-        barrierDismissible: true,
-        context: context,
-        builder: (context) => Container(
-              width: 100,
-              height: 100,
-              child: VideoPlayer(_controller),
-            ));
+      barrierDismissible: true,
+      context: context,
+      builder: (context) => SizedBox(
+        width: 100,
+        height: 100,
+        child: VideoPlayer(controller),
+      ),
+    );
   }
 }

@@ -12,7 +12,7 @@ class Lunar {
 
   String get lunarMonthString => _lunarMonthList[lunarMonth! - 1];
 
-  static List<String> _lunarMonthList = [
+  static final List<String> _lunarMonthList = [
     '正',
     '二',
     '三',
@@ -26,7 +26,7 @@ class Lunar {
     '冬',
     '腊'
   ];
-  static List<String> _lunarDayList = [
+  static final List<String> _lunarDayList = [
     '初一',
     '初二',
     '初三',
@@ -58,7 +58,7 @@ class Lunar {
     '廿九',
     '三十'
   ];
-  static List<String> _tiangan = [
+  static final List<String> _tiangan = [
     "甲",
     "乙",
     "丙",
@@ -70,7 +70,7 @@ class Lunar {
     "壬",
     "癸"
   ];
-  static List<String> _dizhi = [
+  static final List<String> _dizhi = [
     "子",
     "丑",
     "寅",
@@ -85,11 +85,9 @@ class Lunar {
     "亥"
   ];
 
-  Lunar({int? lunarYear, int? lunarMonth, int? lunarDay, bool? isLeap}) {
+  Lunar({int? lunarYear, this.lunarMonth, this.lunarDay, bool? isLeap}) {
     this.lunarYear = lunarYear;
-    this.lunarMonth = lunarMonth;
-    this.lunarDay = lunarDay;
-    this.isLeap = isLeap == null ? false : isLeap;
+    this.isLeap = isLeap ?? false;
   }
 
   set lunarYear(int? v) {
@@ -102,6 +100,7 @@ class Lunar {
 
   int? get lunarYear => _lunarYear;
 
+  @override
   toString() {
     String result = "";
     if (lunarYear != null) {
@@ -115,10 +114,8 @@ class Lunar {
         year += ((2018 - year) / 60).floor() * 60;
       }
       int absYear = lunarYear!.abs();
-      String prefix = (lunarYear! < 0 ? "公元前" : "") + "$absYear";
-      result += ((_tiangan[(year - 4) % _tiangan.length]) +
-          (_dizhi[(year - 4) % _dizhi.length]) +
-          "年($prefix)");
+      String prefix = "${lunarYear! < 0 ? "公元前" : ""}$absYear";
+      result += ("${_tiangan[(year - 4) % _tiangan.length]}${_dizhi[(year - 4) % _dizhi.length]}年($prefix)");
     }
     if (lunarMonth != null) {
       if (lunarMonth! < 1 || lunarMonth! > 12) {

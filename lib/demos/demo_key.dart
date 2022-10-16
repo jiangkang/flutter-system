@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class KeyDemo extends StatefulWidget {
+  const KeyDemo({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _KeyDemoState();
 }
@@ -16,7 +18,7 @@ class _KeyDemoState extends State<KeyDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
         child: Center(
@@ -41,7 +43,7 @@ class RandomColorBlock extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _RandomColorBlockState();
 
-  RandomColorBlock({Key? key}) : super(key: key);
+  const RandomColorBlock({Key? key}) : super(key: key);
 }
 
 class _RandomColorBlockState extends State<RandomColorBlock> {

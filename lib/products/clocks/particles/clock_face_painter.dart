@@ -25,10 +25,10 @@ class ClockFacePainter extends CustomPainter {
       var angle = i * 60 * 2 * pi / 360.0;
       var point = Offset(cx + radius * sin(angle), cy - radius * cos(angle));
       if (i % 5 == 0) {
-        paint..style = PaintingStyle.fill;
+        paint.style = PaintingStyle.fill;
         canvas.drawCircle(point, dotRadius * 2, paint);
       } else {
-        paint..style = PaintingStyle.stroke;
+        paint.style = PaintingStyle.stroke;
         canvas.drawCircle(point, dotRadius, paint);
       }
     }

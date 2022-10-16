@@ -8,6 +8,8 @@ import 'package:sqflite/sqflite.dart';
 
 /// SQLite Demo
 class SQLiteDemo extends StatefulWidget {
+  const SQLiteDemo({Key? key}) : super(key: key);
+
   @override
   _SQLiteDemoState createState() {
     return _SQLiteDemoState();
@@ -36,7 +38,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
               )).then((value) {
                 setState(() {});
               }).catchError((err) {
-                print("err:$err");
+                debugPrint("err:$err");
               });
             },
             child: Text("Insert"),
@@ -50,7 +52,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
               )).then((value) {
                 setState(() {});
               }).catchError((err) {
-                print("err:$err");
+                debugPrint("err:$err");
               });
             },
             child: Text("Update"),
@@ -60,7 +62,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
               deleteDog(Random().nextInt(100)).then((value) {
                 setState(() {});
               }).catchError((err) {
-                print("err:$err");
+                debugPrint("err:$err");
               });
             },
             child: Text("Delete"),

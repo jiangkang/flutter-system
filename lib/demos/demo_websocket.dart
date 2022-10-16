@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:web_socket_channel/io.dart';
 
 class WebSocketDemo extends StatefulWidget {
+  const WebSocketDemo({Key? key}) : super(key: key);
+
   @override
   _WebSocketDemoState createState() {
     return _WebSocketDemoState();

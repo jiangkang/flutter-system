@@ -5,6 +5,8 @@ const String VIDEO_URL =
     "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4";
 
 class VideoDemo extends StatefulWidget {
+  const VideoDemo({Key? key}) : super(key: key);
+
   @override
   _VideoDemoState createState() {
     return _VideoDemoState();
@@ -66,7 +68,7 @@ class _VideoDemoState extends State<VideoDemo> {
                     ],
                   );
                 } else {
-                  return Container(
+                  return SizedBox(
                     width: double.maxFinite,
                     height: 160,
                     child: Center(

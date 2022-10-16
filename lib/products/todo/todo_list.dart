@@ -32,16 +32,16 @@ class _TodoListPageState extends State<TodoListPage> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
-              final List<Task> _tasks = snapshot.data as List<Task>;
-              if (_tasks.isEmpty) {
+              final List<Task> tasks = snapshot.data as List<Task>;
+              if (tasks.isEmpty) {
                 addTask(Task("新增计划"));
               }
               return ListView.builder(
                 itemBuilder: (context, index) {
-                  final _task = _tasks[index];
-                  return TaskListItem(index, _task);
+                  final task = tasks[index];
+                  return TaskListItem(index, task);
                 },
-                itemCount: _tasks.length,
+                itemCount: tasks.length,
               );
             } else if (snapshot.hasError) {
               return Center(
@@ -127,7 +127,7 @@ class _TaskListItemState extends State<TaskListItem> {
 class AddTaskDialog extends StatefulWidget {
   final FocusNode? focusNode;
 
-  AddTaskDialog({this.focusNode});
+  const AddTaskDialog({Key? key, this.focusNode}) : super(key: key);
 
   @override
   _AddTaskDialogState createState() => _AddTaskDialogState();
@@ -144,7 +144,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 140,
       child: Column(
         children: <Widget>[
@@ -161,7 +161,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                     icon: Icon(Icons.send),
                     onPressed: () {
                       final result = _controller!.value;
-                      if (result == null || result.text.isEmpty) {
+                      if (result.text.isEmpty) {
                         showSnackBar(context, "内容不能为空");
                       } else {
                         addTask(Task(result.text));
@@ -174,7 +174,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
+              children: const <Widget>[
                 Chip(
                   label: Text("设置截止日期"),
                   avatar: Icon(Icons.calendar_today),

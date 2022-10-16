@@ -26,20 +26,20 @@ class _EditTextPageState extends State<EditTextPage>
       "Item generated 1",
       "Item generated 2",
     ];
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     super.initState();
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
   @override
   void didChangeMetrics() {
     super.didChangeMetrics();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
     });
   }
@@ -69,7 +69,7 @@ class _EditTextPageState extends State<EditTextPage>
               height: 60,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
-                children: [
+                children: const [
                   Text("表情"),
                   Expanded(child: KEditText()),
                 ],
@@ -144,40 +144,5 @@ class _KEditTextState extends State<KEditText> {
 }
 
 class KEditTextController extends TextEditingController {
-  @override
-  set selection(TextSelection newSelection) {
-    super.selection = newSelection;
-  }
 
-  @override
-  set text(String newText) {
-    super.text = newText;
-  }
-
-  @override
-  set value(TextEditingValue newValue) {
-    super.value = newValue;
-  }
-
-  @override
-  bool isSelectionWithinTextBounds(TextSelection selection) {
-    return super.isSelectionWithinTextBounds(selection);
-  }
-
-  @override
-  void clear() {
-    super.clear();
-  }
-
-  @override
-  void clearComposing() {
-    super.clearComposing();
-  }
-
-  @override
-  TextSpan buildTextSpan(
-      {required BuildContext context, TextStyle? style, required bool withComposing}) {
-    return super.buildTextSpan(
-        context: context, style: style, withComposing: withComposing);
-  }
 }

@@ -21,11 +21,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> _titles = ["Article", "Component", "Demo", "Page"];
+    List<String> titles = ["Article", "Component", "Demo", "Page"];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_titles[_currentIndex]),
+        title: Text(titles[_currentIndex]),
         centerTitle: true,
         actions: <Widget>[
           InkWell(
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             onTap: () {
-              launch("https://github.com/jiangkang/flutter-system");
+              launchUrl(Uri.parse("https://github.com/jiangkang/flutter-system"));
             },
           ),
         ],

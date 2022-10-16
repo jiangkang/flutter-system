@@ -47,10 +47,10 @@ class Calendar extends StatefulWidget {
       : super(key: key);
 
   @override
-  _CalendarState createState() => _CalendarState();
+  CalendarState createState() => CalendarState();
 }
 
-class _CalendarState extends State<Calendar> {
+class CalendarState extends State<Calendar> {
   DateTime? _selectedYearAndMonth;
 
   StartDayOfWeek? _startDayOfWeek;
@@ -73,7 +73,7 @@ class _CalendarState extends State<Calendar> {
     final week = _buildWeek();
     final days = _buildDays();
     final body = Table(
-      children: [week]..addAll(days),
+      children: [week, ...days],
     );
     return Column(
       children: <Widget>[header, body],
@@ -173,16 +173,15 @@ class _CalendarState extends State<Calendar> {
         } else {
           return weekDaysStartWithMonday;
         }
-        break;
       case CalendarLanguage.english:
         if (_startDayOfWeek == StartDayOfWeek.sunday) {
           return weekDaysStartWithSundayEnglish;
         } else {
           return weekDaysStartWithMondayEnglish;
         }
-        break;
+      default:
+        return [];
     }
-    return [];
   }
 }
 
@@ -194,10 +193,10 @@ class DayCell extends StatefulWidget {
   const DayCell({Key? key, this.dateTime, this.currentMonth}) : super(key: key);
 
   @override
-  _DayCellState createState() => _DayCellState();
+  DayCellState createState() => DayCellState();
 }
 
-class _DayCellState extends State<DayCell> {
+class DayCellState extends State<DayCell> {
   final today = DateTime.now();
 
   @override
@@ -208,7 +207,7 @@ class _DayCellState extends State<DayCell> {
     final isCurrentMonth = widget.currentMonth!.month == widget.dateTime!.month;
     return TableCell(
         verticalAlignment: TableCellVerticalAlignment.middle,
-        child: Container(
+        child: SizedBox(
           height: 60,
           child: Padding(
             padding: const EdgeInsets.all(8.0),

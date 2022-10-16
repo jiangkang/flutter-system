@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 /// Transform Demo
 class TransformDemo extends StatefulWidget {
+  const TransformDemo({Key? key}) : super(key: key);
+
   @override
   _TransformDemoState createState() => _TransformDemoState();
 }
@@ -18,7 +20,7 @@ class _TransformDemoState extends State<TransformDemo>
 
   late Animation<Offset> _animTranslate;
 
-  late Animation _curvedAnim;
+  late Animation<dynamic> _curvedAnim;
 
   late VoidCallback _callback;
 

@@ -26,7 +26,7 @@ class _PhysicsAnimationDemoState extends State<PhysicsAnimationDemo> {
 class DraggableCard extends StatefulWidget {
   final Widget child;
 
-  DraggableCard(this.child);
+  const DraggableCard(this.child, {Key? key}) : super(key: key);
 
   @override
   _DraggableCardState createState() => _DraggableCardState();

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TextFieldDemo extends StatefulWidget {
+  const TextFieldDemo({Key? key}) : super(key: key);
+
   @override
   _TextFieldDemoState createState() => _TextFieldDemoState();
 }
@@ -24,25 +26,23 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
         title: Text("TextField"),
         centerTitle: true,
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Text(_value),
-            Row(
-              children: <Widget>[
-                Text("Default:"),
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    onChanged: (value) {
-                      _value = value;
-                    },
-                  ),
+      body: Column(
+        children: <Widget>[
+          Text(_value),
+          Row(
+            children: <Widget>[
+              Text("Default:"),
+              Expanded(
+                child: TextField(
+                  controller: _controller,
+                  onChanged: (value) {
+                    _value = value;
+                  },
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

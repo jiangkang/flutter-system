@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FittedBoxDemo extends StatefulWidget {
+  const FittedBoxDemo({Key? key}) : super(key: key);
+
   @override
   _FittedBoxDemoState createState() => _FittedBoxDemoState();
 }
@@ -22,13 +24,11 @@ class _FittedBoxDemoState extends State<FittedBoxDemo> {
                 color: Colors.white,
                 child: Row(
                   children: [
-                    Container(
-                      child: Text(
-                        "Understand With FittedBox",
-                        style: TextStyle(fontSize: 20, color: Colors.black),
-                      ),
+                    Text(
+                      "Understand With FittedBox",
+                      style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
-                    Container(
+                    SizedBox(
                       height: 200,
                       child: Image.asset("images/landscape2.jpeg"),
                     ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_system/component/calendar.dart';
 
 class CalendarPage extends StatefulWidget {
+  const CalendarPage({Key? key}) : super(key: key);
+
   @override
   _CalendarPageState createState() => _CalendarPageState();
 }
@@ -16,7 +18,7 @@ class _CalendarPageState extends State<CalendarPage> {
       ),
       body: SafeArea(
         child: Column(
-          children: <Widget>[
+          children: const <Widget>[
             Calendar(
               startDayOfWeek: StartDayOfWeek.sunday,
               calendarLanguage: CalendarLanguage.english,

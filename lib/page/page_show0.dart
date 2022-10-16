@@ -11,20 +11,25 @@ class ShowCaseOModel {
   final double radius;
   final int likeNum;
 
-  ShowCaseOModel(this.imgUrl, this.avatarUrl, this.title, this.username,
+  const ShowCaseOModel(this.imgUrl, this.avatarUrl, this.title, this.username,
       this.radius, this.likeNum);
 }
 
+final List<ShowCaseOModel> _dataList = [
+  ShowCaseOModel(IMGS[0], IMGS[0], "大江东去浪淘尽", "小白", 6, 10),
+  ShowCaseOModel(IMGS[1], IMGS[1], "高处不胜寒", "小苏", 6, 12),
+  ShowCaseOModel(IMGS[2], IMGS[2], "为伊消得人憔悴", "小李", 6, 14),
+  ShowCaseOModel(IMGS[3], IMGS[3], "滚滚长江东逝水", "匿名", 6, 15),
+  ShowCaseOModel(IMGS[4], IMGS[4], "恰同学少年", "老毛", 6, 19),
+  ShowCaseOModel(IMGS[5], IMGS[5], "大漠孤烟直", "小愤", 6, 14),
+];
+
 /// 信息流
 class Show0Page extends StatefulWidget {
-  final List<ShowCaseOModel> dataList = [
-    ShowCaseOModel(IMGS[0], IMGS[0], "大江东去浪淘尽", "小白", 6, 10),
-    ShowCaseOModel(IMGS[1], IMGS[1], "高处不胜寒", "小苏", 6, 12),
-    ShowCaseOModel(IMGS[2], IMGS[2], "为伊消得人憔悴", "小李", 6, 14),
-    ShowCaseOModel(IMGS[3], IMGS[3], "滚滚长江东逝水", "匿名", 6, 15),
-    ShowCaseOModel(IMGS[4], IMGS[4], "恰同学少年", "老毛", 6, 19),
-    ShowCaseOModel(IMGS[5], IMGS[5], "大漠孤烟直", "小愤", 6, 14),
-  ];
+
+
+
+  const Show0Page({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _Show0PageState();
@@ -54,7 +59,7 @@ class _Show0PageState extends State<Show0Page> {
 
   Widget gen(int index) {
     final ShowCaseOModel model =
-        widget.dataList[index % widget.dataList.length];
+        _dataList[index % _dataList.length];
     return ShowCase0(
       imgUrl: model.imgUrl,
       avatarUrl: model.avatarUrl,

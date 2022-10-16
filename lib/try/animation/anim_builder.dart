@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AnimBuilderDemo extends StatefulWidget {
+  const AnimBuilderDemo({Key? key}) : super(key: key);
+
   @override
   _AnimBuilderDemoState createState() => _AnimBuilderDemoState();
 }
@@ -61,7 +63,7 @@ class GrowTransition extends StatelessWidget {
     return Center(
       child: AnimatedBuilder(
         animation: animation!,
-        builder: (context, w) => Container(
+        builder: (context, w) => SizedBox(
           width: animation!.value,
           height: animation!.value,
           child: w,
@@ -71,10 +73,12 @@ class GrowTransition extends StatelessWidget {
     );
   }
 
-  GrowTransition({this.child, this.animation});
+  const GrowTransition({Key? key, this.child, this.animation}) : super(key: key);
 }
 
 class LogoWidget extends StatelessWidget {
+  const LogoWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(

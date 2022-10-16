@@ -2,6 +2,8 @@ import 'package:best_toast/best_toast.dart';
 import 'package:flutter/material.dart';
 
 class ToastDemo extends StatefulWidget {
+  const ToastDemo({Key? key}) : super(key: key);
+
   @override
   _ToastDemoState createState() => _ToastDemoState();
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FadeInDemo extends StatefulWidget {
+  const FadeInDemo({Key? key}) : super(key: key);
+
   @override
   _FadeInDemoState createState() => _FadeInDemoState();
 }
@@ -36,7 +38,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
               duration: Duration(seconds: 3),
               opacity: _opacity,
               child: Column(
-                children: [
+                children: const [
                   Text('Type: Owl'),
                   Text('Age: 39'),
                   Text('Employment: None'),

@@ -69,13 +69,13 @@ class _DrawerDemoState extends State<DrawerDemo> {
                   onTap: () {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text("欢迎关注微信公众号:超光速"),
-                      backgroundColor: Theme.of(context).accentColor,
+                      backgroundColor: Theme.of(context).colorScheme.secondary,
                       action: SnackBarAction(
                           label: "关注",
                           textColor: Colors.white,
                           onPressed: () {
-                            launch(
-                                "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5ODQ5OTIzMw==#wechat_redirect");
+                            launchUrl(Uri.parse(
+                                "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5ODQ5OTIzMw==#wechat_redirect"));
                           }),
                     ));
                   }),

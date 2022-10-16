@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
+
 /// YouQi Model
 class YouQiModel {
   /// 背景图片
@@ -63,7 +65,7 @@ class YouQiResponse {
         code: json["code"],
         msg: json["msg"],
         data: List<dynamic>.from(json["data"]).map((d) {
-          print(d);
+          debugPrint(d);
           return YouQiModel.fromJson(d);
         }).toList());
   }

@@ -6,6 +6,8 @@ import 'package:kicons/kicons.dart';
 /// top banner page
 /// 轮播图上覆盖几个快捷入口
 class TopBannerPage extends StatelessWidget {
+  const TopBannerPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final bgTopBanner = Column(
@@ -62,7 +64,7 @@ class TopBannerPage extends StatelessWidget {
                   CircleAvatar(
                     child: Icon(EmojiIcon.wink_smile),
                   ),
-                  Text("Item${index}")
+                  Text("Item$index")
                 ],
               ),
             ));

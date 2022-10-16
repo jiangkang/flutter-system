@@ -45,7 +45,6 @@ import 'package:flutter_system/senior/rich_text_page.dart';
 
 import 'component/component_appbar.dart';
 import 'component/componet_topbanner.dart';
-import 'component/dynamic_ui_page.dart';
 import 'demos/animation/demo_transform.dart';
 import 'demos/demo_button.dart';
 import 'demos/demo_chip.dart';

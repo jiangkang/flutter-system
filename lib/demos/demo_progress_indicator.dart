@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProgressIndicatorDemo extends StatelessWidget {
+  const ProgressIndicatorDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +12,9 @@ class ProgressIndicatorDemo extends StatelessWidget {
       ),
       body: SafeArea(
         child: GridView.count(
-          children: <Widget>[
+          crossAxisCount: 2,
+          padding: EdgeInsets.all(10),
+          children: const <Widget>[
             Card(child: Center(child: LinearProgressIndicator())),
             Card(
                 child: Center(
@@ -40,8 +44,6 @@ class ProgressIndicatorDemo extends StatelessWidget {
               backgroundColor: Colors.pinkAccent,
             ))),
           ],
-          crossAxisCount: 2,
-          padding: EdgeInsets.all(10),
         ),
       ),
     );

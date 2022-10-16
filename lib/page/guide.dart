@@ -100,11 +100,11 @@ class _GuidePageState extends State<GuidePage> {
   }
 
   Widget _buildItem(BuildContext context, int index) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: double.infinity,
       child: Image.asset(
-        "images/" + data[index].imgUrl,
+        "images/${data[index].imgUrl}",
         fit: BoxFit.fill,
       ),
     );

@@ -118,5 +118,5 @@ class ListTileCard extends StatelessWidget {
       this.onTap,
       this.onLongPress,
       this.selected = false,
-      this.borderRadius = 0.0});
+      this.borderRadius = 0.0}) : super(key: key);
 }

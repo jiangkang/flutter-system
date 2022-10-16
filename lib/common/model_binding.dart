@@ -11,10 +11,10 @@ class ModelBinding extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ModelBindingState createState() => _ModelBindingState();
+  ModelBindingState createState() => ModelBindingState();
 }
 
-class _ModelBindingState extends State<ModelBinding> {
+class ModelBindingState extends State<ModelBinding> {
   AppSettings? currentSettings;
 
   @override
@@ -41,11 +41,10 @@ class _ModelBindingState extends State<ModelBinding> {
 }
 
 class _ModelBindingScope extends InheritedWidget {
-  final _ModelBindingState modelBindingState;
+  final ModelBindingState modelBindingState;
 
-  _ModelBindingScope({Key? key, required this.modelBindingState, required Widget child})
-      : assert(modelBindingState != null),
-        super(key: key, child: child);
+  const _ModelBindingScope({Key? key, required this.modelBindingState, required Widget child})
+      : super(key: key, child: child);
 
   @override
   bool updateShouldNotify(_ModelBindingScope oldWidget) {
@@ -73,14 +72,4 @@ class AppSettings {
         context.dependOnInheritedWidgetOfExactType<_ModelBindingScope>()!;
     scope.modelBindingState.updateModel(newSettings);
   }
-
-  @override
-  bool operator ==(Object other) {
-    return other is AppSettings &&
-        themeData == other.themeData &&
-        locale == other.locale;
-  }
-
-  @override
-  int get hashCode => hashValues(this.themeData, this.locale);
 }

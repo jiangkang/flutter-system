@@ -11,7 +11,7 @@ class WebPage extends StatefulWidget {
     return _WebPageState();
   }
 
-  WebPage(this.title, this.webUrl);
+  const WebPage(this.title, this.webUrl, {Key? key}) : super(key: key);
 }
 
 class _WebPageState extends State<WebPage> {
@@ -54,8 +54,8 @@ class _WebPageState extends State<WebPage> {
             },
           ),
           Visibility(
-            child: CircularProgressIndicator(),
             visible: !_loadFinished,
+            child: CircularProgressIndicator(),
           )
         ],
       ),

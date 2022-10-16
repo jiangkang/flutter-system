@@ -8,10 +8,10 @@ class DialogsPage extends StatefulWidget {
   const DialogsPage({Key? key}) : super(key: key);
 
   @override
-  _DialogsPageState createState() => _DialogsPageState();
+  DialogsPageState createState() => DialogsPageState();
 }
 
-class _DialogsPageState extends State<DialogsPage> {
+class DialogsPageState extends State<DialogsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,6 +90,7 @@ class _DialogsPageState extends State<DialogsPage> {
                   context: context,
                   builder: (context) => SimpleDialog(
                         title: Text("警告"),
+                        shape: roundedRectBorder(6),
                         children: <Widget>[
                           SimpleDialogOption(
                             onPressed: () {},
@@ -115,7 +116,6 @@ class _DialogsPageState extends State<DialogsPage> {
                             ),
                           )
                         ],
-                        shape: roundedRectBorder(6),
                       ));
             },
           ),
@@ -127,6 +127,7 @@ class _DialogsPageState extends State<DialogsPage> {
                     context: context,
                     builder: (context) => SimpleDialog(
                           title: Text("你喜欢Flutter还是React Native？"),
+                          shape: roundedRectBorder(6),
                           children: <Widget>[
                             SimpleDialogOption(
                               onPressed: () {
@@ -141,8 +142,8 @@ class _DialogsPageState extends State<DialogsPage> {
                               child: Text("React Native"),
                             )
                           ],
-                          shape: roundedRectBorder(6),
                         )) as FutureOr<String>);
+                if (!mounted) return;
                 ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text(result)));
               },

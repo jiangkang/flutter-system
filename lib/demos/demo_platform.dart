@@ -3,6 +3,8 @@ import 'package:flutter_system/component/listview_item.dart';
 import 'package:flutter_system/platform/toast.dart';
 
 class PlatformDemo extends StatefulWidget {
+  const PlatformDemo({Key? key}) : super(key: key);
+
   @override
   _PlatformDemoState createState() {
     return _PlatformDemoState();

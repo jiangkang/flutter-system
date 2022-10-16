@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ContainerDemo extends StatelessWidget {
+  const ContainerDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: <Widget>[
+      children: const <Widget>[
         SizedBox(
           width: 100,
           height: 100,

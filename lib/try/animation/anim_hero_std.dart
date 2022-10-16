@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HeroStdDemo extends StatefulWidget {
+  const HeroStdDemo({Key? key}) : super(key: key);
+
   @override
   _HeroStdDemoState createState() => _HeroStdDemoState();
 }

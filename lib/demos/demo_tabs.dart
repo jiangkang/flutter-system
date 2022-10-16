@@ -4,6 +4,8 @@ import 'package:flutter_system/page/page_entry.dart';
 /// Tab Demo
 /// important concept: [TabBar.indicator],[TabController],[TabBar],[TabBarView]
 class TabsDemo extends StatefulWidget {
+  const TabsDemo({Key? key}) : super(key: key);
+
   @override
   _TabsDemoState createState() {
     return _TabsDemoState();

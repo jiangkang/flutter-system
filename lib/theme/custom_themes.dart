@@ -6,8 +6,7 @@ final dartTheme = ThemeData.dark();
 
 final yellowLightTheme = ThemeData(
     brightness: Brightness.light,
-    primaryColor: Colors.yellow,
-    accentColor: Colors.yellowAccent);
+    primaryColor: Colors.yellow, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.yellowAccent));
 
 class ThemesNotifier with ChangeNotifier {
   static ThemeData _currentTheme = lightTheme;

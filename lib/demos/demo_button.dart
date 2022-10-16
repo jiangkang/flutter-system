@@ -89,14 +89,14 @@ class ButtonDemo extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: ToggleButtons(onPressed: (index) {}, children: const <Icon>[
-            Icon(Icons.ac_unit),
-            Icon(Icons.call),
-            Icon(Icons.cake),
-          ], isSelected: const [
+          child: ToggleButtons(onPressed: (index) {}, isSelected: const [
             false,
             true,
             false
+          ], children: const <Icon>[
+            Icon(Icons.ac_unit),
+            Icon(Icons.call),
+            Icon(Icons.cake),
           ]),
         ),
       ),

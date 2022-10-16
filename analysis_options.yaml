@@ -15,3 +15,6 @@ linter:
     constant_identifier_names: false
     prefer_const_constructors: false
     non_constant_identifier_names: false
+    library_private_types_in_public_api: false
+    depend_on_referenced_packages: false
+    implementation_imports: false

@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 /// Text Demos
 class TextDemo extends StatelessWidget {
+  const TextDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,8 +17,10 @@ class TextDemo extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20),
                 child: Center(child: Text("源码"))),
             onTap: () {
-              launch(
-                  "https://github.com/jiangkang/flutter-system/blob/master/lib/demos/demo_text.dart");
+              launchUrl(
+                Uri.parse(
+                    "https://github.com/jiangkang/flutter-system/blob/master/lib/demos/demo_text.dart"),
+              );
             },
           ),
         ],
@@ -106,7 +110,7 @@ class TextDemo extends StatelessWidget {
             title: Text(
               "style: letterSpacing,shadows",
               style: TextStyle(
-                shadows: <Shadow>[
+                shadows: const <Shadow>[
                   Shadow(color: Colors.pink, offset: Offset(1, 2))
                 ],
               ),
@@ -172,7 +176,7 @@ class TextDemo extends StatelessWidget {
             title: Text.rich(
               TextSpan(
                 text: "plain text ",
-                children: <TextSpan>[
+                children: const <TextSpan>[
                   TextSpan(
                       text: "color",
                       style: TextStyle(color: Colors.pinkAccent)),
@@ -187,7 +191,7 @@ class TextDemo extends StatelessWidget {
           ListTile(
             title: RichText(
                 text: TextSpan(
-              children: <InlineSpan>[
+              children: const <InlineSpan>[
                 TextSpan(
                     text: "Text 1", style: TextStyle(color: Colors.blueAccent)),
                 TextSpan(

@@ -6,7 +6,7 @@ class ColorUtils {
   /// 解析颜色字符串
   /// * `colorString` 颜色格式为"#123456"
   static Color? parseColor(String colorString) {
-    if (colorString == null || colorString.isEmpty) {
+    if (colorString.isEmpty) {
       return null;
     } else {
       int colorInt = int.parse(colorString.substring(1), radix: 16);

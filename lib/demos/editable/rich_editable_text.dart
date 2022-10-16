@@ -22,7 +22,7 @@ class RichTextEditingController extends TextEditingController {
       int start = match.start;
       int end = match.end;
       String matchedText = content.substring(start,end);
-      debugPrint(">>> "+ matchedText);
+      debugPrint(">>> $matchedText");
     });
     if (content.startsWith("@") && content.endsWith(" ")) {
       InlineSpan span = WidgetSpan(

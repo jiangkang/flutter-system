@@ -30,6 +30,8 @@ enum DemoType {
 }
 
 class GridDemo extends StatefulWidget {
+  const GridDemo({Key? key}) : super(key: key);
+
   @override
   _GridDemoState createState() => _GridDemoState();
 }
@@ -56,24 +58,24 @@ class _GridDemoState extends State<GridDemo> {
                 child: Text("切换"),
                 itemBuilder: (context) => <PopupMenuEntry<DemoType>>[
                   const PopupMenuItem(
-                    child: Text("GridView"),
                     value: DemoType.GridView,
+                    child: Text("GridView"),
                   ),
                   const PopupMenuItem(
-                    child: Text("GridViewCount"),
                     value: DemoType.GridViewCount,
+                    child: Text("GridViewCount"),
                   ),
                   const PopupMenuItem(
-                    child: Text("GridViewExtent"),
                     value: DemoType.GridViewExtent,
+                    child: Text("GridViewExtent"),
                   ),
                   const PopupMenuItem(
-                    child: Text("GridViewCustom"),
                     value: DemoType.GridViewCustom,
+                    child: Text("GridViewCustom"),
                   ),
                   const PopupMenuItem(
-                    child: Text("GridViewBuilder"),
                     value: DemoType.GridViewBuilder,
+                    child: Text("GridViewBuilder"),
                   ),
                 ],
               ),
@@ -87,6 +89,8 @@ class _GridDemoState extends State<GridDemo> {
 }
 
 class GridViewDemo extends StatelessWidget {
+  const GridViewDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GridView(
@@ -108,6 +112,8 @@ class GridViewDemo extends StatelessWidget {
 }
 
 class GridViewCountDemo extends StatelessWidget {
+  const GridViewCountDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -118,19 +124,21 @@ class GridViewCountDemo extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         scrollDirection: Axis.horizontal,
+        crossAxisCount: 3,
         children: List.generate(
           100,
           (index) {
             return buildCachedNetworkImage(index);
           },
         ),
-        crossAxisCount: 3,
       ),
     );
   }
 }
 
 class GridViewExtentDemo extends StatelessWidget {
+  const GridViewExtentDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -153,6 +161,8 @@ class GridViewExtentDemo extends StatelessWidget {
 }
 
 class GridViewBuilderDemo extends StatelessWidget {
+  const GridViewBuilderDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -170,6 +180,8 @@ class GridViewBuilderDemo extends StatelessWidget {
 }
 
 class GridViewCustomDemo extends StatelessWidget {
+  const GridViewCustomDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(

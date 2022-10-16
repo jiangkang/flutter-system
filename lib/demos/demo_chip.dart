@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ChipDemo extends StatelessWidget {
+  const ChipDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +12,7 @@ class ChipDemo extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(8),
-        children: <Widget>[
+        children: const <Widget>[
           Chip(label: Text("Default")),
           Chip(
             label: Text("Default"),

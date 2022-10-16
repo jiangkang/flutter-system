@@ -1,10 +1,10 @@
-import 'dart:ui';
 import 'dart:ui' as prefix0;
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class CustomPaintDemo extends StatefulWidget {
+  const CustomPaintDemo({Key? key}) : super(key: key);
+
   @override
   _CustomPaintDemoState createState() => _CustomPaintDemoState();
 }
@@ -72,9 +72,9 @@ class BackgroundPainter extends CustomPainter {
     myPaint
       ..color = Colors.black
       ..style = PaintingStyle.fill;
-    stars.forEach((star) {
+    for (var star in stars) {
       canvas.drawCircle(star * cellWidth, 2, myPaint);
-    });
+    }
   }
 
   @override
@@ -113,19 +113,19 @@ class SimplePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     double cellWidth = size.width / 18;
 
-    blacks.forEach((offset) {
+    for (var offset in blacks) {
       blackPaint
-        ..shader = prefix0.Gradient.radial(
+        .shader = prefix0.Gradient.radial(
             offset * cellWidth, 9, [Colors.black, Colors.grey[850]!]);
       canvas.drawCircle(offset * cellWidth, 9, blackPaint);
-    });
+    }
 
-    whites.forEach((offset) {
+    for (var offset in whites) {
       whitePaint
-        ..shader = prefix0.Gradient.radial(
+        .shader = prefix0.Gradient.radial(
             offset * cellWidth, 9, [Colors.white, Colors.grey[100]!]);
       canvas.drawCircle(offset * cellWidth, 9, whitePaint);
-    });
+    }
   }
 
   @override

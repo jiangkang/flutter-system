@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_system/component/listview_item.dart';
 
 class TimeDemo extends StatefulWidget {
+  const TimeDemo({Key? key}) : super(key: key);
+
   @override
   _TimeDemoState createState() => _TimeDemoState();
 }
@@ -66,7 +68,7 @@ class _TimeDemoState extends State<TimeDemo> {
               subtitle: Text("timeOfDay.hourOfPeriod 12小时制"),
             ),
             ListTileCard(
-              title: Text("${timeOfDay.format(context)}"),
+              title: Text(timeOfDay.format(context)),
               subtitle: Text("timeOfDay.format(context) 12小时制格式化显示"),
             ),
           ],

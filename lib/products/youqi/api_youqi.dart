@@ -18,11 +18,11 @@ Future<YouQiResponse> requestYouQiResponseFromApi(String url) async {
 
 Future<YouQiResponse> requestYouQiResponseFromAssets(
     BuildContext context) async {
-  Future<YouQiResponse> Function(String value) parser = (jsonData) {
+  parser(jsonData) {
     final YouQiResponse response =
         YouQiResponse.fromJson(json.decode(jsonData));
     return SynchronousFuture(response);
-  };
+  }
   return DefaultAssetBundle.of(context)
       .loadStructuredData<YouQiResponse>("assets/json/youqi.json", parser);
 }
@@ -39,13 +39,13 @@ Future<YouQiResponse> requestYouQiResponseFromAssets(
 
 Future<Map<String, List<String>>> requestMonthAliasResponseFromAssets(
     BuildContext context) async {
-  Future<Map<String, List<String>>> Function(String value) parser = (jsonData) {
+  parser(jsonData) {
     Map<String, dynamic> map = json.decode(jsonData);
     Map<String, List<String>> result = map.map((key, value) {
       return MapEntry(key, List<String>.from(value));
     });
     return SynchronousFuture(result);
-  };
+  }
   return DefaultAssetBundle.of(context)
       .loadStructuredData<Map<String, List<String>>>(
           "assets/json/month_traditional.json", parser);

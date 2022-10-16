@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AnimTwoDemo extends StatefulWidget {
+  const AnimTwoDemo({Key? key}) : super(key: key);
+
   @override
   _AnimTwoDemoState createState() => _AnimTwoDemoState();
 }
@@ -47,7 +49,7 @@ class AnimatedLogo extends AnimatedWidget {
   static final _tweenOpacity = Tween<double>(begin: 0.0, end: 1.0);
   static final _tweenSize = Tween<double>(begin: 100.0, end: 360.0);
 
-  AnimatedLogo({Key? key, required Animation<double> animation})
+  const AnimatedLogo({Key? key, required Animation<double> animation})
       : super(key: key, listenable: animation);
 
   @override
@@ -56,7 +58,7 @@ class AnimatedLogo extends AnimatedWidget {
     return Center(
       child: Opacity(
         opacity: _tweenOpacity.evaluate(animation),
-        child: Container(
+        child: SizedBox(
           width: _tweenSize.evaluate(animation),
           height: _tweenSize.evaluate(animation),
           child: FlutterLogo(),

@@ -27,18 +27,18 @@ Future<List<Task>> requestTaskList() async {
   return List.generate(maps.length, (index) => Task.fromMap(maps[index]));
 }
 
-Future updateTask(int index, Task newTask) async {
+Future<dynamic> updateTask(int index, Task newTask) async {
   final Database db = await todoListDb;
   await db.update("todo", newTask.toMap(),
       where: "taskName= ?", whereArgs: [newTask.taskName]);
 }
 
-Future addTask(Task task) async {
+Future<dynamic> addTask(Task task) async {
   final Database db = await todoListDb;
   await db.insert("todo", task.toMap());
 }
 
-Future deleteTask(Task task) async {
+Future<dynamic> deleteTask(Task task) async {
   final Database db = await todoListDb;
   await db.delete("todo", where: "taskName = ?", whereArgs: [task.taskName]);
 }

@@ -26,7 +26,7 @@ class _SwipeDismissDemoState extends State<SwipeDismissDemo> {
               itemBuilder: (context, index) {
                 return Dismissible(
                   background: Container(
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     child: Align(
                       alignment: AlignmentDirectional.centerEnd,
                       child: Padding(
@@ -38,10 +38,6 @@ class _SwipeDismissDemoState extends State<SwipeDismissDemo> {
                       ),
                     ),
                   ),
-                  child: ListTileCard(
-                    borderRadius: 6,
-                    title: Text(_items[index]),
-                  ),
                   key: Key(_items[index]),
                   onDismissed: (DismissDirection direction) {
                     setState(() {
@@ -50,6 +46,10 @@ class _SwipeDismissDemoState extends State<SwipeDismissDemo> {
                     ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("${_items[index]}已删除！")));
                   },
+                  child: ListTileCard(
+                    borderRadius: 6,
+                    title: Text(_items[index]),
+                  ),
                 );
               })),
     );

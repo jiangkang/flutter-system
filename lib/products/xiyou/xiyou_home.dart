@@ -6,6 +6,8 @@ import 'package:flutter_system/utils/time_utils.dart';
 
 /// Xiyou 首页
 class XiyouHome extends StatefulWidget {
+  const XiyouHome({Key? key}) : super(key: key);
+
   @override
   _XiyouHomeState createState() => _XiyouHomeState();
 }
@@ -67,7 +69,7 @@ class _XiyouHomeState extends State<XiyouHome> {
           title: Text("点赞"),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: const <Widget>[
               IconButton(icon: Icon(Icons.forward_5), onPressed: null),
               IconButton(icon: Icon(Icons.forward_10), onPressed: null),
               IconButton(icon: Icon(Icons.forward_30), onPressed: null),
@@ -79,7 +81,7 @@ class _XiyouHomeState extends State<XiyouHome> {
           title: Text("习惯"),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: const <Widget>[
               IconButton(icon: Icon(Icons.file_download), onPressed: null),
               IconButton(icon: Icon(Icons.file_upload), onPressed: null),
               IconButton(icon: Icon(Icons.folder), onPressed: null),

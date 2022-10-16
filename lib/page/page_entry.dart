@@ -9,6 +9,8 @@ import 'package:flutter_system/utils/nav_utils.dart';
 
 /// Page 入口
 class PageEntry extends StatelessWidget {
+  const PageEntry({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,6 +70,8 @@ class ComponentEntry extends StatelessWidget {
 
 /// Demo 入口
 class DemoEntry extends StatelessWidget {
+  const DemoEntry({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -104,6 +108,8 @@ class DemoEntry extends StatelessWidget {
 
 /// Article 入口
 class ArticleEntry extends StatelessWidget {
+  const ArticleEntry({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -111,16 +117,16 @@ class ArticleEntry extends StatelessWidget {
             future: AssetStorage.getArticleList(context),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
-                final _articles = snapshot.data!;
+                final articles = snapshot.data!;
                 return ListView.builder(
-                    itemCount: _articles.length,
+                    itemCount: articles.length,
                     itemBuilder: (context, index) {
                       return ListTileCard(
                         borderRadius: 4,
-                        title: Text("${_articles[index].title}"),
+                        title: Text("${articles[index].title}"),
                         onTap: () {
-                          NavUtils.openWebView(context, _articles[index].url,
-                              title: _articles[index].title);
+                          NavUtils.openWebView(context, articles[index].url,
+                              title: articles[index].title);
                         },
                       );
                     });

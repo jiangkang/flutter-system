@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Xiyou 我的页面
 class XiyouMyPage extends StatefulWidget {
+  const XiyouMyPage({Key? key}) : super(key: key);
+
   @override
   _XiyouMyPageState createState() => _XiyouMyPageState();
 }
@@ -42,13 +44,13 @@ class _XiyouMyPageState extends State<XiyouMyPage> {
             title: Text("运动天数"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   "5天",
                   style: TextStyle(color: Colors.grey),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 12, left: 6),
+                  padding: EdgeInsets.only(right: 12, left: 6),
                   child: Icon(Icons.chevron_right),
                 ),
               ],
@@ -59,13 +61,13 @@ class _XiyouMyPageState extends State<XiyouMyPage> {
             title: Text("测量长度"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   "30天",
                   style: TextStyle(color: Colors.grey),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 12, left: 6),
+                  padding: EdgeInsets.only(right: 12, left: 6),
                   child: Icon(Icons.chevron_right),
                 ),
               ],
@@ -88,13 +90,13 @@ class _XiyouMyPageState extends State<XiyouMyPage> {
             title: Text("关于"),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   "v1.0.0",
                   style: TextStyle(color: Colors.grey),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 12, left: 6),
+                  padding: EdgeInsets.only(right: 12, left: 6),
                   child: Icon(Icons.chevron_right),
                 ),
               ],

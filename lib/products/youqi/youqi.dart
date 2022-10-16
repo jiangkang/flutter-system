@@ -42,7 +42,7 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
 class YouQiContentPage extends StatefulWidget {
   final YouQiModel model;
 
-  YouQiContentPage(this.model);
+  const YouQiContentPage(this.model, {Key? key}) : super(key: key);
 
   @override
   _YouQiContentPageState createState() => _YouQiContentPageState();
@@ -128,11 +128,11 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                 ),
               ),
               InkWell(
+                onTap: null,
                 child: Icon(
                   Icons.share,
                   color: Colors.white,
                 ),
-                onTap: null,
               ),
             ],
           ),
@@ -225,7 +225,8 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                 future: requestMonthAliasResponseFromAssets(context),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.done) {
-                    Map<String, List<String>> response = snapshot.data as Map<String, List<String>>;
+                    Map<String, List<String>> response =
+                        snapshot.data as Map<String, List<String>>;
                     final list =
                         response[DateTime.now().month.toString()] ?? [""];
                     final randomName = list[Random().nextInt(list.length)];
@@ -262,19 +263,19 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Align(
+                                alignment: AlignmentDirectional.topStart,
                                 child: Text(
                                   _model.date!.split("-")[1],
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 21),
-                                ),
-                                alignment: AlignmentDirectional.topStart),
+                                )),
                             Align(
+                              alignment: AlignmentDirectional.bottomEnd,
                               child: Text(
                                 _model.date!.split("-")[2],
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 21),
                               ),
-                              alignment: AlignmentDirectional.bottomEnd,
                             ),
                           ],
                         )),

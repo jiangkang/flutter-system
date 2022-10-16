@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AnimBasic extends StatefulWidget {
+  const AnimBasic({Key? key}) : super(key: key);
+
   @override
   _AnimBasicState createState() => _AnimBasicState();
 }
@@ -32,7 +34,6 @@ class _AnimBasicState extends State<AnimBasic>
           }
         });
       });
-    ;
     _animationController.forward();
   }
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListWheelScrollViewDemo extends StatefulWidget {
+  const ListWheelScrollViewDemo({Key? key}) : super(key: key);
+
   @override
   _ListWheelScrollViewDemoState createState() =>
       _ListWheelScrollViewDemoState();
