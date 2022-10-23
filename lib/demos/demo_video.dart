@@ -38,7 +38,7 @@ class _VideoDemoState extends State<VideoDemo> {
           child: FutureBuilder(
               future: _initializeVideoPlayerFuture,
               builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
+                if (snapshot.hasData) {
                   return Stack(
                     alignment: AlignmentDirectional.bottomCenter,
                     children: <Widget>[

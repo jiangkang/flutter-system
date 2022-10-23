@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_system/products/youqi/youqi_model.dart';
 import 'package:http/http.dart';
 
@@ -18,24 +19,9 @@ Future<YouQiResponse> requestYouQiResponseFromApi(String url) async {
 
 Future<YouQiResponse> requestYouQiResponseFromAssets(
     BuildContext context) async {
-  parser(jsonData) {
-    final YouQiResponse response =
-        YouQiResponse.fromJson(json.decode(jsonData));
-    return SynchronousFuture(response);
-  }
-  return DefaultAssetBundle.of(context)
-      .loadStructuredData<YouQiResponse>("assets/json/youqi.json", parser);
+  String json = await rootBundle.loadString("assets/json/youqi.json");
+  return YouQiResponse.fromJson(jsonDecode(json));
 }
-
-//Future<MonthAliasResponse> requestMonthAliasResponseFromAssets(
-//    BuildContext context) async {
-//  Future<MonthAliasResponse> Function(String value) parser = (jsonData) {
-//    final response = MonthAliasResponse.fromJson(json.decode(jsonData));
-//    return SynchronousFuture(response);
-//  };
-//  return DefaultAssetBundle.of(context).loadStructuredData<MonthAliasResponse>(
-//      "assets/json/month_traditional.json", parser);
-//}
 
 Future<Map<String, List<String>>> requestMonthAliasResponseFromAssets(
     BuildContext context) async {

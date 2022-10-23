@@ -30,7 +30,7 @@ class _TodoListPageState extends State<TodoListPage> {
       body: FutureBuilder(
         future: requestTaskList(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.hasData) {
             if (snapshot.hasData) {
               final List<Task> tasks = snapshot.data as List<Task>;
               if (tasks.isEmpty) {

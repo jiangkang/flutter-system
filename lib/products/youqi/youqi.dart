@@ -18,10 +18,10 @@ class _YouQiHomePageState extends State<YouQiHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
+      body: FutureBuilder<YouQiResponse>(
           future: requestYouQiResponseFromAssets(context),
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasData) {
               YouQiResponse response = snapshot.data as YouQiResponse;
               final modelList = response.data ?? [];
               return PageView.builder(
@@ -224,7 +224,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
               FutureBuilder(
                 future: requestMonthAliasResponseFromAssets(context),
                 builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasData) {
                     Map<String, List<String>> response =
                         snapshot.data as Map<String, List<String>>;
                     final list =

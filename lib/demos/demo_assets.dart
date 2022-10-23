@@ -28,7 +28,7 @@ class _AssetsDemoState extends State<AssetsDemo> {
           child: FutureBuilder<List<Article>>(
               future: AssetStorage.getArticleList(context),
               builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
+                if (snapshot.hasData) {
                   final articles = snapshot.data!;
                   return ListView.builder(
                       itemCount: articles.length,
