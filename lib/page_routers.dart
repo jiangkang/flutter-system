@@ -40,7 +40,7 @@ import 'package:flutter_system/page/page_settings.dart';
 import 'package:flutter_system/page/page_show0.dart';
 import 'package:flutter_system/products/todo/todo_list.dart';
 import 'package:flutter_system/products/xiyou/xiyou_home.dart';
-import 'package:flutter_system/products/youqi/youqi.dart';
+import 'package:flutter_system/products/youqi/youqi_home_page.dart';
 import 'package:flutter_system/senior/rich_text_page.dart';
 
 import 'component/component_appbar.dart';
@@ -50,8 +50,6 @@ import 'demos/demo_button.dart';
 import 'demos/demo_chip.dart';
 import 'demos/demo_fitted_box.dart';
 import 'demos/demo_slider.dart';
-
-
 
 /// Page Routers
 final Map<String, WidgetBuilder> pageRouters = {
@@ -120,7 +118,7 @@ final Map<String, WidgetBuilder> productRouters = {
   // "/product/clock": (BuildContext context) => ClockListPage(),
 };
 
-final Map<String,WidgetBuilder> seniorRouters = {
+final Map<String, WidgetBuilder> seniorRouters = {
   "/senior/rich_text": (BuildContext context) => RichTextPage(),
 };
 
@@ -128,9 +126,9 @@ final Map<String,WidgetBuilder> seniorRouters = {
 /// include of [pageRouters],[componentRouters],[demoRouters],[productRouters]
 final Map<String, WidgetBuilder> appRouters = {
   "/": (BuildContext context) => HomePage(),
-}
-  ..addAll(pageRouters)
-  ..addAll(componentRouters)
-  ..addAll(demoRouters)
-  ..addAll(seniorRouters)
-  ..addAll(productRouters);
+  ...pageRouters,
+  ...componentRouters,
+  ...demoRouters,
+  ...seniorRouters,
+  ...productRouters,
+};

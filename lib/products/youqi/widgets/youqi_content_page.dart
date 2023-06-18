@@ -1,43 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_system/products/youqi/api_youqi.dart';
+import 'package:flutter_system/products/youqi/widgets/youqi_top_header.dart';
 import 'package:flutter_system/products/youqi/youqi_model.dart';
 import 'package:flutter_system/utils/nav_utils.dart';
-import 'package:flutter_system/utils/time_utils.dart';
 import 'package:kicons/kicons.dart';
-
-class YouQiHomePage extends StatefulWidget {
-  const YouQiHomePage({Key? key}) : super(key: key);
-
-  @override
-  _YouQiHomePageState createState() => _YouQiHomePageState();
-}
-
-class _YouQiHomePageState extends State<YouQiHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: FutureBuilder<YouQiResponse>(
-          future: requestYouQiResponseFromAssets(context),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              YouQiResponse response = snapshot.data as YouQiResponse;
-              final modelList = response.data ?? [];
-              return PageView.builder(
-                itemBuilder: (context, index) {
-                  return YouQiContentPage(modelList[index]);
-                },
-                itemCount: modelList.length,
-                pageSnapping: true,
-                reverse: true,
-              );
-            }
-            return Center(child: CircularProgressIndicator());
-          }),
-    );
-  }
-}
 
 class YouQiContentPage extends StatefulWidget {
   final YouQiModel model;
@@ -74,7 +39,7 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            _buildTopHeader(),
+            YouQiTopHeader(model: _model),
             _buildContent(),
             _buildBottomMenu(),
           ],
@@ -209,86 +174,6 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
     );
   }
 
-  Widget _buildTopHeader() {
-    return Column(
-      children: <Widget>[
-        SizedBox(
-          height: 40,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              FutureBuilder(
-                future: requestMonthAliasResponseFromAssets(context),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    Map<String, List<String>> response =
-                        snapshot.data as Map<String, List<String>>;
-                    final list =
-                        response[DateTime.now().month.toString()] ?? [""];
-                    final randomName = list[Random().nextInt(list.length)];
-                    return SizedBox(
-                      height: 60,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: <Widget>[
-                          Text(
-                            randomName,
-                            style: TextStyle(color: Colors.white, fontSize: 24),
-                          ),
-                          Text(
-                            "${TimeUtils.getLunarMonth(_getDateTime())}月${TimeUtils.getLunarDay(_getDateTime())}",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    );
-                  }
-                  return Container();
-                },
-              ),
-              Column(
-                children: <Widget>[
-                  CustomPaint(
-                    painter: DateBoxPainter(),
-                    child: SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Align(
-                                alignment: AlignmentDirectional.topStart,
-                                child: Text(
-                                  _model.date!.split("-")[1],
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 21),
-                                )),
-                            Align(
-                              alignment: AlignmentDirectional.bottomEnd,
-                              child: Text(
-                                _model.date!.split("-")[2],
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 21),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                ],
-              )
-            ],
-          ),
-        )
-      ],
-    );
-  }
-
   /// 从色值字符串中获取背景色
   Color _getBgColor() {
     if (_model.bgColor == null || _model.bgColor!.isEmpty) {
@@ -297,31 +182,5 @@ class _YouQiContentPageState extends State<YouQiContentPage> {
       int colorInt = int.parse(_model.bgColor!.substring(1), radix: 16);
       return Color(colorInt);
     }
-  }
-
-  DateTime _getDateTime() {
-    final dateString = _model.date!.split("-");
-    return DateTime(
-      int.parse(dateString[0]),
-      int.parse(dateString[1]),
-      int.parse(dateString[2]),
-    );
-  }
-}
-
-class DateBoxPainter extends CustomPainter {
-  final Paint _painter = Paint()
-    ..color = Colors.white
-    ..strokeWidth = 2;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawLine(
-        Offset(6, size.height - 6), Offset(size.height - 6, 6), _painter);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
   }
 }

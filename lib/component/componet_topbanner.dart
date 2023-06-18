@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_system/component/component_appbar.dart';
 import 'package:flutter_system/utils/ui_utils.dart';
 import 'package:kicons/kicons.dart';
 
 /// top banner page
 /// 轮播图上覆盖几个快捷入口
-class TopBannerPage extends StatelessWidget {
+class TopBannerPage extends StatefulWidget {
   const TopBannerPage({Key? key}) : super(key: key);
 
+  @override
+  State<TopBannerPage> createState() => _TopBannerPageState();
+}
+
+class _TopBannerPageState extends State<TopBannerPage> {
   @override
   Widget build(BuildContext context) {
     final bgTopBanner = Column(
@@ -51,6 +55,46 @@ class TopBannerPage extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  AppBar buildAppBarWithMiddleSearch() {
+    return AppBar(
+      title: Chip(
+        backgroundColor: Colors.white,
+        label: Row(
+          mainAxisSize: MainAxisSize.max,
+          children: const <Widget>[
+            Icon(
+              Icons.search,
+              color: Colors.grey,
+            ),
+            SizedBox(
+              width: 6,
+            ),
+            Text(
+              "点击这里搜索内容",
+              style: TextStyle(color: Colors.grey),
+            )
+          ],
+        ),
+      ),
+      leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Center(child: Text("首页"))),
+      actions: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            "images/home_bar_scan.png",
+            color: Colors.white,
+            width: 28,
+            height: 28,
+          ),
+        )
+      ],
     );
   }
 
