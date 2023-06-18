@@ -3,13 +3,8 @@ import 'package:flutter/material.dart';
 import 'model/model_entry.dart';
 
 final List<EntryItem> pageEntries = [
-  // EntryItem("Guide Page", "/page/guide"),
-  // EntryItem("MarkDown Editor", "/page/markdown"),
-  // EntryItem("Password", "/page/password"),
-  // EntryItem("Xi You", "/product/xiyou"),
   EntryItem("You Qi", "/product/youqi"),
   EntryItem("To Do", "/product/todo"),
-  // EntryItem("Clocks", "/product/clock"),
 ];
 
 final List<EntryItem> componentEntries = [
@@ -22,8 +17,8 @@ final List<EntryItem> componentEntries = [
   EntryItem("Toast", "/component/toast", icon: Icons.message),
   EntryItem("Pickers", "/component/pickers", icon: Icons.photo_album),
   EntryItem("Share", "/component/share", icon: Icons.share),
-  // EntryItem("Dynamic UI", "/component/dynamic_ui", icon: Icons.dynamic_feed),
   EntryItem("Painter", "/component/painter", icon: Icons.brush_outlined),
+  // EntryItem("Animation", "/component/animation", icon: Icons.animation),
 ];
 
 final List<EntryItem> demoEntries = [
@@ -43,7 +38,6 @@ final List<EntryItem> demoEntries = [
   EntryItem("WebSocket", "/demo/websocket", icon: Icons.web),
   EntryItem("SQLite", "/demo/sqlite", icon: Icons.data_usage),
   EntryItem("File IO", "/demo/io", icon: Icons.insert_drive_file),
-  // EntryItem("Camera", "/demo/camera", icon: Icons.camera),
   EntryItem("Assets", "/demo/assets", icon: Icons.web_asset),
   EntryItem("Platform", "/demo/platform", icon: Icons.phone_android),
   EntryItem("Time", "/demo/time", icon: Icons.access_time),

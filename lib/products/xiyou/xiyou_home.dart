@@ -54,7 +54,7 @@ class _XiyouHomeState extends State<XiyouHome> {
     );
 
     final listView = ListView(
-      children: <Widget>[
+      children: const <Widget>[
         ListTile(
           leading: Icon(Icons.av_timer),
           title: Text("开关"),
@@ -69,7 +69,7 @@ class _XiyouHomeState extends State<XiyouHome> {
           title: Text("点赞"),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: const <Widget>[
+            children: <Widget>[
               IconButton(icon: Icon(Icons.forward_5), onPressed: null),
               IconButton(icon: Icon(Icons.forward_10), onPressed: null),
               IconButton(icon: Icon(Icons.forward_30), onPressed: null),
@@ -81,7 +81,7 @@ class _XiyouHomeState extends State<XiyouHome> {
           title: Text("习惯"),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: const <Widget>[
+            children: <Widget>[
               IconButton(icon: Icon(Icons.file_download), onPressed: null),
               IconButton(icon: Icon(Icons.file_upload), onPressed: null),
               IconButton(icon: Icon(Icons.folder), onPressed: null),

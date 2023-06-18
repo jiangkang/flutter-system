@@ -39,11 +39,11 @@ class _GuidePageState extends State<GuidePage> {
       _itemCount = 3;
     });
 
-    _onPageChanged = (value) => {
-          setState(() {
+    _onPageChanged = (value) => setState(
+          () {
             _currentIndex = value;
-          })
-        };
+          },
+        );
   }
 
   @override

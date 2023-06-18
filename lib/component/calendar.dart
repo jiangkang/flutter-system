@@ -219,7 +219,7 @@ class DayCellState extends State<DayCell> {
                   widget.dateTime!.day.toString(),
                   style: TextStyle(
                       color: isCurrentMonth
-                          ? Theme.of(context).textTheme.bodyText2!.color
+                          ? Theme.of(context).textTheme.bodyMedium!.color
                           : Colors.grey,
                       fontSize: 21),
                 ),

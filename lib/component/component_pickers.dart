@@ -75,10 +75,11 @@ class _PickersPageState extends State<PickersPage> {
     );
   }
 
-  void showVideoDialog(BuildContext context, File file) async {
+  Future<void> showVideoDialog(BuildContext context, File file) async {
     final controller = VideoPlayerController.file(file);
     await controller.initialize();
     await controller.play();
+    //ignore: use_build_context_synchronously
     await showDialog<void>(
       barrierDismissible: true,
       context: context,
